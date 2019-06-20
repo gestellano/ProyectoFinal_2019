@@ -37,8 +37,7 @@ namespace AppMobile
         private void BtnConfirmar_Clicked(object sender, EventArgs e)
         {
             try
-            {
-                
+            {              
 
                 //LLAMAR AL logica
                 Navigation.PushAsync(new AltaClienteExito());
