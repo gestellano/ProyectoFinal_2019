@@ -47,8 +47,7 @@ namespace AppMobile
             {
                 throw new Exception("Ha ocurrido un error en App y debe cerrase");
             }
-
- 
+            
         }
 
         private void BtnCancelar_Clicked(object sender, EventArgs e)
