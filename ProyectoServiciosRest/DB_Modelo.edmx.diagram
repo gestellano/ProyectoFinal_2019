@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="439bd2f735f741afb5b4153803c218d3" Name="Diagram1" >
+        <EntityTypeShape EntityType="DB_Modelo.Usuario" Width="1.5" PointX="2.75" PointY="1.25" />
+        <EntityTypeShape EntityType="DB_Modelo.Admin" Width="1.5" PointX="5.875" PointY="3.125" />
+        <EntityTypeShape EntityType="DB_Modelo.Vendedor" Width="1.5" PointX="3" PointY="4.5" />
+        <InheritanceConnector EntityType="DB_Modelo.Vendedor" ManuallyRouted="true" >
+          <ConnectorPoint PointX="3.5" PointY="3.2302864583333331" />
+          <ConnectorPoint PointX="3.5" PointY="4.37625" />
+          <ConnectorPoint PointX="3.75" PointY="4.37625" />
+          <ConnectorPoint PointX="3.75" PointY="4.5" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="DB_Modelo.Pedido" Width="1.5" PointX="5.875" PointY="5.375" />
+        <EntityTypeShape EntityType="DB_Modelo.Cliente" Width="1.5" PointX="0.75" PointY="6.125" />
+        <EntityTypeShape EntityType="DB_Modelo.LineaPedido" Width="1.5" PointX="3.125" PointY="8.25" />
+        <EntityTypeShape EntityType="DB_Modelo.Articulo" Width="1.5" PointX="0.75" PointY="9.375" />
+        <AssociationConnector Association="DB_Modelo.VendedorPedido" />
+        <AssociationConnector Association="DB_Modelo.PedidoLineaPedido" />
+        <AssociationConnector Association="DB_Modelo.ClientePedido" />
+        <AssociationConnector Association="DB_Modelo.LineaPedidoArticulo" />
+        <InheritanceConnector EntityType="DB_Modelo.Admin" />
+      </Diagram>
+      
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

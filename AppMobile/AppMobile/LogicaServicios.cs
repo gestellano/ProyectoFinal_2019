@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppMobile
 {
-    class LogicaServicios
+    public class LogicaServicios
     {
         public void AgregarCliente(int Rut, String NombreEmp, String Direccion, String Telefono, String Ciudad)
         {
@@ -15,6 +15,7 @@ namespace AppMobile
             }
             else
             {
+               
                 //INVOCAR SERVICIO REST
             }
         }

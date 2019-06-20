@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="DB_Modelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="DB_ModeloTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DB_Modelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DB_ModeloContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UsuarioSet" EntityType="DB_Modelo.Usuario" />
+          <EntitySet Name="PedidoSet" EntityType="DB_Modelo.Pedido" />
+          <EntitySet Name="ClienteSet" EntityType="DB_Modelo.Cliente" />
+          <EntitySet Name="LineaPedidoSet" EntityType="DB_Modelo.LineaPedido" />
+          <EntitySet Name="ArticuloSet" EntityType="DB_Modelo.Articulo" />
+          <AssociationSet Name="VendedorPedido" Association="DB_Modelo.VendedorPedido">
+            <End Role="Vendedor" EntitySet="UsuarioSet" />
+            <End Role="Pedido" EntitySet="PedidoSet" />
+          </AssociationSet>
+          <AssociationSet Name="PedidoLineaPedido" Association="DB_Modelo.PedidoLineaPedido">
+            <End Role="Pedido" EntitySet="PedidoSet" />
+            <End Role="LineaPedido" EntitySet="LineaPedidoSet" />
+          </AssociationSet>
+          <AssociationSet Name="ClientePedido" Association="DB_Modelo.ClientePedido">
+            <End Role="Cliente" EntitySet="ClienteSet" />
+            <End Role="Pedido" EntitySet="PedidoSet" />
+          </AssociationSet>
+          <AssociationSet Name="LineaPedidoArticulo" Association="DB_Modelo.LineaPedidoArticulo">
+            <End Role="LineaPedido" EntitySet="LineaPedidoSet" />
+            <End Role="Articulo" EntitySet="ArticuloSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="nikcName" />
+          </Key>
+          <Property Name="nikcName" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="String" />
+          <Property Name="passcode" Type="String" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="celular" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admin" BaseType="DB_Modelo.Usuario">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Vendedor" BaseType="DB_Modelo.Usuario">
+          <NavigationProperty Name="Pedido" Relationship="DB_Modelo.VendedorPedido" FromRole="Vendedor" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" />
+          <Property Name="estadoImpreso" Type="Boolean" Nullable="false" />
+          <Property Name="unidades" Type="Int32" Nullable="false" />
+          <Property Name="envio" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Vendedor" Relationship="DB_Modelo.VendedorPedido" FromRole="Pedido" ToRole="Vendedor" />
+          <NavigationProperty Name="LineaPedido" Relationship="DB_Modelo.PedidoLineaPedido" FromRole="Pedido" ToRole="LineaPedido" />
+          <NavigationProperty Name="Cliente" Relationship="DB_Modelo.ClientePedido" FromRole="Pedido" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rut" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" />
+          <Property Name="direccion" Type="String" Nullable="false" />
+          <Property Name="telefono" Type="String" Nullable="false" />
+          <Property Name="ciudad" Type="String" Nullable="false" />
+          <NavigationProperty Name="Pedido" Relationship="DB_Modelo.ClientePedido" FromRole="Cliente" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="LineaPedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="pedidoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Articulo" Relationship="DB_Modelo.LineaPedidoArticulo" FromRole="LineaPedido" ToRole="Articulo" />
+        </EntityType>
+        <EntityType Name="Articulo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="LineaPedido" Relationship="DB_Modelo.LineaPedidoArticulo" FromRole="Articulo" ToRole="LineaPedido" />
+        </EntityType>
+        <Association Name="VendedorPedido">
+          <End Type="DB_Modelo.Vendedor" Role="Vendedor" Multiplicity="1" />
+          <End Type="DB_Modelo.Pedido" Role="Pedido" Multiplicity="*" />
+        </Association>
+        <Association Name="PedidoLineaPedido">
+          <End Type="DB_Modelo.Pedido" Role="Pedido" Multiplicity="1" />
+          <End Type="DB_Modelo.LineaPedido" Role="LineaPedido" Multiplicity="*" />
+        </Association>
+        <Association Name="ClientePedido">
+          <End Type="DB_Modelo.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="DB_Modelo.Pedido" Role="Pedido" Multiplicity="*" />
+        </Association>
+        <Association Name="LineaPedidoArticulo">
+          <End Type="DB_Modelo.LineaPedido" Role="LineaPedido" Multiplicity="1" />
+          <End Type="DB_Modelo.Articulo" Role="Articulo" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="DB_Modelo" />
+        <Alias Key="Target" Value="DB_Modelo.Store" />
+        <EntityContainerMapping CdmEntityContainer="DB_ModeloContainer" StorageEntityContainer="DB_ModeloTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
