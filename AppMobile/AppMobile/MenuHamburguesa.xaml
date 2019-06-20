@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.MenuHamburguesa">
+
+    <MasterDetailPage.Master>
+ 
+        <ContentPage
+            Title="Oscal SRL"
+            Icon="">
+
+            <ListView x:Name="ListMenu" ItemSelected="ListMenu_ItemSelected" BackgroundColor="#c3c3c3" SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding MenuTitle}" TextColor="Black"></TextCell>                     
+                    </DataTemplate>                    
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+</MasterDetailPage>

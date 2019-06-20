@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.Contactos">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+       
+            <Label Text="Oscal SRL - Direccion 123"
+                TextColor="#000000"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label></Label>
+            <Label Text="Telefono Oficinas - 24002020"
+                   TextColor="#000000"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label></Label>
+            <Label Text="Celular Oscar - 099999999"
+                   TextColor="#000000"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label></Label>
+            <Label Text="Vendedor 1 - 099999999"
+                   TextColor="#000000"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label></Label>
+            <Label Text="Vendedor 2 - 098888888"
+                   TextColor="#000000"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+            <Label></Label>
+            <Label Text="Vendedor 3 - 097777777"
+                   TextColor="#000000"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" />
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
