@@ -45,25 +45,25 @@ namespace AppMobile
                 {
                     int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());
 
-                    // Datos de prueba para dar de alta pedido
-                    String nombreEmprea = "Estellano S.A";
-                    String direccion = "Tacuarembo 1361";
-                    String telefono = "098977344";
-                    String ciudad = "Durazno";
+                   
 
-                    //INVOCAR A SERVICIO DE BUSCAR CLIENTE
+                    LogicaServicios obj = new LogicaServicios();
+                    obj.BuscarCliente(rutEmpresa);
 
-                  
+                    if(obj == null)
+                    {
+                        Navigation.PushAsync(new AltaCliente1(rutEmpresa));
+                    }
+                    else
+                    {
+                        // Datos de prueba para dar de alta pedido
+                        String nombreEmprea = "Estellano S.A";
+                        String direccion = "Tacuarembo 1361";
+                        String telefono = "098977344";
+                        String ciudad = "Durazno";
 
-                  //  if (Cliente != null)
-                 //   {
-                //        Navigation.PushAsync(new ClienteEncontrado(rutEmpresa, nombreEmprea, direccion, telefono, ciudad));
-//
-               //     }
-               //     else
-                //    {
-               //         Navigation.PushAsync(new AltaCliente1(rutEmpresa));
-              //      }
+                        Navigation.PushAsync(new ClienteEncontrado(rutEmpresa, nombreEmprea, direccion, telefono, ciudad));
+                    }
 
                 }
             }
