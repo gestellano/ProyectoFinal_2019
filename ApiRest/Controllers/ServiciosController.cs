@@ -1,38 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
-namespace ProyectoServiciosRest.Controllers
+namespace ApiRest.Controllers
 {
-    public class ServiciosController : ApiController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ServiciosController : ControllerBase
     {
         // GET: api/Servicios
+        [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-       
         // GET: api/Servicios/5
+        [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
 
         // POST: api/Servicios
-        public void Post([FromBody]string value)
+        [HttpPost]
+        public void Post([FromBody] string value)
         {
         }
 
         // PUT: api/Servicios/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/Servicios/5
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete("{id}")]
         public void Delete(int id)
         {
         }
