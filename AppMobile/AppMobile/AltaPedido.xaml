@@ -29,8 +29,8 @@
             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" Color="Black"/>
 
             <Label Text="Codigo; Descripcion; Cantidad" TextColor="#000000" />
-
             <Label Text="Codigo Producto:" TextColor="#000000" ></Label>
+            
             <Entry x:Name="lblCodigo" Placeholder="Codigo" TextColor="#000000" Keyboard="Numeric"></Entry>
             <Button  x:Name="btnAgregarProducto" Text="Agregar producto" ></Button>
             

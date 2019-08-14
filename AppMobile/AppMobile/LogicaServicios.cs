@@ -32,11 +32,13 @@ namespace AppMobile
             }
             else
             {
+                
                 object[] cliente = new object[] { Rut, NombreEmp, Direccion,Telefono,Ciudad};
 
                 string json = JsonConvert.SerializeObject(cliente);
 
                 //INVOCAR SERVICIO REST
+
 
                 
             }
