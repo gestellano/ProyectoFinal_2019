@@ -38,7 +38,7 @@ namespace AppMobile
         private void BtnConfirmar_Clicked(object sender, EventArgs e)
         {
             try
-            {              
+            {            
 
                 LogicaServicios obj = new LogicaServicios();
                 obj.AgregarCliente((Convert.ToInt32(lblRut.Text)),lblNombreEmp.Text,lblDireccion.Text,lblTelefono.Text,lblCiudad.Text);               
