@@ -12,10 +12,9 @@ namespace AppMobile
         {
             string rut = Convert.ToString(Rut);
 
-            //INVOCAR SERVICIO REST
-
             String json = null;
 
+            //INVOCAR SERVICIO REST
 
             return json;
             

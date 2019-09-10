@@ -43,12 +43,10 @@ namespace AppMobile
                 }
                 else
                 {
-                    int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());
-
-                   
+                    int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());                   
 
                     LogicaServicios obj = new LogicaServicios();
-                    obj.BuscarCliente(rutEmpresa);
+                    String ClienteBuscado = obj.BuscarCliente(rutEmpresa);
 
                     if(obj == null)
                     {
@@ -56,13 +54,14 @@ namespace AppMobile
                     }
                     else
                     {
+                        
                         // Datos de prueba para dar de alta pedido
-                        String nombreEmprea = "Estellano S.A";
-                        String direccion = "Tacuarembo 1361";
-                        String telefono = "098977344";
-                        String ciudad = "Durazno";
+                       // String nombreEmprea = "Estellano S.A";
+                       // String direccion = "Tacuarembo 1361";
+                       // String telefono = "098977344";
+                       // String ciudad = "Durazno";
 
-                        Navigation.PushAsync(new ClienteEncontrado(rutEmpresa, nombreEmprea, direccion, telefono, ciudad));
+                      //  Navigation.PushAsync(new ClienteEncontrado(rutEmpresa, nombreEmprea, direccion, telefono, ciudad));
                     }
 
                 }

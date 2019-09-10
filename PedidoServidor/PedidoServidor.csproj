@@ -166,6 +166,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseDeDatos_DbContext.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Desarrollador.cs" />
     <Compile Include="Models\Especificacion_Articulo.cs" />
