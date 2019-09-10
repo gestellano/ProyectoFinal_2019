@@ -7,28 +7,29 @@ using System.Web;
 
 namespace PedidoServidor.Models
 {
-    [Table("Cliente")]
-    public class Cliente
+    [Table("Usuario")]
+     public class Usuario
     {
         [Key]
         [StringLength(50)]
         [Required]
-        public int Rut { get; set; }
+        public int Numero { get; set; }
 
         [StringLength(50)]
         [Required]
-        public String NombreEmp { get; set; }
+        public String Nombre { get; set; }
 
-        [StringLength(50)]
         [Required]
-        public String Direccion { get; set; }
+        public EmailAddressAttribute Mail { get; set; }
 
-        [StringLength(50)]
-        public String Telefono { get; set; }
-
-        [StringLength(50)]
         [Required]
-        public String Ciudad { get; set; }
+        public String Celular { get; set; }
+
+        [Required]
+        public String Nickname { get; set; }
+
+        [Required]
+        public String Password { get; set; }
         
     }
 }

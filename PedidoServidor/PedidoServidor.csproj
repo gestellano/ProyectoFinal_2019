@@ -167,6 +167,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Desarrollador.cs" />
+    <Compile Include="Models\Especificacion_Articulo.cs" />
+    <Compile Include="Models\Linea_Pedido.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Vendedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
