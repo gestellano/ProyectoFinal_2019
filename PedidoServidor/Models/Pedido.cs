@@ -17,12 +17,11 @@ namespace PedidoServidor.Models
         [Required]
         public DateTime Fecha { get; set; }        
 
-        public Boolean EstadoImpresion { get; set; }
-        //anotacion para default FALSE en base de datos
+        public Boolean EstadoImpresion { get; set; }        
 
         [Required]
-        public List<Linea_Pedido> ArticulosPedidos { get; set; }
-        //Se pasa una lista aca para entity?
+        public virtual IList<Linea_Pedido> ArticulosPedidos { get; set; }
+       
 
         [StringLength(50)]
         [Required]

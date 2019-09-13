@@ -44,9 +44,10 @@ namespace AppMobile
                 obj.AgregarCliente((Convert.ToInt32(lblRut.Text)),lblNombreEmp.Text,lblDireccion.Text,lblTelefono.Text,lblCiudad.Text);               
                 Navigation.PushAsync(new AltaClienteExito());
             }
-            catch
+            catch(Exception ex)
             {
-                throw new Exception("Ha ocurrido un error en App y debe cerrase");
+                throw new Exception();
+                
             }
             
         }

@@ -45,15 +45,15 @@ namespace AppMobile
                 {
                     int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());                   
 
-                    LogicaServicios obj = new LogicaServicios();
-                    String ClienteBuscado = obj.BuscarCliente(rutEmpresa);
+                   // LogicaServicios obj = new LogicaServicios();
+                  //  String ClienteBuscado = obj.BuscarCliente(rutEmpresa);
 
-                    if(obj == null)
-                    {
+                  //  if(obj == null)
+                 //   {
                         Navigation.PushAsync(new AltaCliente1(rutEmpresa));
-                    }
-                    else
-                    {
+                //    }
+               //     else
+               //     {
                         
                         // Datos de prueba para dar de alta pedido
                        // String nombreEmprea = "Estellano S.A";
@@ -62,7 +62,7 @@ namespace AppMobile
                        // String ciudad = "Durazno";
 
                       //  Navigation.PushAsync(new ClienteEncontrado(rutEmpresa, nombreEmprea, direccion, telefono, ciudad));
-                    }
+                //    }
 
                 }
             }

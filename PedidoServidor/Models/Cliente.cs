@@ -11,7 +11,6 @@ namespace PedidoServidor.Models
     public class Cliente
     {
         [Key]
-        [StringLength(50)]
         [Required]
         public int Rut { get; set; }
 

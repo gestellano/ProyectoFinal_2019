@@ -11,7 +11,6 @@ namespace PedidoServidor.Models
      public class Usuario
     {
         [Key]
-        [StringLength(50)]
         [Required]
         public int Numero { get; set; }
 
@@ -20,7 +19,7 @@ namespace PedidoServidor.Models
         public String Nombre { get; set; }
 
         [Required]
-        public EmailAddressAttribute Mail { get; set; }
+        public String Mail { get; set; }
 
         [Required]
         public String Celular { get; set; }

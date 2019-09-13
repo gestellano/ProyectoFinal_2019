@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppMobile.Android", "AppMobile\AppMobile.Android\AppMobile.Android.csproj", "{5D53ED92-EB4F-4C3E-AF67-7D0E75650425}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E605986B-8494-400D-A9B2-FB9D1567F10A} = {E605986B-8494-400D-A9B2-FB9D1567F10A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppMobile.iOS", "AppMobile\AppMobile.iOS\AppMobile.iOS.csproj", "{CA2BC68A-E8BC-49E3-8720-DFD7D7FF05EE}"
 EndProject

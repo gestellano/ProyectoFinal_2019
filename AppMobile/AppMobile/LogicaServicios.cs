@@ -1,12 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 
 namespace AppMobile
 {
     public class LogicaServicios
     {
+        private String baseUrl = "http://localhost:4425";
         //Buscar Cliente
         public String BuscarCliente(int Rut)
         {
@@ -31,15 +33,25 @@ namespace AppMobile
             }
             else
             {
-                
-                object[] cliente = new object[] { Rut, NombreEmp, Direccion,Telefono,Ciudad};
+                using (var client = new HttpClient())
+                {
+                   
+                     client.BaseAddress = new Uri(baseUrl + "/api/Base");
+                   // client.BaseAddress = new Uri(baseUrl + "/api/Base?rut=8888&nombre=sol&direccion=ignacionunez&ciudad=montevideo&telefono=099");
+                    var cliente = new{rut=Rut,nombre=NombreEmp,direccion=Direccion,telefono=Telefono,ciudad=Ciudad};
+                    var postTask = client.PostAsJsonAsync("cliente", cliente);                    
+                    postTask.Wait();
+                    var result = postTask.Result;
+                    if (result.IsSuccessStatusCode)
+                    {
 
-                string json = JsonConvert.SerializeObject(cliente);
+                    }
+                }
 
                 //INVOCAR SERVICIO REST
 
 
-                
+
             }
         }
 
