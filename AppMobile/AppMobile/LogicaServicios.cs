@@ -35,13 +35,13 @@ namespace AppMobile
             {
                 using (var client = new HttpClient())
                 {
-                    //client.BaseAddress = new Uri(baseUrl + "/api/Base?rut=8888&nombre=sol&direccion=ignacionunez&ciudad=montevideo&telefono=099");
+                    client.BaseAddress = new Uri(baseUrl + "/api/Base?rut=8888&nombre=sol&direccion=ignacionunez&ciudad=montevideo&telefono=099");
 
-                    var cliente = new {Rut=Rut, NombreEmp = NombreEmp, Direccion = Direccion, Telefono = Telefono, Ciudad = Ciudad};
-                    client.BaseAddress = new Uri(baseUrl + "/api/Cliente");
-                    var postTask = client.PostAsJsonAsync("cliente", cliente);
+                  //  var cliente = new {Rut=Rut, NombreEmp = NombreEmp, Direccion = Direccion, Telefono = Telefono, Ciudad = Ciudad};
+                  //  client.BaseAddress = new Uri(baseUrl + "/api/Cliente");
+                 //   var postTask = client.PostAsJsonAsync("cliente", cliente);
                     // var postTask = client.PostAsync("cliente");
-                    postTask.Wait();
+               //     postTask.Wait();
 
 
                     //var result = postTask.Result;
