@@ -9,7 +9,7 @@ namespace PedidoServidor.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(PedidoServidor.Models.BaseDeDatosContext context)
