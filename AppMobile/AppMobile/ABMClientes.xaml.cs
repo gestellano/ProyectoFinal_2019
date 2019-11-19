@@ -43,6 +43,7 @@ namespace AppMobile
                 }
                 else
                 {
+
                     int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());                   
 
                    // LogicaServicios obj = new LogicaServicios();
