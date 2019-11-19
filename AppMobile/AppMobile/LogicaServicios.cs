@@ -35,20 +35,7 @@ namespace AppMobile
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(baseUrl + "/api/Base?rut=8888&nombre=sol&direccion=ignacionunez&ciudad=montevideo&telefono=099");
-
-                  //  var cliente = new {Rut=Rut, NombreEmp = NombreEmp, Direccion = Direccion, Telefono = Telefono, Ciudad = Ciudad};
-                  //  client.BaseAddress = new Uri(baseUrl + "/api/Cliente");
-                 //   var postTask = client.PostAsJsonAsync("cliente", cliente);
-                    // var postTask = client.PostAsync("cliente");
-               //     postTask.Wait();
-
-
-                    //var result = postTask.Result;
-                    //if (result.IsSuccessStatusCode)
-                    //{
-
-                  //  }
+                    client.BaseAddress = new Uri(baseUrl + "/api/Cliente?rut=8888&nombre=sol&direccion=ignacionunez&ciudad=montevideo&telefono=099");
                 }
             }
         }

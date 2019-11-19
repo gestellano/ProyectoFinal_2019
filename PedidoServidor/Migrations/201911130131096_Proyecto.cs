@@ -11,7 +11,7 @@ namespace PedidoServidor.Migrations
                 "dbo.Cliente",
                 c => new
                     {
-                        Rut = c.Int(nullable: false, identity: true),
+                        Rut = c.String(nullable: false, maxLength: 128),
                         NombreEmp = c.String(nullable: false, maxLength: 50),
                         Direccion = c.String(nullable: false, maxLength: 50),
                         Telefono = c.String(maxLength: 50),
@@ -70,20 +70,12 @@ namespace PedidoServidor.Migrations
                 .PrimaryKey(t => t.Numero);
             
             CreateTable(
-                "dbo.Desarrollador",
-                c => new
-                    {
-                        Numero = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Numero)
-                .ForeignKey("dbo.Usuario", t => t.Numero)
-                .Index(t => t.Numero);
-            
-            CreateTable(
                 "dbo.Vendedor",
                 c => new
                     {
                         Numero = c.Int(nullable: false),
+                        TieneVehiculo = c.Boolean(nullable: false),
+                        ZonaTrabajo = c.String(nullable: false, maxLength: 200),
                     })
                 .PrimaryKey(t => t.Numero)
                 .ForeignKey("dbo.Usuario", t => t.Numero)
@@ -94,15 +86,12 @@ namespace PedidoServidor.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Vendedor", "Numero", "dbo.Usuario");
-            DropForeignKey("dbo.Desarrollador", "Numero", "dbo.Usuario");
             DropForeignKey("dbo.Linea_Pedido", "Pedido_Id", "dbo.Pedido");
             DropForeignKey("dbo.Linea_Pedido", "Articulo_Id", "dbo.Especificacion_Articulo");
             DropIndex("dbo.Vendedor", new[] { "Numero" });
-            DropIndex("dbo.Desarrollador", new[] { "Numero" });
             DropIndex("dbo.Linea_Pedido", new[] { "Pedido_Id" });
             DropIndex("dbo.Linea_Pedido", new[] { "Articulo_Id" });
             DropTable("dbo.Vendedor");
-            DropTable("dbo.Desarrollador");
             DropTable("dbo.Usuario");
             DropTable("dbo.Linea_Pedido");
             DropTable("dbo.Pedido");

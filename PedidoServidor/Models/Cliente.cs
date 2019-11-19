@@ -12,7 +12,7 @@ namespace PedidoServidor.Models
     {
         [Key]
         [Required]
-        public int Rut { get; set; }
+        public String Rut { get; set; }
 
         [StringLength(50)]
         [Required]
