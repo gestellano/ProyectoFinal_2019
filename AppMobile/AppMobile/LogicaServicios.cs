@@ -35,7 +35,11 @@ namespace AppMobile
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(baseUrl + "/api/Cliente?rut=8888&nombre=sol&direccion=ignacionunez&ciudad=montevideo&telefono=099");
+                    //client.BaseAddress = new Uri(baseUrl + "/api/Cliente?rut=8888&nombre=sol&direccion=ignacionunez&ciudad=montevideo&telefono=099");
+                                       
+                    string url = baseUrl + "/api/Cliente/" + Rut.ToString() + "/" + NombreEmp + "/" + Direccion + "/" + Ciudad + "/" + Telefono;
+                    client.BaseAddress = new Uri(url);
+                    
                 }
             }
         }

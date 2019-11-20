@@ -38,8 +38,11 @@ namespace PedidoServidor.Migrations
                         Fecha = c.DateTime(nullable: false),
                         EstadoImpresion = c.Boolean(nullable: false),
                         TipoEnvio = c.String(nullable: false, maxLength: 50),
+                        ClientePedido_Rut = c.String(nullable: false, maxLength: 128),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Cliente", t => t.ClientePedido_Rut, cascadeDelete: true)
+                .Index(t => t.ClientePedido_Rut);
             
             CreateTable(
                 "dbo.Linea_Pedido",
@@ -57,7 +60,7 @@ namespace PedidoServidor.Migrations
                 .Index(t => t.Pedido_Id);
             
             CreateTable(
-                "dbo.Usuario",
+                "dbo.Vendedor",
                 c => new
                     {
                         Numero = c.Int(nullable: false, identity: true),
@@ -66,33 +69,22 @@ namespace PedidoServidor.Migrations
                         Celular = c.String(nullable: false),
                         Nickname = c.String(nullable: false),
                         Password = c.String(nullable: false),
+                        ZonaTrabajo = c.String(nullable: false, maxLength: 200),
+                        TieneVehiculo = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Numero);
-            
-            CreateTable(
-                "dbo.Vendedor",
-                c => new
-                    {
-                        Numero = c.Int(nullable: false),
-                        TieneVehiculo = c.Boolean(nullable: false),
-                        ZonaTrabajo = c.String(nullable: false, maxLength: 200),
-                    })
-                .PrimaryKey(t => t.Numero)
-                .ForeignKey("dbo.Usuario", t => t.Numero)
-                .Index(t => t.Numero);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Vendedor", "Numero", "dbo.Usuario");
+            DropForeignKey("dbo.Pedido", "ClientePedido_Rut", "dbo.Cliente");
             DropForeignKey("dbo.Linea_Pedido", "Pedido_Id", "dbo.Pedido");
             DropForeignKey("dbo.Linea_Pedido", "Articulo_Id", "dbo.Especificacion_Articulo");
-            DropIndex("dbo.Vendedor", new[] { "Numero" });
             DropIndex("dbo.Linea_Pedido", new[] { "Pedido_Id" });
             DropIndex("dbo.Linea_Pedido", new[] { "Articulo_Id" });
+            DropIndex("dbo.Pedido", new[] { "ClientePedido_Rut" });
             DropTable("dbo.Vendedor");
-            DropTable("dbo.Usuario");
             DropTable("dbo.Linea_Pedido");
             DropTable("dbo.Pedido");
             DropTable("dbo.Especificacion_Articulo");
