@@ -8,7 +8,7 @@ namespace PedidoServidor.Models
 {
     public class BaseDeDatosContext : DbContext
     {
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Vendedor> Vendedores { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Especificacion_Articulo> EspecificacionArticulo { get; set; }

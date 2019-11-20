@@ -163,7 +163,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -180,7 +179,6 @@
     <Compile Include="Models\Especificacion_Articulo.cs" />
     <Compile Include="Models\Linea_Pedido.cs" />
     <Compile Include="Models\Pedido.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Vendedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

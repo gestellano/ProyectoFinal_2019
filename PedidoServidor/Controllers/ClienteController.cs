@@ -11,12 +11,12 @@ namespace PedidoServidor.Controllers
     public class ClienteController : ApiController
     {
         // GET: api/Cliente
-        public List<Usuario> Get()
+       /* public List<Usuario> Get()
         {
             BaseDeDatosContext baseDatos = new BaseDeDatosContext();
             return (from cliente in baseDatos.Usuarios
                     select cliente).ToList();
-        }
+        }*/
 
         // GET: api/Cliente/5
         public string Get(int id)

@@ -14,8 +14,8 @@ namespace PedidoServidor.Models
         [Required]
         public int Id { get; set; }
 
-   //     [ForeignKey("ClienteRefId")]
-   //   public Cliente ClientePedido  { get; set; }
+        [Required]
+        public Cliente ClientePedido  { get; set; }
 
         [Required]
         public DateTime Fecha { get; set; }        
