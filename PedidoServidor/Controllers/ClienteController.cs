@@ -19,30 +19,44 @@ namespace PedidoServidor.Controllers
              return (from cliente in baseDatos.Clientes
                      select cliente).ToList();
          }
-/*
-        public string Buscar(string rut)
-        {
-            Cliente cliente = (from c in context.Clientes where c.Rut == rut select c).FirstOrDefault();
-            return JsonConvert.SerializeObject(cliente);
-        }
 
-*/
-        // GET: api/Cliente/5
-        public string Get(int id)
+   /*     public Cliente Buscar(string prut)
         {
-            return "value";
+            BaseDeDatosContext baseDatos = new BaseDeDatosContext();
+            return (from cliente in baseDatos.Clientes where cliente.Rut = prut 
+                    select cliente ).ToList();
+        }
+*/
+
+        // GET: api/Cliente/5
+        public string Get(String rut)
+        {
+            
+             BaseDeDatosContext context = new BaseDeDatosContext();
+            var client = context.Clientes.Find(rut);
+            String clienteEncontrado = JsonConvert.SerializeObject(client);
+            return clienteEncontrado;
+
         }
 
         // POST: api/Cliente
-        public void Post(string rut, string nombre, string direccion, string ciudad, string telefono)
+        public HttpResponseMessage Post([FromBody]Cliente value)
         {
+
+
             BaseDeDatosContext context = new BaseDeDatosContext();
-            context.Clientes.Add(new Cliente() { Rut = rut, NombreEmp = nombre, Direccion = direccion, Ciudad = ciudad, Telefono = telefono });
+            context.Clientes.Add(value);
+            //context.Clientes.Add(new Cliente() { Rut = rut, NombreEmp = nombre, Direccion = direccion, Ciudad = ciudad, Telefono = telefono });
             context.SaveChanges();
+
+            var mensaje = Request.CreateResponse(HttpStatusCode.Created);
+            mensaje.Headers.Location = new Uri(Request.RequestUri + "text");
+            return mensaje;
         }
 
         // PUT: api/Cliente/5
         public void Put(int id, [FromBody]string value)
+
         {
         }
 
