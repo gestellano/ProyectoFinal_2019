@@ -46,8 +46,8 @@ namespace AppMobile
 
                     int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());                   
 
-                    LogicaServicios obj = new LogicaServicios();
-                    var pepe = obj.BuscarCliente(rutEmpresa);
+                   // LogicaServicios obj = new LogicaServicios();
+                  //  var pepe = obj.BuscarCliente(rutEmpresa);
 
                   //  if(obj == null)
                  //   {

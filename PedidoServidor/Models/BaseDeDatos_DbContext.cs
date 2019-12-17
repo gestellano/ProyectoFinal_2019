@@ -8,14 +8,17 @@ namespace PedidoServidor.Models
 {
     public class BaseDeDatosContext : DbContext
     {
+
         public DbSet<Vendedor> Vendedores { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Especificacion_Articulo> EspecificacionArticulo { get; set; }
-       
-        public BaseDeDatosContext():base("conexion")
-        {
 
+        
+        
+        public BaseDeDatosContext():base("name=conexion")
+        {
+            Configuration.LazyLoadingEnabled = false;
         }
     }
 }
