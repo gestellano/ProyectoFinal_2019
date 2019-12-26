@@ -44,26 +44,29 @@ namespace AppMobile
                 else
                 {
 
-                    int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());                   
+                    int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());
 
-                   // LogicaServicios obj = new LogicaServicios();
-                  //  var pepe = obj.BuscarCliente(rutEmpresa);
+                    LogicaServicios obj = new LogicaServicios();
+                    obj.BuscarCliente(rutEmpresa);
 
-                  //  if(obj == null)
-                 //   {
-                        Navigation.PushAsync(new AltaCliente1(rutEmpresa));
-                //    }
-               //     else
-               //     {
-                        
-                        // Datos de prueba para dar de alta pedido
-                       // String nombreEmprea = "Estellano S.A";
-                       // String direccion = "Tacuarembo 1361";
-                       // String telefono = "098977344";
-                       // String ciudad = "Durazno";
+                    // LogicaServicios obj = new LogicaServicios();
+                    //  var pepe = obj.BuscarCliente(rutEmpresa);
 
-                      //  Navigation.PushAsync(new ClienteEncontrado(rutEmpresa, nombreEmprea, direccion, telefono, ciudad));
-                //    }
+                    //  if(obj == null)
+                    //   {
+                    //  Navigation.PushAsync(new AltaCliente1(rutEmpresa));
+                    //    }
+                    //     else
+                    //     {
+
+                    // Datos de prueba para dar de alta pedido
+                    // String nombreEmprea = "Estellano S.A";
+                    // String direccion = "Tacuarembo 1361";
+                    // String telefono = "098977344";
+                    // String ciudad = "Durazno";
+
+                    //  Navigation.PushAsync(new ClienteEncontrado(rutEmpresa, nombreEmprea, direccion, telefono, ciudad));
+                    //    }
 
                 }
             }
