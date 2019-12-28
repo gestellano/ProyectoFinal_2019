@@ -10,24 +10,22 @@ namespace AppMobile
     public class LogicaServicios
     {
         private String baseUrl = "http://localhost:4425";
-        
+
         //Buscar Cliente
         public async void BuscarCliente(int Rut)
         {
-            string rutString = Convert.ToString(Rut);
 
-            String json = null;
+
             try
             {
+                string rutString = Convert.ToString(Rut);
+                string url = baseUrl + "/api/Cliente/BuscarCliente/" + rutString;
+
                 using (var client = new HttpClient())
                 {
 
-                    //client.BaseAddress = new Uri(baseUrl);
-                    string url = baseUrl + "/api/Cliente/Get?rut=" + rutString;
-                    HttpResponseMessage response = await client.GetAsync(baseUrl + "/api/Get?rut="+ rutString);
-                    string content = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine("Resultado: " + content);
-
+                    string result = await client.GetStringAsync(url);
+                    //Q' hacemos ahora con result?                    
                 }
             }
             catch (Exception ex)
@@ -35,10 +33,11 @@ namespace AppMobile
 
                 throw new Exception(ex.ToString());
             }
-            
+
         }
 
-        
+
+
 
         //Agregar Cliente
         public async void AgregarCliente(String Rut, String NombreEmp, String Direccion, String Telefono, String Ciudad) 

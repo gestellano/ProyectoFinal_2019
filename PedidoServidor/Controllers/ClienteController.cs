@@ -23,17 +23,19 @@ namespace PedidoServidor.Controllers
 
 
         // GET: api/Cliente/5
-        public string Get(String rut)
+        [HttpGet]
+        [Route("BuscarCliente")]
+        public string BuscarCliente(String rut)
         {
-
-            BaseDeDatosContext context = new BaseDeDatosContext();
-            var client = context.Clientes.Find(rut);
-            String clienteEncontrado = JsonConvert.SerializeObject(client);
-            return clienteEncontrado;
-
+            using (var context = new BaseDeDatosContext())
+            {
+                var client = context.Clientes.Find(rut);
+                //validar existencia de client
+                return JsonConvert.SerializeObject(client);
+            }
         }
 
-            // POST: api/Cliente
+        // POST: api/Cliente
 
         [Route("AgregarCliente")]
         [HttpPost]
