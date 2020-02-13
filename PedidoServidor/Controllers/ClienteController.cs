@@ -24,15 +24,16 @@ namespace PedidoServidor.Controllers
 
         // GET: api/Cliente/5
         [HttpGet]
-        [Route("api/Cliente/BuscarCliente/{rut}")]
+     //   [Route("{rut}")]
         //[Route("BuscarCliente")]
         public string BuscarCliente(String rut)
         {
             using (var context = new BaseDeDatosContext())
             {
-                var client = context.Clientes.Find(rut);
+                 var client = context.Clientes.Find(rut);
                 //validar existencia de client
-                return JsonConvert.SerializeObject(client);
+               return JsonConvert.SerializeObject(client);
+               
             }
         }
 
@@ -42,6 +43,7 @@ namespace PedidoServidor.Controllers
         [HttpPost]
         public void AgregarCliente(string rut, string nombre, string direccion, string ciudad, string telefono)
         {
+            Console.WriteLine("In service");
             BaseDeDatosContext context = new BaseDeDatosContext();
             context.Clientes.Add(new Cliente() { Rut = rut, NombreEmp = nombre, Direccion = direccion, Ciudad = ciudad, Telefono = telefono });
             context.SaveChanges();

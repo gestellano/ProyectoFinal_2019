@@ -396,7 +396,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4425</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:4425/</IISUrl>
+          <IISUrl>http://127.0.0.1:4425/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
