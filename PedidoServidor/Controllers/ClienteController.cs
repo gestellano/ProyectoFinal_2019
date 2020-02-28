@@ -31,12 +31,18 @@ namespace PedidoServidor.Controllers
             using (var context = new BaseDeDatosContext())
             {
                  var client = context.Clientes.Find(rut);
-
+                if(client == null)
+                {
+                    return string.Empty;
+                }
+                else
+                { 
                 return "ciudad=" + client.Ciudad        +";"+
                        "nombreEmp=" + client.NombreEmp  + ";" +
                        "telefono=" + client.Telefono    + ";" +
                        "direccion=" + client.Direccion  + ";" +
                        "rut="    + client.Rut;
+                }
             }
         }
 
@@ -46,7 +52,7 @@ namespace PedidoServidor.Controllers
         [HttpPost]
         public void AgregarCliente(string rut, string nombre, string direccion, string ciudad, string telefono)
         {
-            Console.WriteLine("In service");
+          
             BaseDeDatosContext context = new BaseDeDatosContext();
             context.Clientes.Add(new Cliente() { Rut = rut, NombreEmp = nombre, Direccion = direccion, Ciudad = ciudad, Telefono = telefono });
             context.SaveChanges();

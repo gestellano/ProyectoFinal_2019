@@ -52,13 +52,18 @@ namespace AppMobile
                     LogicaServicios obj = new LogicaServicios();
                     string result = obj.BuscarCliente(rutEmpresa);
 
-                      if(  String.IsNullOrEmpty(result))
-                       {
+                    if (result.Length > 1)
+                    {
+                        result = result.Substring(1, result.Length - 2);
+                    }
+
+                    if(result.Length == 0)
+                    { 
                             Navigation.PushAsync(new AltaCliente1(rutEmpresa));
                     }
                     else
                     {               
-                        Dictionary<string, string> dictionary = result.Substring(1,result.Length -2).TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
+                        Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
     
                         Navigation.PushAsync(new ClienteEncontrado(dictionary["rut"], dictionary["nombreEmp"], dictionary["direccion"], dictionary["telefono"], dictionary["ciudad"]));
                     }

@@ -13,7 +13,7 @@ namespace AppMobile
         private string baseUrl = "http://10.0.2.2:4425/api";
 
         //Buscar Cliente
-        public String BuscarCliente(int Rut)
+        public string BuscarCliente(int Rut)
         {
             string response = "";
             try
@@ -43,10 +43,10 @@ namespace AppMobile
 
 
         //Agregar Cliente
-        public async void AgregarCliente(String Rut, String NombreEmp, String Direccion, String Telefono, String Ciudad) 
+        public void AgregarCliente(string rut, string nombreEmp, string direccion, string telefono, string ciudad) 
         { 
-            if (string.IsNullOrEmpty(NombreEmp) || string.IsNullOrEmpty(Direccion)
-                     || string.IsNullOrEmpty(Telefono) || string.IsNullOrEmpty(Ciudad))
+            if (string.IsNullOrEmpty(nombreEmp) || string.IsNullOrEmpty(direccion)
+                     || string.IsNullOrEmpty(telefono) || string.IsNullOrEmpty(ciudad))
             {
                 throw new Exception("Todos los campos son obligatorios");
             }
@@ -60,19 +60,25 @@ namespace AppMobile
                         string url = baseUrl + "/api/Cliente";
                         client.BaseAddress = new Uri("http://10.0.2.2/api");
                         
-                        Dictionary<string, string> jsonValues = new Dictionary<string, string>();
-                        jsonValues.Add("Rut", Rut);
-                        jsonValues.Add("Nombre", NombreEmp);
-                        jsonValues.Add("Direccion", Direccion);
-                        jsonValues.Add("Ciudad", Ciudad);
-                        jsonValues.Add("Telefono", Telefono);
+                       // Dictionary<string, string> jsonValues = new Dictionary<string, string>();
+                   //     jsonValues.Add("Rut", Rut);
+                     //   jsonValues.Add("Nombre", NombreEmp);
+                       // jsonValues.Add("Direccion", Direccion);
+                        //jsonValues.Add("Ciudad", Ciudad);
+                        //jsonValues.Add("Telefono", Telefono);
 
-                        var serialized = JsonConvert.SerializeObject(jsonValues);
+                        //var serialized = JsonConvert.SerializeObject(jsonValues);
                         //HttpContent sc = new StringContent(JsonConvert.SerializeObject(jsonValues), UnicodeEncoding.UTF8, "application/json");
-                        var result = await client.PostAsJsonAsync("/Cliente/AgregarCliente/", jsonValues);
-                        int a = 0;
-                        //HttpResponseMessage response = await client.PostAsync("/Cliente/AgregarCliente/", sc);                       
-                  
+
+                        client.BaseAddress = new Uri(baseUrl);
+                        string urlRe = "http://10.0.2.2:4425/api/Cliente/AgregarCliente?" + "rut=" + rut +
+                                                                                            "&nombre=" + nombreEmp + 
+                                                                                            "&direccion=" + direccion +
+                                                                                            "&ciudad=" + ciudad + 
+                                                                                            "&telefono=" + telefono;
+                        WebClient wc = new WebClient();
+                        string resp = wc.DownloadString(urlRe);
+                                              
                     }
                 }
                 catch (Exception ex)
