@@ -12,17 +12,17 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ClienteEncontrado : ContentPage
 	{
-		public ClienteEncontrado(int Rut, String NombreEmp, String Direccion, String Telefono, String Ciudad)
+		public ClienteEncontrado(String rut, String nombreEmp, String direccion, String telefono, String ciudad)
         {
             try
             {
                 InitializeComponent();
                 
-                lblRut.Text = Convert.ToString(Rut);
-                lblNombreEmp.Text = NombreEmp;
-                lblDireccion.Text = Direccion;
-                lblTelefono.Text = Telefono;
-                lblCiudad.Text = Ciudad;
+                lblRut.Text = Convert.ToString(rut);
+                lblNombreEmp.Text = nombreEmp;
+                lblDireccion.Text = direccion;
+                lblTelefono.Text = telefono;
+                lblCiudad.Text = ciudad;
 
 
                 btnCancelar.Clicked += BtnCancelar_Clicked;

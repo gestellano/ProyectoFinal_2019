@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,30 +50,22 @@ namespace AppMobile
                     int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());
 
                     LogicaServicios obj = new LogicaServicios();
-                    obj.BuscarCliente(rutEmpresa);
-                    
+                    string result = obj.BuscarCliente(rutEmpresa);
 
-                   obj = null;
-
-                      if(obj == null)
+                      if(  String.IsNullOrEmpty(result))
                        {
-                     Navigation.PushAsync(new AltaCliente1(rutEmpresa));
+                            Navigation.PushAsync(new AltaCliente1(rutEmpresa));
                     }
                     else
-                    {
-
-                        // Datos de prueba para dar de alta pedido
-                        // String nombreEmprea = "Estellano S.A";
-                        // String direccion = "Tacuarembo 1361";
-                        // String telefono = "098977344";
-                        // String ciudad = "Durazno";
-
-                        //  Navigation.PushAsync(new ClienteEncontrado(rutEmpresa, nombreEmprea, direccion, telefono, ciudad));
-                           }
-
+                    {               
+                        Dictionary<string, string> dictionary = result.Substring(1,result.Length -2).TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
+    
+                        Navigation.PushAsync(new ClienteEncontrado(dictionary["rut"], dictionary["nombreEmp"], dictionary["direccion"], dictionary["telefono"], dictionary["ciudad"]));
                     }
+
+                }
             }
-            catch
+            catch (Exception ex)
             {
                 throw new Exception("Ha ocurrido un error en App y debe cerrase");
             }

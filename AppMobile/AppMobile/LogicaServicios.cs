@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,9 @@ namespace AppMobile
         private string baseUrl = "http://10.0.2.2:4425/api";
 
         //Buscar Cliente
-        public async void BuscarCliente(int Rut)
+        public String BuscarCliente(int Rut)
         {
+            string response = "";
             try
             {
                 string rutString = Convert.ToString(Rut);
@@ -22,10 +24,11 @@ namespace AppMobile
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(baseUrl);
-                    string urlRe = "http://127.0.0.1:4425/api/Cliente/BuscarCliente?" + "rut=" + rutString;
-                    string response = await client.GetStringAsync(urlRe);
-                    var a = 0;
-                    //Q' hacemos ahora con result?                    
+                    string urlRe = "http://10.0.2.2:4425/api/Cliente/BuscarCliente?" + "rut=" + rutString;
+                    WebClient wc = new WebClient();
+
+                    response = wc.DownloadString(urlRe);
+               
                 }
             }
             catch (Exception ex)
@@ -33,7 +36,7 @@ namespace AppMobile
 
                 throw new Exception(ex.ToString());
             }
-
+            return response;
         }
 
 
@@ -56,6 +59,7 @@ namespace AppMobile
 
                         string url = baseUrl + "/api/Cliente";
                         client.BaseAddress = new Uri("http://10.0.2.2/api");
+                        
                         Dictionary<string, string> jsonValues = new Dictionary<string, string>();
                         jsonValues.Add("Rut", Rut);
                         jsonValues.Add("Nombre", NombreEmp);
@@ -67,12 +71,8 @@ namespace AppMobile
                         //HttpContent sc = new StringContent(JsonConvert.SerializeObject(jsonValues), UnicodeEncoding.UTF8, "application/json");
                         var result = await client.PostAsJsonAsync("/Cliente/AgregarCliente/", jsonValues);
                         int a = 0;
-                        //HttpResponseMessage response = await client.PostAsync("/Cliente/AgregarCliente/", sc);
-                        
-                        //Console.WriteLine("Resultado: " + response.StatusCode);
-                        //string content = await response.Content.ReadAsStringAsync();
-                        //Console.WriteLine("Resultado: " + content);
-
+                        //HttpResponseMessage response = await client.PostAsync("/Cliente/AgregarCliente/", sc);                       
+                  
                     }
                 }
                 catch (Exception ex)
