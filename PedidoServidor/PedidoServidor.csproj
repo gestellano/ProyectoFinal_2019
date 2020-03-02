@@ -264,6 +264,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EspecificacionArticuloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -342,6 +343,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Cliente\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\EspecificacionArticulo\" />
     <Folder Include="Views\Pedido\" />
   </ItemGroup>
   <ItemGroup>

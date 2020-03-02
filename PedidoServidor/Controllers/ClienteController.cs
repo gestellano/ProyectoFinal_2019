@@ -24,8 +24,6 @@ namespace PedidoServidor.Controllers
 
         // GET: api/Cliente/5
         [HttpGet]
-        //   [Route("{rut}")]
-        //[Route("BuscarCliente")]
         public String BuscarCliente(String rut)
         {
             using (var context = new BaseDeDatosContext())

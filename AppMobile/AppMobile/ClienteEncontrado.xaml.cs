@@ -12,7 +12,7 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ClienteEncontrado : ContentPage
 	{
-		public ClienteEncontrado(String rut, String nombreEmp, String direccion, String telefono, String ciudad)
+		public ClienteEncontrado(string rut, string nombreEmp, string direccion, string telefono, string ciudad)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace AppMobile
 
         private void BtnCancelar_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new PaginaInicioxaml());
         }
 
     }

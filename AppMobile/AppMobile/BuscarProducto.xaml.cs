@@ -18,6 +18,7 @@ namespace AppMobile
             {
                 InitializeComponent();                
                 btnBuscar.Clicked += BtnBuscar_Clicked;
+                btnCancelar.Clicked += BtnCancelar_Clicked;
             }
             catch
             {
@@ -25,6 +26,11 @@ namespace AppMobile
             }
 
 
+        }
+
+        private void BtnCancelar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PaginaInicioxaml());
         }
 
         private void BtnBuscar_Clicked(object sender, EventArgs e)
@@ -38,16 +44,26 @@ namespace AppMobile
                 }
                 else
                 {
-                    int Codigo = (Convert.ToInt32(lblCodigo.Text.Trim()));
-                    //invocar a servicio con CODIGO
+                 
+                    LogicaServicios obj = new LogicaServicios();
+                    string result = obj.BuscarArticulio(lblCodigo.Text.Trim());
 
-                   // Entidades.EspecificacionArticulo ArticuloBuscar = new Entidades.EspecificacionArticulo();
-                  //  ArticuloBuscar = null;
+                    if (result.Length > 1)
+                    {
+                        result = result.Substring(1, result.Length - 2);
+                    }
 
-                    
+                    if (result.Length == 0)
+                    {
+                        DisplayAlert("", "Articulo no registrado", "Aceptar");
+                        Navigation.PushAsync(new BuscarProducto());
+                    }
+                    else
+                    {
+                        Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
 
-                    
-                        DisplayAlert("", "Producto no registrado", "Aceptar");
+                        Navigation.PushAsync(new ProductoEncontrado(dictionary["codigo"], dictionary["nombre"], dictionary["descripcion"], dictionary["imagen"]));
+                    }
                     
                    
                 }

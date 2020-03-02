@@ -91,7 +91,32 @@ namespace AppMobile
             }
         }
 
-        
+
+        //BuscarArticulo
+        public string BuscarArticulio(string codigo)
+        {
+            string response = "";
+            try
+            {
+             
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(baseUrl);
+                    string urlRe = "http://10.0.2.2:4425/api/EspecificacionArticulo/BuscarArticulo?" + "codigo=" + codigo;
+                    WebClient wc = new WebClient();
+
+                    response = wc.DownloadString(urlRe);
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.ToString());
+            }
+            return response;
+        }
+
 
     }
 }

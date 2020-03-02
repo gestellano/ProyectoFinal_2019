@@ -10,19 +10,22 @@ namespace PedidoServidor.Models
     [Table("Especificacion_Articulo")]
     public class Especificacion_Articulo
     {
-        [Key]
-        [Required]
+                 
         public int Id { get; set; }
 
-        [StringLength(100)]
+        [Key]
         [Required]
-        public String Nombre { get; set; }
+        public string codigo{ get; set; }
 
         [StringLength(100)]
         [Required]
-        public String Descripcion { get; set; }        
+        public string Nombre { get; set; }
 
-        public String Imagen{ get; set; }
+        [StringLength(100)]
+        [Required]
+        public string Descripcion { get; set; }        
+
+        public string Imagen{ get; set; }
         
     }
 }

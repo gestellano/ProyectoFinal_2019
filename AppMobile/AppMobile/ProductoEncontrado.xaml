@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.ProductoEncontrado">
+    <ScrollView >
+
+        <StackLayout Padding="20">
+
+            <Label Text="Articulo Encontrado" Font="25" TextColor="Red" HorizontalOptions="Center" />
+            <Label></Label>
+
+            <Label Text="Codigo:" TextColor="#000000"></Label>
+            <Label x:Name="lblCodigo"  TextColor="#7B7776"/>
+
+            <Label></Label>
+            <Label Text="Nombre:" TextColor="#000000"></Label>
+            <Label x:Name="lblNombre"  TextColor="#7B7776"/>
+
+            <Label></Label>
+            <Label Text="Descripcion:" TextColor="#000000"></Label>
+            <Label x:Name="lblDescripcion"  TextColor="#7B7776"/>
+
+            <Label></Label>
+            <Label Text="Imagen:" TextColor="#000000"></Label>
+            <Label x:Name="lblImagen"  TextColor="#7B7776"/>
+            <Label></Label>
+
+            <Button x:Name="btnBuscarOtroProducto" Text="Buscar otro articulo"></Button>
+            <Button x:Name="btnInicio" Text="Inicio"></Button>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
