@@ -63,8 +63,7 @@ namespace AppMobile
                         Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
 
                         Navigation.PushAsync(new ProductoEncontrado(dictionary["codigo"], dictionary["nombre"], dictionary["descripcion"], dictionary["imagen"]));
-                    }
-                    
+                    }                    
                    
                 }
             }

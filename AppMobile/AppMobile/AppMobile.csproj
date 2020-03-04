@@ -18,31 +18,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="AltaClienteExito.xaml.cs">
-      <DependentUpon>AltaClienteExito.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="ABMClientes.xaml">
+    <EmbeddedResource Update="Alta Pedido\AltaPedido_BuscarCliente.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AltaCliente1.xaml">
+    <EmbeddedResource Update="Alta Pedido\ConfeccionPedido.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AltaCliente2.xaml">
+    <EmbeddedResource Update="AMBCliente\ABMClientes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AltaClienteExito.xaml">
+    <EmbeddedResource Update="AMBCliente\AltaCliente1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AltaPedido.xaml">
+    <EmbeddedResource Update="AMBCliente\AltaCliente2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BuscarProducto.xaml">
+    <EmbeddedResource Update="Articulos\BuscarProducto.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ClienteEncontrado.xaml">
+    <EmbeddedResource Update="AMBCliente\ClienteEncontrado.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Contactos.xaml">
@@ -51,7 +45,7 @@
     <EmbeddedResource Update="MenuHamburguesa.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ModificarCliente.xaml">
+    <EmbeddedResource Update="AMBCliente\ModificarCliente.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="PaginaInicioxaml.xaml">
@@ -63,10 +57,7 @@
     <EmbeddedResource Update="Perfil.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PrimerPantalla.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="ProductoEncontrado.xaml">
+    <EmbeddedResource Update="Articulos\ProductoEncontrado.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

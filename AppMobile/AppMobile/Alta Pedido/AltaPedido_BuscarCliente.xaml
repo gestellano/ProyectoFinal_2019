@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.Alta_Pedido.AltaPedido_BuscarCliente">
+    <ScrollView >
+
+        <StackLayout Padding="20">
+
+            <Label Text="Realizar Pedido" Font="25" TextColor="Red" HorizontalOptions="Center" />
+            <Label Text="Buscar Cliente" Font="18" TextColor="Black" HorizontalOptions="Center" />
+
+            <Label Text="RUT:" TextColor="#000000" ></Label>
+            <Entry x:Name="lblRut" Placeholder="rut" TextColor="#000000" Keyboard="Telephone"></Entry>
+
+            <Button  x:Name="btnBuscar" Text="Buscar" ></Button>
+            <Label></Label>
+
+           
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

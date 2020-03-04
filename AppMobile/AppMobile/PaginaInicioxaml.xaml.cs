@@ -15,6 +15,7 @@ namespace AppMobile
 		public PaginaInicioxaml ()
 		{
 			InitializeComponent ();
-		}
+            
+        }
 	}
 }

@@ -43,7 +43,7 @@ namespace AppMobile
 
                 LogicaServicios obj = new LogicaServicios();
                 obj.AgregarCliente(lblRut.Text,lblNombreEmp.Text,lblDireccion.Text,lblTelefono.Text,lblCiudad.Text);               
-                Navigation.PushAsync(new AltaClienteExito());
+                Navigation.PushAsync(new PantallaExito());
             }
             catch(Exception ex)
             {

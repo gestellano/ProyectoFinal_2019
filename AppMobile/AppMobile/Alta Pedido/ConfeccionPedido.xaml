@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.Alta_Pedido.ConfeccionPedido">
+    <ScrollView >
+
+        <StackLayout Padding="20">
+
+            <Label Text="Realizar Pedido" Font="25" TextColor="Red" HorizontalOptions="Center" />         
+            <Label Text="Confeccion Pedido" Font="18" TextColor="Black" HorizontalOptions="Center" />
+
+           <Label x:Name="lblRut" Font="10" TextColor="#7B7776"/>           
+           <Label x:Name="lblNombreEmpresa" Font="10" TextColor="#7B7776"/>
+
+           <Label></Label>
+
+            <Label Text="Codigo Articulo:" Font="15" TextColor="#000000"/>
+            <Entry x:Name="lblCodigoBuscar" Placeholder="codigo" TextColor="#000000" Keyboard="Telephone" ></Entry>
+            
+            <Button  x:Name="btnBuscar" Text="Buscar" ></Button>
+
+            <Label></Label>
+
+            <Label x:Name="lblCodigo" Font="15" TextColor="#000000"/>
+            <Label x:Name="lblArticulo" Font="15" TextColor="#000000"/>
+            <Button  x:Name="btnAgregarAlPedido" Text="Agregar" ></Button>
+            
+            <Label></Label>
+
+
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

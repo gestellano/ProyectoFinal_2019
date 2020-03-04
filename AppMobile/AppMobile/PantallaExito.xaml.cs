@@ -15,6 +15,12 @@ namespace AppMobile
 		public PantallaExito ()
 		{
 			InitializeComponent ();
+            btnInicio.Clicked += BtnInicio_Clicked;
 		}
-	}
+
+        private void BtnInicio_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PaginaInicioxaml());
+        }
+    }
 }
