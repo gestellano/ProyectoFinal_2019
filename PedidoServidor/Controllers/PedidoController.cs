@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PedidoServidor.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,19 +8,21 @@ using System.Web.Http;
 
 namespace PedidoServidor.Controllers
 {
+    [RoutePrefix("api/Pedido")]
     public class PedidoController : ApiController
     {
-        // GET: api/Pedido
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        // GET: api/Pedido/
+        [Route("AltaPedido")]
+        [HttpPost]
+        public void AltaPedido(string tipoEnvio, string rutCliente, string codigoProducto, string estadoImpresion,string fecha)
+        {            
+            bool estadoImp = false;            
+            BaseDeDatosContext context = new BaseDeDatosContext();
+            context.Pedidos.Add(new Pedido() { RutCliente = rutCliente, Fecha = fecha, EstadoImpresion = estadoImp,CodigoProducto = codigoProducto, TipoEnvio = tipoEnvio }); 
+            context.SaveChanges();
         }
 
-        // GET: api/Pedido/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+
 
         // POST: api/Pedido
         public void Post([FromBody]string value)

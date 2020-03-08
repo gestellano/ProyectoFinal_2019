@@ -44,21 +44,16 @@ namespace PedidoServidor.Controllers
             }
         }
 
-        // POST: api/Cliente
 
+        // GET: api/Cliente        
         [Route("AgregarCliente")]
         [HttpPost]
         public void AgregarCliente(string rut, string nombre, string direccion, string ciudad, string telefono)
-        {
-          
+        {          
             BaseDeDatosContext context = new BaseDeDatosContext();
             context.Clientes.Add(new Cliente() { Rut = rut, NombreEmp = nombre, Direccion = direccion, Ciudad = ciudad, Telefono = telefono });
             context.SaveChanges();
         }
-
-
-
-
 
 
         // PUT: api/Cliente/5

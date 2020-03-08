@@ -12,6 +12,7 @@ namespace PedidoServidor.Models
     {
         [Key]
         public int id { get; set; }
+
         [Required]
         public int Cantidad { get; set; }
 

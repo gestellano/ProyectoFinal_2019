@@ -24,11 +24,14 @@
             <Label x:Name="lblCodigo" Font="15" TextColor="#000000"/>
             <Label x:Name="lblArticulo" Font="15" TextColor="#000000"/>
             <Button  x:Name="btnAgregarAlPedido" Text="Agregar" ></Button>
+
+
+            <Label Text="Tabla de datos" />
+
+            <Label Text="Tipo de envio:" Font="15" TextColor="#000000"/>
             
-            <Label></Label>
 
-
-
+            <Button  x:Name="btnEnviarPedido" Text="Enviar" ></Button>
 
         </StackLayout>
     </ScrollView>

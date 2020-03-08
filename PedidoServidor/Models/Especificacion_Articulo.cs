@@ -11,8 +11,6 @@ namespace PedidoServidor.Models
     public class Especificacion_Articulo
     {
                  
-        public int Id { get; set; }
-
         [Key]
         [Required]
         public string codigo{ get; set; }

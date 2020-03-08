@@ -16,7 +16,9 @@ namespace AppMobile
 		{
 			InitializeComponent ();
             btnInicio.Clicked += BtnInicio_Clicked;
-		}
+
+            NavigationPage.SetHasBackButton(this, false);
+        }
 
         private void BtnInicio_Clicked(object sender, EventArgs e)
         {

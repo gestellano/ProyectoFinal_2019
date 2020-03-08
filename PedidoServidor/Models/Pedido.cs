@@ -11,20 +11,19 @@ namespace PedidoServidor.Models
     public class Pedido
     {
         [Key]
-        [Required]
         public int Id { get; set; }
 
         [Required]
-        public Cliente ClientePedido  { get; set; }
+        public string RutCliente{ get; set; }
 
         [Required]
-        public DateTime Fecha { get; set; }        
+        public string Fecha { get; set; }        
 
         public Boolean EstadoImpresion { get; set; }        
 
         [Required]
-        public virtual IList<Linea_Pedido> ArticulosPedidos { get; set; }
-       
+        public string CodigoProducto { get; set; }
+
 
         [StringLength(50)]
         [Required]

@@ -60,25 +60,23 @@ namespace AppMobile
                         string url = baseUrl + "/api/Cliente";
                         client.BaseAddress = new Uri("http://10.0.2.2/api");
                         
-                       // Dictionary<string, string> jsonValues = new Dictionary<string, string>();
-                   //     jsonValues.Add("Rut", Rut);
-                     //   jsonValues.Add("Nombre", NombreEmp);
-                       // jsonValues.Add("Direccion", Direccion);
-                        //jsonValues.Add("Ciudad", Ciudad);
-                        //jsonValues.Add("Telefono", Telefono);
-
-                        //var serialized = JsonConvert.SerializeObject(jsonValues);
-                        //HttpContent sc = new StringContent(JsonConvert.SerializeObject(jsonValues), UnicodeEncoding.UTF8, "application/json");
-
+                     
                         client.BaseAddress = new Uri(baseUrl);
                         string urlRe = "http://10.0.2.2:4425/api/Cliente/AgregarCliente?" + "rut=" + rut +
                                                                                             "&nombre=" + nombreEmp + 
                                                                                             "&direccion=" + direccion +
                                                                                             "&ciudad=" + ciudad + 
                                                                                             "&telefono=" + telefono;
+
+                        //string url1 = "http://10.0.2.2:4425/api/Cliente/AgregarCliente";
+                        //string param = "rut=" + rut +
+                        //                                                                    "&nombre=" + nombreEmp +
+                        //                                                                    "&direccion=" + direccion +
+                        //                                                                    "&ciudad=" + ciudad +
+                        //                                                                    "&telefono=" + telefono;
                         WebClient wc = new WebClient();
-                        string resp = wc.DownloadString(urlRe);
-                                              
+                        wc.DownloadString(urlRe);
+                       
                     }
                 }
                 catch (Exception ex)
@@ -115,6 +113,35 @@ namespace AppMobile
                 throw new Exception(ex.ToString());
             }
             return response;
+        }
+        
+        //AltaPedido
+        public void AltaPedido(string rut, string fecha, bool estadoImpresion, string codigoProducto, string tipoEnvio)
+        {
+            
+                try
+                {
+                    using (var client = new HttpClient())
+                    {  
+                        client.BaseAddress = new Uri(baseUrl);
+                        string urlRe = "http://10.0.2.2:4425/api/Pedido/AltaPedido?" + "rutCliente=" + rut +
+                                                                                            "&fecha=" + fecha +
+                                                                                            "&estadoImpresion=" + estadoImpresion +
+                                                                                            "&codigoProducto=" + codigoProducto +
+                                                                                            "&tipoEnvio=" + tipoEnvio;
+                        WebClient wc = new WebClient();
+                        wc.DownloadString(urlRe);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw new Exception(ex.ToString());
+
+                }
+
+            
         }
 
 

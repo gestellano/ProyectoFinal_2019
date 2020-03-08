@@ -19,10 +19,19 @@ namespace AppMobile.Alta_Pedido
             lblRut.Text = "RUT: "+rut;
             lblNombreEmpresa.Text = "Nombre Empresa: "+nombreEmp;
 
+           
+            string rutEmpresa = rut;
+
             btnBuscar.Clicked += BtnBuscar_Clicked;
+            btnAgregarAlPedido.IsVisible = false;
             btnAgregarAlPedido.Clicked += BtnAgregarAlPedido_Clicked;
+            btnEnviarPedido.Clicked += BtnEnviarPedido_Clicked;
+
+
+
 		}
 
+       
         private void BtnAgregarAlPedido_Clicked(object sender, EventArgs e)
         {
             try
@@ -42,7 +51,7 @@ namespace AppMobile.Alta_Pedido
                 if (lblCodigoBuscar.Text == null || lblCodigoBuscar.Text.Trim() == "")
                 {
 
-                    DisplayAlert("Error", "Codigo de producto obligatorio", "Aceptar");
+                    DisplayAlert("Alerta", "Codigo de producto obligatorio", "Aceptar");
                 }
                 else
                 {
@@ -64,15 +73,36 @@ namespace AppMobile.Alta_Pedido
                         Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
                         lblCodigo.Text = "Codigo: "+dictionary["codigo"];
                         lblArticulo.Text = "Nombre: "+dictionary["nombre"];
-                 
+                        btnAgregarAlPedido.IsVisible = true;            
+                        string codigoProducto = dictionary["codigo"];
+
                     }
                 }
             }
             catch (Exception)
             {
 
-                DisplayAlert("", "Ha ocurrido un error en la app,intente nuevamente la operativa.", "Aceptar");
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
+
+        private void BtnEnviarPedido_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                 string tipoEnvio = "express";
+                string fechaActual = DateTime.Now.ToString();                
+                bool estadoImpresionPedido = false;
+                LogicaServicios obj = new LogicaServicios();
+                obj.AltaPedido("222", fechaActual, estadoImpresionPedido, "10", tipoEnvio);
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
+        }
+
+
+
     }
 }

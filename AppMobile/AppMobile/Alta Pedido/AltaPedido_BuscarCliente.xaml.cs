@@ -41,7 +41,7 @@ namespace AppMobile.Alta_Pedido
 
                     if (result.Length == 0)
                     {
-                        Navigation.PushAsync(new AltaCliente1(rutEmpresa));
+                        DisplayAlert("Info", "No existe el cliente", "Aceptar");
                     }
                     else
                     {
