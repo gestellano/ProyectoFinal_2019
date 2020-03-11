@@ -68,12 +68,6 @@ namespace AppMobile
                                                                                             "&ciudad=" + ciudad + 
                                                                                             "&telefono=" + telefono;
 
-                        //string url1 = "http://10.0.2.2:4425/api/Cliente/AgregarCliente";
-                        //string param = "rut=" + rut +
-                        //                                                                    "&nombre=" + nombreEmp +
-                        //                                                                    "&direccion=" + direccion +
-                        //                                                                    "&ciudad=" + ciudad +
-                        //                                                                    "&telefono=" + telefono;
                         WebClient wc = new WebClient();
                         wc.DownloadString(urlRe);
                        
@@ -116,9 +110,8 @@ namespace AppMobile
         }
         
         //AltaPedido
-        public void AltaPedido(string rut, string fecha, bool estadoImpresion, string codigoProducto, string tipoEnvio)
-        {
-            
+        public void AltaPedido(string rut, string fecha, string estadoImpresion, string vendedor, string tipoEnvio)
+        {            
                 try
                 {
                     using (var client = new HttpClient())
@@ -127,7 +120,7 @@ namespace AppMobile
                         string urlRe = "http://10.0.2.2:4425/api/Pedido/AltaPedido?" + "rutCliente=" + rut +
                                                                                             "&fecha=" + fecha +
                                                                                             "&estadoImpresion=" + estadoImpresion +
-                                                                                            "&codigoProducto=" + codigoProducto +
+                                                                                            "&vendedor=" + vendedor +
                                                                                             "&tipoEnvio=" + tipoEnvio;
                         WebClient wc = new WebClient();
                         wc.DownloadString(urlRe);

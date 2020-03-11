@@ -46,8 +46,8 @@ namespace PedidoServidor.Controllers
 
 
         // GET: api/Cliente        
-        [Route("AgregarCliente")]
-        [HttpPost]
+       // [Route("AgregarCliente")]
+        [HttpGet]
         public void AgregarCliente(string rut, string nombre, string direccion, string ciudad, string telefono)
         {          
             BaseDeDatosContext context = new BaseDeDatosContext();

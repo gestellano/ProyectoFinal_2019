@@ -12,15 +12,17 @@ namespace AppMobile.Alta_Pedido
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ConfeccionPedido : ContentPage
 	{
-		public ConfeccionPedido(string rut, string nombreEmp)
+        string rutEmpresa;
+
+        public ConfeccionPedido(string rut, string nombreEmp)
         {
 			InitializeComponent ();
 
             lblRut.Text = "RUT: "+rut;
             lblNombreEmpresa.Text = "Nombre Empresa: "+nombreEmp;
+             rutEmpresa = rut;
 
-           
-            string rutEmpresa = rut;
+          
 
             btnBuscar.Clicked += BtnBuscar_Clicked;
             btnAgregarAlPedido.IsVisible = false;
@@ -90,11 +92,14 @@ namespace AppMobile.Alta_Pedido
         {
             try
             {
-                 string tipoEnvio = "express";
-                string fechaActual = DateTime.Now.ToString();                
-                bool estadoImpresionPedido = false;
+                string tipoEnvio = "express";
+                string vendedor = "Vendedor1";
+
+
+                string fechaActual = DateTime.Now.ToString();  
+                string estadoImpresionPedido = "0";
                 LogicaServicios obj = new LogicaServicios();
-                obj.AltaPedido("222", fechaActual, estadoImpresionPedido, "10", tipoEnvio);
+                obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, vendedor, tipoEnvio);                
             }
             catch (Exception ex)
             {

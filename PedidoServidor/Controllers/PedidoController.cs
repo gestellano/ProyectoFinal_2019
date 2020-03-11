@@ -12,13 +12,13 @@ namespace PedidoServidor.Controllers
     public class PedidoController : ApiController
     {
         // GET: api/Pedido/
-        [Route("AltaPedido")]
-        [HttpPost]
-        public void AltaPedido(string tipoEnvio, string rutCliente, string codigoProducto, string estadoImpresion,string fecha)
-        {            
-            bool estadoImp = false;            
+       // [Route("AltaPedido")]
+        [HttpGet]
+        public void AltaPedido(string tipoEnvio, string rutCliente, string vendedor, string estadoImpresion,string fecha)
+        {           
+                
             BaseDeDatosContext context = new BaseDeDatosContext();
-            context.Pedidos.Add(new Pedido() { RutCliente = rutCliente, Fecha = fecha, EstadoImpresion = estadoImp,CodigoProducto = codigoProducto, TipoEnvio = tipoEnvio }); 
+            context.Pedidos.Add(new Pedido() { RutCliente = rutCliente, Fecha = fecha, EstadoImpresion = estadoImpresion, Vendedor = vendedor, TipoEnvio = tipoEnvio }); 
             context.SaveChanges();
         }
 

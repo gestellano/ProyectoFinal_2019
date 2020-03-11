@@ -11,6 +11,7 @@ namespace PedidoServidor.Models
     public class Pedido
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
@@ -19,11 +20,11 @@ namespace PedidoServidor.Models
         [Required]
         public string Fecha { get; set; }        
 
-        public Boolean EstadoImpresion { get; set; }        
+
+        public string EstadoImpresion { get; set; }        
 
         [Required]
-        public string CodigoProducto { get; set; }
-
+        public string Vendedor { get; set; }
 
         [StringLength(50)]
         [Required]

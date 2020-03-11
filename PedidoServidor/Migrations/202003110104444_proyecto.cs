@@ -3,7 +3,7 @@ namespace PedidoServidor.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Proyecto : DbMigration
+    public partial class proyecto : DbMigration
     {
         public override void Up()
         {
@@ -37,8 +37,8 @@ namespace PedidoServidor.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         RutCliente = c.String(nullable: false),
                         Fecha = c.String(nullable: false),
-                        EstadoImpresion = c.Boolean(nullable: false),
-                        CodigoProducto = c.String(nullable: false),
+                        EstadoImpresion = c.String(),
+                        Vendedor = c.String(nullable: false),
                         TipoEnvio = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.Id);

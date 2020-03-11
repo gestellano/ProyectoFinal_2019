@@ -7,13 +7,13 @@ namespace PedidoServidor.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Proyecto : IMigrationMetadata
+    public sealed partial class proyecto : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Proyecto));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(proyecto));
         
         string IMigrationMetadata.Id
         {
-            get { return "201912070006534_Proyecto"; }
+            get { return "202003110104444_proyecto"; }
         }
         
         string IMigrationMetadata.Source
