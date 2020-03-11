@@ -14,7 +14,7 @@ namespace PedidoServidor.Controllers
         // GET: api/Pedido/
        // [Route("AltaPedido")]
         [HttpGet]
-        public void AltaPedido(string tipoEnvio, string rutCliente, string vendedor, string estadoImpresion,string fecha)
+        public void AltaPedido(string tipoEnvio, string rutCliente, string vendedor, int estadoImpresion,DateTime fecha)
         {           
                 
             BaseDeDatosContext context = new BaseDeDatosContext();

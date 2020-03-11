@@ -12,31 +12,31 @@ namespace PedidoServidor.Models
     {
 
         [Key]
-        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Numero { get; set; }        
 
         [StringLength(50)]
         [Required]
-        public String Nombre { get; set; }
+        public string Nombre { get; set; }
 
         [Required]
-        public String Mail { get; set; }
+        public string Mail { get; set; }
 
         [Required]
-        public String Celular { get; set; }
+        public string Celular { get; set; }
 
         [Required]
-        public String Nickname { get; set; }
+        public string Nickname { get; set; }
 
         [Required]
-        public String Password { get; set; }
+        public string Password { get; set; }
 
         [StringLength(200)]
         [Required]
-        public String ZonaTrabajo { get; set; }
+        public string ZonaTrabajo { get; set; }
 
         [Required]
-        public Boolean TieneVehiculo { get; set; }
+        public bool TieneVehiculo { get; set; }
 
     }
 }

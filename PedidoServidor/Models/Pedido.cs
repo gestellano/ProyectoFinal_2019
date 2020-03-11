@@ -18,10 +18,10 @@ namespace PedidoServidor.Models
         public string RutCliente{ get; set; }
 
         [Required]
-        public string Fecha { get; set; }        
+        public DateTime Fecha { get; set; }
 
-
-        public string EstadoImpresion { get; set; }        
+        [Required]
+        public int EstadoImpresion { get; set; }        
 
         [Required]
         public string Vendedor { get; set; }

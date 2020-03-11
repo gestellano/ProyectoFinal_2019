@@ -21,9 +21,7 @@
             <Label x:Name="lblDescripcion"  TextColor="#7B7776"/>
 
             <Label></Label>
-            <Label Text="Imagen:" TextColor="#000000"></Label>
-            <Label x:Name="lblImagen"  TextColor="#7B7776"/>
-            <Label></Label>
+            
 
             <Button x:Name="btnBuscarOtroProducto" Text="Buscar otro articulo"></Button>
             <Button x:Name="btnInicio" Text="Inicio"></Button>

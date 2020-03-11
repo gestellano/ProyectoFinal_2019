@@ -13,7 +13,7 @@ namespace PedidoServidor.Models
                  
         [Key]
         [Required]
-        public string codigo{ get; set; }
+        public string Codigo{ get; set; }
 
         [StringLength(100)]
         [Required]
@@ -23,7 +23,6 @@ namespace PedidoServidor.Models
         [Required]
         public string Descripcion { get; set; }        
 
-        public string Imagen{ get; set; }
         
     }
 }

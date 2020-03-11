@@ -92,12 +92,14 @@ namespace AppMobile.Alta_Pedido
         {
             try
             {
+                //cambio por combo
                 string tipoEnvio = "express";
+                //cambiarlo para tomar usuario logueado
                 string vendedor = "Vendedor1";
 
 
-                string fechaActual = DateTime.Now.ToString();  
-                string estadoImpresionPedido = "0";
+                DateTime fechaActual = DateTime.Now;  
+                int estadoImpresionPedido = 0;
                 LogicaServicios obj = new LogicaServicios();
                 obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, vendedor, tipoEnvio);                
             }

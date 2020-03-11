@@ -110,7 +110,7 @@ namespace AppMobile
         }
         
         //AltaPedido
-        public void AltaPedido(string rut, string fecha, string estadoImpresion, string vendedor, string tipoEnvio)
+        public void AltaPedido(string rut, DateTime fecha, int estadoImpresion, string vendedor, string tipoEnvio)
         {            
                 try
                 {

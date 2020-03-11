@@ -10,8 +10,8 @@ namespace PedidoServidor.Models
     [Table("Linea_Pedido")]
     public class Linea_Pedido
     {
-        [Key]
-        public int id { get; set; }
+        [Required]
+        public int Id { get; set; }
 
         [Required]
         public int Cantidad { get; set; }

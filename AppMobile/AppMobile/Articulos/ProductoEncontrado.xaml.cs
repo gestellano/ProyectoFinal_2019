@@ -12,14 +12,14 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProductoEncontrado : ContentPage
 	{
-		public ProductoEncontrado (string codigo, string nombre, string descripcion, string imagen)
+		public ProductoEncontrado (string codigo, string nombre, string descripcion)
 		{
 			InitializeComponent ();
 
             lblCodigo.Text = codigo;
             lblNombre.Text = nombre;
             lblDescripcion.Text = descripcion;
-            lblImagen.Text = imagen;
+
 
             btnBuscarOtroProducto.Clicked += BtnBuscarOtroProducto_Clicked;
             btnInicio.Clicked += BtnInicio_Clicked;

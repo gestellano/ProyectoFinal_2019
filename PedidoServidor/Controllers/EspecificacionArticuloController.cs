@@ -25,23 +25,21 @@ namespace PedidoServidor.Controllers
                 }
                 else
                 {
-                    return "codigo=" + articulo.codigo + ";" +
+                    return "codigo=" + articulo.Codigo + ";" +
                            "nombre=" + articulo.Nombre + ";" +
-                           "descripcion=" + articulo.Descripcion + ";" +
-                           "imagen=" + articulo.Imagen;
+                           "descripcion=" + articulo.Descripcion;
                 }
             }
         }
 
 
-        // POST: api/EspecificacionArticulo
-        [Route("AgregarArticulo")]
-        [HttpPost]
-        public void AgregarArticulo(string codigo, string nombre, string descripcion, string imagen)
+        // api/EspecificacionArticulo        
+        [HttpGet]
+        public void AgregarArticulo(string codigo, string nombre, string descripcion)
         {
 
             BaseDeDatosContext context = new BaseDeDatosContext();
-            context.EspecificacionArticulo.Add(new Especificacion_Articulo() { codigo = codigo, Nombre= nombre, Descripcion= descripcion, Imagen= imagen});
+            context.EspecificacionArticulo.Add(new Especificacion_Articulo() { Codigo = codigo, Nombre= nombre, Descripcion= descripcion});
             context.SaveChanges();
         }
 
