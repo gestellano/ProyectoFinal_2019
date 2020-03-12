@@ -13,6 +13,10 @@ namespace AppMobile.Alta_Pedido
 	public partial class ConfeccionPedido : ContentPage
 	{
         string rutEmpresa;
+        string tipoEnvioSeleccionado;
+        string codigoProducto;
+        int cantidadArticulos;
+        Dictionary<string, int> listaArticulos = new Dictionary<string, int>();
 
         public ConfeccionPedido(string rut, string nombreEmp)
         {
@@ -20,25 +24,50 @@ namespace AppMobile.Alta_Pedido
 
             lblRut.Text = "RUT: "+rut;
             lblNombreEmpresa.Text = "Nombre Empresa: "+nombreEmp;
-             rutEmpresa = rut;
-
-          
+            rutEmpresa = rut;
 
             btnBuscar.Clicked += BtnBuscar_Clicked;
             btnAgregarAlPedido.IsVisible = false;
             btnAgregarAlPedido.Clicked += BtnAgregarAlPedido_Clicked;
             btnEnviarPedido.Clicked += BtnEnviarPedido_Clicked;
 
+            List<string> TipoEnvio = new List<string>();
+            TipoEnvio.Add("Normal");
+            TipoEnvio.Add("Express");
+            TipoEnvio.Add("Consultar");
+            Seleccione.ItemsSource = TipoEnvio;
 
+        }
 
-		}
-
-       
+        
         private void BtnAgregarAlPedido_Clicked(object sender, EventArgs e)
         {
             try
             {
+                if (lblCodigo.Text == null  )
+                {
+                    DisplayAlert("", "Debe de buscar un articulo para agregar al pedido.", "Aceptar");
+                }
+                else if(lblCantidad.Text == null)
+                {
+                    DisplayAlert("", "Debe de ingresar la cantidad de articulos.", "Aceptar");
+                }
+                else
+                {
+                    cantidadArticulos = Convert.ToInt32(lblCantidad.Text);
+                    listaArticulos.Add(codigoProducto, cantidadArticulos);
+                    lblCantidad.IsVisible = false;
+                    lblCodigo.IsVisible = false;
+                    lblArticulo.IsVisible = false;
 
+                    lblCantidad.Text = null;
+                    lblCodigo.Text = null;
+                    lblArticulo.Text = null;
+                    lblCodigoBuscar.Text = null;
+                     
+                }
+               
+                               
             }
             catch (Exception)
             {
@@ -76,7 +105,12 @@ namespace AppMobile.Alta_Pedido
                         lblCodigo.Text = "Codigo: "+dictionary["codigo"];
                         lblArticulo.Text = "Nombre: "+dictionary["nombre"];
                         btnAgregarAlPedido.IsVisible = true;            
-                        string codigoProducto = dictionary["codigo"];
+                        codigoProducto = dictionary["codigo"];
+
+                        lblCodigo.IsVisible = true;
+                        lblArticulo.IsVisible = true;
+                        lblCodigoBuscar.IsVisible = true;
+                        lblCantidad.IsVisible = true;
 
                     }
                 }
@@ -92,16 +126,23 @@ namespace AppMobile.Alta_Pedido
         {
             try
             {
-                //cambio por combo
-                string tipoEnvio = "express";
                 //cambiarlo para tomar usuario logueado
-                string vendedor = "Vendedor1";
+                string vendedor = "Vendedor1";                
 
-
-                DateTime fechaActual = DateTime.Now;  
-                int estadoImpresionPedido = 0;
-                LogicaServicios obj = new LogicaServicios();
-                obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, vendedor, tipoEnvio);                
+                if(Seleccione.SelectedItem == null)
+                {
+                    DisplayAlert("", "Debe de seleccionar un Tipo de Envio", "Aceptar");
+                    
+                }
+                else
+                {
+                    tipoEnvioSeleccionado = Seleccione.SelectedItem.ToString();
+                    DateTime fechaActual = DateTime.Now;
+                    int estadoImpresionPedido = 0;
+                    LogicaServicios obj = new LogicaServicios();
+                    obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, vendedor, tipoEnvioSeleccionado);
+                }
+                
             }
             catch (Exception ex)
             {

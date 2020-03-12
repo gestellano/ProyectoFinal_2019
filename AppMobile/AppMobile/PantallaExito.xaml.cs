@@ -22,7 +22,7 @@ namespace AppMobile
 
         private void BtnInicio_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PaginaInicioxaml());
+            Navigation.PushAsync(new MenuHamburguesa());
         }
     }
 }

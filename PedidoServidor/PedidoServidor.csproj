@@ -271,6 +271,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003112248386_proyecto.cs" />
+    <Compile Include="Migrations\202003112248386_proyecto.Designer.cs">
+      <DependentUpon>202003112248386_proyecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseDeDatos_DbContext.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -370,6 +374,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202003112248386_proyecto.resx">
+      <DependentUpon>202003112248386_proyecto.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

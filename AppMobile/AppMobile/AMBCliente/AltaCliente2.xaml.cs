@@ -29,7 +29,7 @@ namespace AppMobile
             }
             catch
             {
-                throw new Exception("Ha ocurrido un error en App y debe cerrase");
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
      
  
@@ -47,15 +47,23 @@ namespace AppMobile
             }
             catch(Exception ex)
             {
-                throw new Exception();
-                
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+
             }
             
         }
 
         private void BtnCancelar_Clicked(object sender, EventArgs e)
         {
-            
+            try
+            {
+                Navigation.PushAsync(new MenuHamburguesa());
+            }
+            catch (Exception ex)
+            {
+
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
         }
     }
 }

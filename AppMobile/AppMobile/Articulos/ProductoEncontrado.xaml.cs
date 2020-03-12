@@ -27,12 +27,29 @@ namespace AppMobile
 
         private void BtnInicio_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PaginaInicioxaml());
+            try
+            {
+                Navigation.PushAsync(new MenuHamburguesa());
+            }
+            catch (Exception ex)
+            {
+
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
         }
 
         private void BtnBuscarOtroProducto_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new BuscarProducto());
+            try
+            {
+                Navigation.PushAsync(new BuscarProducto());
+            }
+            catch (Exception ex)
+            {
+
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
+           
         }
     }
 }

@@ -19,10 +19,11 @@ namespace AppMobile
                 InitializeComponent();                
                 btnBuscar.Clicked += BtnBuscar_Clicked;
                 btnCancelar.Clicked += BtnCancelar_Clicked;
-            }
+           
+             }
             catch
             {
-                throw new Exception("Ha ocurrido un error en App y debe cerrase");
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
 
 
@@ -30,13 +31,23 @@ namespace AppMobile
 
         private void BtnCancelar_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PaginaInicioxaml());
+            try
+            {
+                Navigation.PushAsync(new MenuHamburguesa());
+            }
+            catch (Exception ex)
+            {
+
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
         }
 
         private void BtnBuscar_Clicked(object sender, EventArgs e)
         {
             try
             {
+                
+               
                 if (lblCodigo.Text == null || lblCodigo.Text.Trim() == "")
                 {
 
@@ -44,7 +55,6 @@ namespace AppMobile
                 }
                 else
                 {
-                 
                     LogicaServicios obj = new LogicaServicios();
                     string result = obj.BuscarArticulio(lblCodigo.Text.Trim());
 
@@ -69,7 +79,7 @@ namespace AppMobile
             }
             catch
             {
-                throw new Exception("Ha ocurrido un error en App y debe cerrase");
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
     }

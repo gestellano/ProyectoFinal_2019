@@ -23,14 +23,16 @@
 
             <Label x:Name="lblCodigo" Font="15" TextColor="#000000"/>
             <Label x:Name="lblArticulo" Font="15" TextColor="#000000"/>
+            <Entry x:Name="lblCantidad" Placeholder="Cantidad" TextColor="#000000" Keyboard="Telephone" WidthRequest="70" ></Entry>
             <Button  x:Name="btnAgregarAlPedido" Text="Agregar" ></Button>
 
+            <Grid x:Name="tablaDatos"></Grid>
 
             <Label Text="Tabla de datos" />
-
-            <Label Text="Tipo de envio:" Font="15" TextColor="#000000"/>
             
 
+            <Label Text="Tipo de envio:"  Font="15" TextColor="#000000"/>
+            <Picker  x:Name="Seleccione" Title="Seleccione" ></Picker>
             <Button  x:Name="btnEnviarPedido" Text="Enviar" ></Button>
 
         </StackLayout>

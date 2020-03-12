@@ -16,7 +16,8 @@ namespace AppMobile
 		{
             InitializeComponent();
             Init();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 
         void Init()
         {

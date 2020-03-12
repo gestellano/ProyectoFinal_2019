@@ -17,7 +17,7 @@ namespace PedidoServidor.Models
         public int Cantidad { get; set; }
 
         [Required]
-        public Especificacion_Articulo Articulo { get; set; }
+        public string  CodigoArticulo{ get; set; }
         
     }
 }
