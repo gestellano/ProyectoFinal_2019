@@ -24,10 +24,10 @@ namespace AppMobile
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(baseUrl);
-                    string urlRe = "http://10.0.2.2:4425/api/Cliente/BuscarCliente?" + "rut=" + rutString;
+                    string BuscarCliente = "http://10.0.2.2:4425/api/Cliente/BuscarCliente?" + "rut=" + rutString;
                     WebClient wc = new WebClient();
 
-                    response = wc.DownloadString(urlRe);
+                    response = wc.DownloadString(BuscarCliente);
                
                 }
             }
@@ -62,14 +62,14 @@ namespace AppMobile
                         
                      
                         client.BaseAddress = new Uri(baseUrl);
-                        string urlRe = "http://10.0.2.2:4425/api/Cliente/AgregarCliente?" + "rut=" + rut +
+                        string urlAgregarCliente = "http://10.0.2.2:4425/api/Cliente/AgregarCliente?" + "rut=" + rut +
                                                                                             "&nombre=" + nombreEmp + 
                                                                                             "&direccion=" + direccion +
                                                                                             "&ciudad=" + ciudad + 
                                                                                             "&telefono=" + telefono;
 
                         WebClient wc = new WebClient();
-                        wc.DownloadString(urlRe);
+                        wc.DownloadString(urlAgregarCliente);
                        
                     }
                 }
@@ -94,10 +94,10 @@ namespace AppMobile
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(baseUrl);
-                    string urlRe = "http://10.0.2.2:4425/api/EspecificacionArticulo/BuscarArticulo?" + "codigo=" + codigo;
+                    string urlBuscarArticulo = "http://10.0.2.2:4425/api/EspecificacionArticulo/BuscarArticulo?" + "codigo=" + codigo;
                     WebClient wc = new WebClient();
 
-                    response = wc.DownloadString(urlRe);
+                    response = wc.DownloadString(urlBuscarArticulo);
 
                 }
             }
@@ -110,20 +110,76 @@ namespace AppMobile
         }
         
         //AltaPedido
-        public void AltaPedido(string rut, DateTime fecha, int estadoImpresion, string vendedor, string tipoEnvio)
+        public void AltaPedido(string rut, DateTime fecha, int estadoImpresion, string vendedor, string tipoEnvio, Dictionary<string,int> listaArt)
         {            
                 try
                 {
                     using (var client = new HttpClient())
-                    {  
+                    {                    
+                     client.BaseAddress = new Uri(baseUrl);
+                     string urlAltaPedido = "http://10.0.2.2:4425/api/Pedido/AltaPedido?" + "rutCliente=" + rut +
+                                                                                       "&fecha=" + fecha +
+                                                                                       "&estadoImpresion=" + estadoImpresion +
+                                                                                       "&vendedor=" + vendedor +
+                                                                                       "&tipoEnvio=" + tipoEnvio;
+
+                     WebClient wc = new WebClient();
+                     wc.DownloadString(urlAltaPedido);
+
+
+                    foreach (KeyValuePair<string, int> entry in listaArt)
+                    {
+                        int cantidadArticulo = Convert.ToInt32(entry.Value.ToString());
+                        string codigoArticulo = entry.Key.ToString();
+                        int idPedido = 1;
+
+                        string urlAltaLineaPedido = "http://10.0.2.2:4425/api/Pedido/AltaLineaPedido?" + "codigo=" + codigoArticulo +
+                                                                                      "&cantidad=" + cantidadArticulo +
+                                                                                      "&idPedido=" + idPedido;
+
+                        
+                        wc.DownloadString(urlAltaLineaPedido);
+                    }
+
+                }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }            
+        }
+
+
+
+        //Modificar Cliente
+        public void ModificarCliente(string rut,string nombreEmp, string direccion, string telefono, string ciudad)
+        {
+            if (string.IsNullOrEmpty(nombreEmp) || string.IsNullOrEmpty(direccion)
+                     || string.IsNullOrEmpty(telefono) || string.IsNullOrEmpty(ciudad))
+            {
+                throw new Exception("Todos los campos son obligatorios");
+            }
+            else
+            {
+                try
+                {
+                    using (var client = new HttpClient())
+                    {
+
+                        string url = baseUrl + "/api/Cliente";
+                        client.BaseAddress = new Uri("http://10.0.2.2/api");
+
+                        string modificar = "S";
                         client.BaseAddress = new Uri(baseUrl);
-                        string urlRe = "http://10.0.2.2:4425/api/Pedido/AltaPedido?" + "rutCliente=" + rut +
-                                                                                            "&fecha=" + fecha +
-                                                                                            "&estadoImpresion=" + estadoImpresion +
-                                                                                            "&vendedor=" + vendedor +
-                                                                                            "&tipoEnvio=" + tipoEnvio;
+                        string urlModificarCliente = "http://10.0.2.2:4425/api/Cliente/ModificarCliente?" + "&rut=" + rut +
+                                                                                            "&nombre=" + nombreEmp +
+                                                                                            "&direccion=" + direccion +
+                                                                                            "&ciudad=" + ciudad +
+                                                                                            "&telefono=" + telefono +
+                                                                                            "&modificar="+ modificar;
+
                         WebClient wc = new WebClient();
-                        wc.DownloadString(urlRe);
+                        wc.DownloadString(urlModificarCliente);
 
                     }
                 }
@@ -134,7 +190,7 @@ namespace AppMobile
 
                 }
 
-            
+            }
         }
 
 

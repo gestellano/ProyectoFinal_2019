@@ -136,11 +136,20 @@ namespace AppMobile.Alta_Pedido
                 }
                 else
                 {
-                    tipoEnvioSeleccionado = Seleccione.SelectedItem.ToString();
-                    DateTime fechaActual = DateTime.Now;
-                    int estadoImpresionPedido = 0;
-                    LogicaServicios obj = new LogicaServicios();
-                    obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, vendedor, tipoEnvioSeleccionado);
+                    if (listaArticulos.Count == 0)
+                    {
+                        DisplayAlert("", "Debe de agregar articulos al pedido", "Aceptar");
+                    }
+                    else
+                    {
+                        tipoEnvioSeleccionado = Seleccione.SelectedItem.ToString();
+                        DateTime fechaActual = DateTime.Now;
+                        int estadoImpresionPedido = 0;
+                        LogicaServicios obj = new LogicaServicios();
+                        obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, vendedor, tipoEnvioSeleccionado, listaArticulos);
+                        Navigation.PushAsync(new PantallaExito());
+                    }
+                   
                 }
                 
             }

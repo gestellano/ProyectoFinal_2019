@@ -19,6 +19,7 @@ namespace AppMobile
                 InitializeComponent();
                 int RutConv = Convert.ToInt32(pRut.Text);
                 RutConv = Rut;
+                pRut.Text = Convert.ToString(Rut.ToString());
                
                 pNombreEmp.Text = NombreEmp;
                 pDireccion.Text = Direccion;
@@ -60,10 +61,10 @@ namespace AppMobile
                 }
                 else
                 {
-                    //Inovocar a servicio
-                    //Entidades.Cliente EmpresaModificada = new Entidades.Cliente((Convert.ToInt32(pRut.Text)), pNombreEmp.Text, pDireccion.Text, pTelefono.Text, pCiudad.Text);
 
-                    Navigation.PushAsync(new PantallaExito());
+                    LogicaServicios obj = new LogicaServicios();
+                    obj.ModificarCliente(pRut.Text, pNombreEmp.Text, pDireccion.Text, pTelefono.Text, pCiudad.Text);                    
+                   Navigation.PushAsync(new PantallaExito());
                 }
             }
             catch

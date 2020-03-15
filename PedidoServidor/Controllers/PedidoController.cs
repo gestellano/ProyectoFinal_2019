@@ -16,11 +16,9 @@ namespace PedidoServidor.Controllers
         [HttpGet]
         public void AltaPedido(string tipoEnvio, string rutCliente, string vendedor, int estadoImpresion,DateTime fecha)
         {
-           // Dictionary<string, int> ArticulosPedido = Articulos;     
+               
             BaseDeDatosContext context = new BaseDeDatosContext();
-            context.Pedidos.Add(new Pedido() { RutCliente = rutCliente, Fecha = fecha, EstadoImpresion = estadoImpresion, Vendedor = vendedor, TipoEnvio = tipoEnvio }); 
-             
-                    
+            context.Pedidos.Add(new Pedido() { RutCliente = rutCliente, Fecha = fecha, EstadoImpresion = estadoImpresion, Vendedor = vendedor, TipoEnvio = tipoEnvio });                      
             context.SaveChanges();
         }
 
@@ -28,9 +26,8 @@ namespace PedidoServidor.Controllers
         [HttpGet]
         public void AltaLineaPedido(string codigo, int cantidad, int idPedido)
         {
-
             BaseDeDatosContext context = new BaseDeDatosContext();
-            context.Linea_Pedidos.Add(new Linea_Pedido() { Cantidad= cantidad, CodigoArticulo = codigo, Id= idPedido});
+            context.Linea_Pedidos.Add(new Linea_Pedido() { Cantidad= cantidad, CodigoArticulo = codigo, IdPedido = idPedido});
             context.SaveChanges();
         }
 

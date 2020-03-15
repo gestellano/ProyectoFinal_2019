@@ -51,7 +51,7 @@ namespace AppMobile
 
                     LogicaServicios obj = new LogicaServicios();
                     string result = obj.BuscarCliente(rutEmpresa);
-
+                    
                     if (result.Length > 1)
                     {
                         result = result.Substring(1, result.Length - 2);

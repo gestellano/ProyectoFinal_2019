@@ -7,7 +7,7 @@
  
         <StackLayout Padding="20">
 
-            <Label Text="ABM Clientes" Font="25" TextColor="Red" HorizontalOptions="Center" />
+            <Label Text="A-M Clientes" Font="25" TextColor="Red" HorizontalOptions="Center" />
 
             <Label Text="RUT:" TextColor="#000000" ></Label>
             <Entry x:Name="lblRut" Placeholder="rut" TextColor="#000000" Keyboard="Telephone"></Entry>

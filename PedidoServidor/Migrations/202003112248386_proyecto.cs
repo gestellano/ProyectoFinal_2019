@@ -33,13 +33,12 @@ namespace PedidoServidor.Migrations
                 "dbo.Linea_Pedido",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        id = c.Int(nullable: false, identity: true),
+                        IdPedido = c.Int(nullable: false),
                         Cantidad = c.Int(nullable: false),
-                        Articulo_Codigo = c.String(nullable: false, maxLength: 128),
+                        CodigoArticulo = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Especificacion_Articulo", t => t.Articulo_Codigo, cascadeDelete: true)
-                .Index(t => t.Articulo_Codigo);
+                .PrimaryKey(t => t.id);
             
             CreateTable(
                 "dbo.Pedido",
@@ -73,8 +72,6 @@ namespace PedidoServidor.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Linea_Pedido", "Articulo_Codigo", "dbo.Especificacion_Articulo");
-            DropIndex("dbo.Linea_Pedido", new[] { "Articulo_Codigo" });
             DropTable("dbo.Vendedor");
             DropTable("dbo.Pedido");
             DropTable("dbo.Linea_Pedido");

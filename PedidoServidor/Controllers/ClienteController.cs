@@ -53,7 +53,23 @@ namespace PedidoServidor.Controllers
             BaseDeDatosContext context = new BaseDeDatosContext();
             context.Clientes.Add(new Cliente() { Rut = rut, NombreEmp = nombre, Direccion = direccion, Ciudad = ciudad, Telefono = telefono });
             context.SaveChanges();
+            
         }
+
+        [HttpGet]
+        public void ModificarCliente(string rut, string nombre, string direccion, string ciudad, string telefono, string modificar)
+        {
+            BaseDeDatosContext context = new BaseDeDatosContext();
+            var ClienteModif = context.Clientes.First<Cliente>();
+            ClienteModif.Rut = rut;
+            ClienteModif.NombreEmp = nombre;
+            ClienteModif.Ciudad = ciudad;
+            ClienteModif.Direccion = direccion;
+            ClienteModif.Telefono = telefono;
+            context.SaveChanges();
+
+        }
+
 
 
         // PUT: api/Cliente/5
