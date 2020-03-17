@@ -268,6 +268,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VendedorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -345,6 +346,7 @@
     <Folder Include="Views\Default\" />
     <Folder Include="Views\EspecificacionArticulo\" />
     <Folder Include="Views\Pedido\" />
+    <Folder Include="Views\Vendedor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

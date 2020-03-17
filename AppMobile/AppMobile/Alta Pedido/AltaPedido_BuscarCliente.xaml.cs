@@ -12,10 +12,12 @@ namespace AppMobile.Alta_Pedido
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AltaPedido_BuscarCliente : ContentPage
 	{
-		public AltaPedido_BuscarCliente ()
+        string usuario;
+		public AltaPedido_BuscarCliente()
 		{
-			InitializeComponent ();
+			InitializeComponent();
             btnBuscar.Clicked += BtnBuscar_Clicked;
+           
 		}
 
         private void BtnBuscar_Clicked(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace AppMobile.Alta_Pedido
                     {
                         Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
 
-                        Navigation.PushAsync(new ConfeccionPedido(dictionary["rut"], dictionary["nombreEmp"]));
+                        Navigation.PushAsync(new ConfeccionPedido(dictionary["rut"], dictionary["nombreEmp"] ));
                     }
 
                 }

@@ -11,9 +11,8 @@ namespace AppMobile
         {
             InitializeComponent();
 
-            MainPage = new MenuHamburguesa();          
-
-            
+            MainPage = new NavigationPage(new Acceso.Acceso());
+            string usuario;
         }
 
         protected override void OnStart()

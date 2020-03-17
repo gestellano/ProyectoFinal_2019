@@ -12,6 +12,7 @@ namespace AppMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BuscarProducto : ContentPage
     {
+        string usuario;
         public BuscarProducto()
         {
             try
@@ -19,8 +20,12 @@ namespace AppMobile
                 InitializeComponent();                
                 btnBuscar.Clicked += BtnBuscar_Clicked;
                 btnCancelar.Clicked += BtnCancelar_Clicked;
-           
-             }
+               
+                //overlay.IsEnabled = true;
+                //overlay.IsRunning = true;
+                //overlay.IsVisible = true;
+
+            }
             catch
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
@@ -33,7 +38,7 @@ namespace AppMobile
         {
             try
             {
-                Navigation.PushAsync(new MenuHamburguesa());
+                Navigation.PushAsync(new MenuHamburguesa(usuario));
             }
             catch (Exception ex)
             {
@@ -46,8 +51,11 @@ namespace AppMobile
         {
             try
             {
-                
-               
+                //AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  AbsoluteLayout.LayoutFlags="All" IsVisible="True" BackgroundColor="#C0808080" Padding="10, 0"
+                //overlay.IsEnabled = true;
+                //overlay.IsRunning = true;
+                //overlay.IsVisible = true;
+
                 if (lblCodigo.Text == null || lblCodigo.Text.Trim() == "")
                 {
 

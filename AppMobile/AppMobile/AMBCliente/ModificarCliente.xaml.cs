@@ -12,7 +12,8 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ModificarCliente : ContentPage
 	{
-		public ModificarCliente (int Rut, String NombreEmp, String Direccion, String Telefono, String Ciudad)
+        string usuario;
+		public ModificarCliente (int Rut, String NombreEmp, String Direccion, String Telefono, String Ciudad, string nickname)
 		{
             try
             {
@@ -20,7 +21,7 @@ namespace AppMobile
                 int RutConv = Convert.ToInt32(pRut.Text);
                 RutConv = Rut;
                 pRut.Text = Convert.ToString(Rut.ToString());
-               
+                usuario = nickname;
                 pNombreEmp.Text = NombreEmp;
                 pDireccion.Text = Direccion;
                 pTelefono.Text = Telefono;
@@ -40,7 +41,7 @@ namespace AppMobile
         {
             try
             {
-                Navigation.PushAsync(new MenuHamburguesa());
+                Navigation.PushAsync(new MenuHamburguesa(usuario));
             }
             catch (Exception ex)
             {

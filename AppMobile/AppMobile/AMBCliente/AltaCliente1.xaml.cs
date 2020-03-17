@@ -12,12 +12,13 @@ namespace AppMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AltaCliente1 : ContentPage
     {
-        public AltaCliente1(int pRut)
+        string usuario;
+        public AltaCliente1(int pRut, string nickname)
         {
             try
             {
                 InitializeComponent();
-
+                usuario = nickname;
                 lblRut.Text = Convert.ToString(pRut);
                
                 
@@ -54,7 +55,7 @@ namespace AppMobile
 
                 else
                 {
-                    Navigation.PushAsync(new AltaCliente2(RutConv, NombreEmpresa, Direccion, Telefono, Ciudad));
+                    Navigation.PushAsync(new AltaCliente2(RutConv, NombreEmpresa, Direccion, Telefono, Ciudad, usuario));
                 }
             }
             catch
@@ -68,7 +69,7 @@ namespace AppMobile
         {
             try
             {
-                Navigation.PushAsync(new MenuHamburguesa());
+                Navigation.PushAsync(new MenuHamburguesa(usuario));
             }
             catch (Exception ex)
             {

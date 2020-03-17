@@ -12,12 +12,12 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ClienteEncontrado : ContentPage
 	{
+        string usuario;
 		public ClienteEncontrado(string rut, string nombreEmp, string direccion, string telefono, string ciudad)
         {
             try
             {
                 InitializeComponent();
-                
                 lblRut.Text = Convert.ToString(rut);
                 lblNombreEmp.Text = nombreEmp;
                 lblDireccion.Text = direccion;
@@ -40,7 +40,7 @@ namespace AppMobile
         {
             try
             {
-                Navigation.PushAsync(new ModificarCliente((Convert.ToInt32(lblRut.Text)), lblNombreEmp.Text, lblDireccion.Text, lblTelefono.Text, lblCiudad.Text));
+                Navigation.PushAsync(new ModificarCliente((Convert.ToInt32(lblRut.Text)), lblNombreEmp.Text, lblDireccion.Text, lblTelefono.Text, lblCiudad.Text, usuario));
             }
             catch
             {
@@ -54,7 +54,7 @@ namespace AppMobile
         {
             try
             {
-                Navigation.PushAsync(new MenuHamburguesa());
+                Navigation.PushAsync(new MenuHamburguesa(usuario));
             }
             catch (Exception ex)
             {

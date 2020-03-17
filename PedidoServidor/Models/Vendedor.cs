@@ -11,7 +11,7 @@ namespace PedidoServidor.Models
     public class Vendedor
     {
 
-        [Key]
+       
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Numero { get; set; }        
 
@@ -26,6 +26,7 @@ namespace PedidoServidor.Models
         public string Celular { get; set; }
 
         [Required]
+        [Key]
         public string Nickname { get; set; }
 
         [Required]

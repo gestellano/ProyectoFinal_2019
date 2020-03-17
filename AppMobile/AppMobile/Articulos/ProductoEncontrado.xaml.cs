@@ -12,6 +12,7 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProductoEncontrado : ContentPage
 	{
+        string usuario;
 		public ProductoEncontrado (string codigo, string nombre, string descripcion)
 		{
 			InitializeComponent ();
@@ -19,7 +20,7 @@ namespace AppMobile
             lblCodigo.Text = codigo;
             lblNombre.Text = nombre;
             lblDescripcion.Text = descripcion;
-
+      
 
             btnBuscarOtroProducto.Clicked += BtnBuscarOtroProducto_Clicked;
             btnInicio.Clicked += BtnInicio_Clicked;
@@ -29,7 +30,7 @@ namespace AppMobile
         {
             try
             {
-                Navigation.PushAsync(new MenuHamburguesa());
+                Navigation.PushAsync(new MenuHamburguesa(usuario));
             }
             catch (Exception ex)
             {

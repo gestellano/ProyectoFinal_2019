@@ -12,17 +12,18 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PantallaExito : ContentPage
 	{
+        string usuario;
 		public PantallaExito ()
 		{
 			InitializeComponent ();
             btnInicio.Clicked += BtnInicio_Clicked;
-
             NavigationPage.SetHasBackButton(this, false);
+
         }
 
         private void BtnInicio_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MenuHamburguesa());
+            Navigation.PushAsync(new MenuHamburguesa(usuario));
         }
     }
 }

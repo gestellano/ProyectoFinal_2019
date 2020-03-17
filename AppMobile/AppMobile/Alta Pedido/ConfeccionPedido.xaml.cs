@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace AppMobile.Alta_Pedido
         string tipoEnvioSeleccionado;
         string codigoProducto;
         int cantidadArticulos;
+        string usuario;
         Dictionary<string, int> listaArticulos = new Dictionary<string, int>();
 
         public ConfeccionPedido(string rut, string nombreEmp)
@@ -25,9 +27,13 @@ namespace AppMobile.Alta_Pedido
             lblRut.Text = "RUT: "+rut;
             lblNombreEmpresa.Text = "Nombre Empresa: "+nombreEmp;
             rutEmpresa = rut;
+            usuario = "gestellano";
 
             btnBuscar.Clicked += BtnBuscar_Clicked;
             btnAgregarAlPedido.IsVisible = false;
+            lblCantidad.IsVisible = false;
+            
+            
             btnAgregarAlPedido.Clicked += BtnAgregarAlPedido_Clicked;
             btnEnviarPedido.Clicked += BtnEnviarPedido_Clicked;
 
@@ -59,17 +65,27 @@ namespace AppMobile.Alta_Pedido
                     lblCantidad.IsVisible = false;
                     lblCodigo.IsVisible = false;
                     lblArticulo.IsVisible = false;
+                    btnEnviarPedido.IsVisible = true;
+                    btnEnviarPedido.IsEnabled = true;
 
                     lblCantidad.Text = null;
                     lblCodigo.Text = null;
                     lblArticulo.Text = null;
                     lblCodigoBuscar.Text = null;
-                     
+
+                    
+                    
+                    //foreach (KeyValuePair<string, int> entry in listaArticulos)
+                    //{
+                    //    int cantidadArticulo = Convert.ToInt32(entry.Value.ToString());
+                    //    string codigoArticulo = entry.Key.ToString();
+                        
+                    //   // lblArticuloAgregado.Text = "Codigo: " + codigoArticulo + "   -   Cantidad: " + cantidadArticulo.ToString();
+                    //}
                 }
-               
-                               
+                            
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 DisplayAlert("", "Ha ocurrido un error en la app,intente nuevamente la operativa.", "Aceptar");
             }
@@ -127,8 +143,7 @@ namespace AppMobile.Alta_Pedido
             try
             {
                 //cambiarlo para tomar usuario logueado
-                string vendedor = "Vendedor1";                
-
+               
                 if(Seleccione.SelectedItem == null)
                 {
                     DisplayAlert("", "Debe de seleccionar un Tipo de Envio", "Aceptar");
@@ -146,7 +161,7 @@ namespace AppMobile.Alta_Pedido
                         DateTime fechaActual = DateTime.Now;
                         int estadoImpresionPedido = 0;
                         LogicaServicios obj = new LogicaServicios();
-                        obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, vendedor, tipoEnvioSeleccionado, listaArticulos);
+                        obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, usuario, tipoEnvioSeleccionado, listaArticulos);
                         Navigation.PushAsync(new PantallaExito());
                     }
                    

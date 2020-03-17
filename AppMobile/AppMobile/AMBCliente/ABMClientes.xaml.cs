@@ -16,12 +16,12 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ABMClientes : ContentPage
 	{
+        string usuario;
 		public ABMClientes ()
 		{
             try
             {
-                InitializeComponent();
-             
+                InitializeComponent();              
 
                 btnCancelar.Clicked += BtnCancelar_Clicked;
                 btnBuscar.Clicked += BtnBuscar_Clicked;
@@ -59,7 +59,7 @@ namespace AppMobile
 
                     if(result.Length == 0)
                     { 
-                            Navigation.PushAsync(new AltaCliente1(rutEmpresa));
+                            Navigation.PushAsync(new AltaCliente1(rutEmpresa, usuario));
                     }
                     else
                     {               
@@ -82,7 +82,7 @@ namespace AppMobile
         {
             try
             {
-                Navigation.PushAsync(new MenuHamburguesa());
+                Navigation.PushAsync(new MenuHamburguesa(usuario));
             }
             catch (Exception ex)
             {

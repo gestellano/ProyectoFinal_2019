@@ -57,16 +57,16 @@ namespace PedidoServidor.Migrations
                 "dbo.Vendedor",
                 c => new
                     {
+                        Nickname = c.String(nullable: false, maxLength: 128),
                         Numero = c.Int(nullable: false, identity: true),
                         Nombre = c.String(nullable: false, maxLength: 50),
                         Mail = c.String(nullable: false),
                         Celular = c.String(nullable: false),
-                        Nickname = c.String(nullable: false),
                         Password = c.String(nullable: false),
                         ZonaTrabajo = c.String(nullable: false, maxLength: 200),
                         TieneVehiculo = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.Numero);
+                .PrimaryKey(t => t.Nickname);
             
         }
         

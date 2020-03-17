@@ -12,11 +12,14 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MenuHamburguesa : MasterDetailPage
 	{
-		public MenuHamburguesa()
+        string nickname;
+
+        public MenuHamburguesa(string nicknameUsu)
 		{
             InitializeComponent();
             Init();
             NavigationPage.SetHasNavigationBar(this, false);
+            nickname = nicknameUsu;
         }
 
         void Init()

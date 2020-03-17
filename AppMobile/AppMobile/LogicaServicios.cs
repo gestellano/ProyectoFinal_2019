@@ -41,7 +41,6 @@ namespace AppMobile
 
 
 
-
         //Agregar Cliente
         public void AgregarCliente(string rut, string nombreEmp, string direccion, string telefono, string ciudad) 
         { 
@@ -57,10 +56,7 @@ namespace AppMobile
                     using (var client = new HttpClient())
                     {
 
-                        string url = baseUrl + "/api/Cliente";
-                        client.BaseAddress = new Uri("http://10.0.2.2/api");
-                        
-                     
+                       
                         client.BaseAddress = new Uri(baseUrl);
                         string urlAgregarCliente = "http://10.0.2.2:4425/api/Cliente/AgregarCliente?" + "rut=" + rut +
                                                                                             "&nombre=" + nombreEmp + 
@@ -191,6 +187,62 @@ namespace AppMobile
                 }
 
             }
+        }
+
+
+        //Buscar Vendedor
+        public string Login(string nickname)
+        {
+            string response = "";
+            try
+            {
+             
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(baseUrl);
+                    string LoginVendedor = "http://10.0.2.2:4425/api/Vendedor/Login?" + "nickname=" + nickname;
+                    WebClient wc = new WebClient();
+
+                    response = wc.DownloadString(LoginVendedor);
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.ToString());
+            }
+            return response;
+        }
+
+        //Agregar Vendedor
+        public void AgregarVendedor(string nombre, string mail, string celular, string nickname, string password, string zonaTrabajo, bool tieneVehiculo)
+        {
+            try
+                {
+                    using (var client = new HttpClient())
+                    {
+
+                        //client.BaseAddress = new Uri(baseUrl);
+                        string urlAltaVendedor = "http://10.0.2.2:4425/api/Vendedor/AgregarVendedor?" + "Nombre=" + nombre +
+                                                                                            "&Mail=" + mail +
+                                                                                            "&Celular=" + celular +
+                                                                                            "&NickName=" + nickname +
+                                                                                            "&Password=" + password+
+                                                                                            "&ZonaTrabajo="+zonaTrabajo+
+                                                                                            "&TieneVehiculo="+tieneVehiculo;
+
+                        WebClient wc = new WebClient();
+                        wc.DownloadString(urlAltaVendedor);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw new Exception(ex.ToString());
+
+                }            
         }
 
 
