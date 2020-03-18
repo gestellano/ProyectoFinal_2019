@@ -5,42 +5,60 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20">
-       
-                <Label Text="Oscal SRL - Dionisio Oribe 3071"
-                TextColor="#000000"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="StartAndExpand"/>
-                <Button x:Name="btnOscal" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
-                <Label Text="---------------------------" HorizontalOptions = "Center" />
-                
-                <Label Text="Teléfono Oficinas - Administración"
-                 TextColor="#000000"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="StartAndExpand" />
-                <Button x:Name="btnAdmin" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
-                <Label Text="---------------------------" HorizontalOptions = "Center" />
-                
-                <Label Text="Celular Oscar - 098563563"
-                   TextColor="#000000"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="StartAndExpand" />
-                <Button x:Name="btnCelularOscar" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
-                <Label Text="---------------------------" HorizontalOptions = "Center"  />
-                
-                <Label Text="Analia Gonzalez - Vendedora"
-                   TextColor="#000000"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="StartAndExpand" />
-                <Button x:Name="btnAnaliaGonzalez" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
-                <Label Text="---------------------------" HorizontalOptions = "Center" />
+                <Label Text="Contactos" Font="25" TextColor="Red" HorizontalOptions="Center" />
 
-                <Label Text="Gonzalo Lopez - Vendedor"
-                   TextColor="#000000"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="StartAndExpand" />
-                <Button x:Name="btnGonzaloLopez" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
+                <Label Text="Presione sobre cada contacto para realizar una llamada." Font="7" TextColor="Gray" HorizontalOptions="Center" />
+                <Label></Label>
 
 
+                <Label Text="Oscal SRL - Dionisio Oribe 3071"                      
+                       TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="LlamarOscal"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="---------------------------" HorizontalOptions = "Center" />
+
+
+                <Label Text="Teléfono Oficinas - Administración"          
+                       TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="LlamarAdminsitracion"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="---------------------------" HorizontalOptions = "Center" />
+
+                <Label Text="Celular Oscar" 
+                       TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="LlamarCelularOscar"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="---------------------------" HorizontalOptions = "Center" />
+
+                <Label Text="Analia Gonzalez - Vendedora"  
+                       TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="LlamarCelularAnalia"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="---------------------------" HorizontalOptions = "Center" />
+
+                <Label Text="Gonzalo Lopez - Vendedor" 
+                       TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                Tapped="LlamarCelularGonzalo"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="---------------------------" HorizontalOptions = "Center" />
+
+
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

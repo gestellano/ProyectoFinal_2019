@@ -41,7 +41,7 @@ namespace AppMobile
         {
             try
             {
-                Navigation.PushAsync(new MenuHamburguesa(usuario));
+                Navigation.PushAsync(new MenuHamburguesa());
             }
             catch (Exception ex)
             {

@@ -17,7 +17,6 @@ namespace AppMobile.Alta_Pedido
         string tipoEnvioSeleccionado;
         string codigoProducto;
         int cantidadArticulos;
-        string usuario;
         Dictionary<string, int> listaArticulos = new Dictionary<string, int>();
 
         public ConfeccionPedido(string rut, string nombreEmp)
@@ -27,7 +26,7 @@ namespace AppMobile.Alta_Pedido
             lblRut.Text = "RUT: "+rut;
             lblNombreEmpresa.Text = "Nombre Empresa: "+nombreEmp;
             rutEmpresa = rut;
-            usuario = "gestellano";
+           
 
             btnBuscar.Clicked += BtnBuscar_Clicked;
             btnAgregarAlPedido.IsVisible = false;
@@ -142,36 +141,45 @@ namespace AppMobile.Alta_Pedido
         {
             try
             {
-                //cambiarlo para tomar usuario logueado
-               
-                if(Seleccione.SelectedItem == null)
+                if (App.Usuario == null)
                 {
-                    DisplayAlert("", "Debe de seleccionar un Tipo de Envio", "Aceptar");
-                    
+                    DisplayAlert("Error interno", "Por favor, cerrar app y volver a abrir.", "Aceptar");
                 }
                 else
                 {
-                    if (listaArticulos.Count == 0)
+
+
+
+                    if (Seleccione.SelectedItem == null)
                     {
-                        DisplayAlert("", "Debe de agregar articulos al pedido", "Aceptar");
+                        DisplayAlert("", "Debe de seleccionar un Tipo de Envio", "Aceptar");
+
                     }
                     else
                     {
-                        tipoEnvioSeleccionado = Seleccione.SelectedItem.ToString();
-                        DateTime fechaActual = DateTime.Now;
-                        int estadoImpresionPedido = 0;
-                        LogicaServicios obj = new LogicaServicios();
-                        obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, usuario, tipoEnvioSeleccionado, listaArticulos);
-                        Navigation.PushAsync(new PantallaExito());
+                        if (listaArticulos.Count == 0)
+                        {
+                            DisplayAlert("", "Debe de agregar articulos al pedido", "Aceptar");
+                        }
+                        else
+                        {
+                            tipoEnvioSeleccionado = Seleccione.SelectedItem.ToString();
+                            DateTime fechaActual = DateTime.Now;
+                            int estadoImpresionPedido = 0;
+                            LogicaServicios obj = new LogicaServicios();
+                            obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, App.Usuario, tipoEnvioSeleccionado, listaArticulos);
+                            Navigation.PushAsync(new PantallaExito());
+                        }
+
                     }
-                   
+
                 }
-                
             }
             catch (Exception ex)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
+
         }
 
 

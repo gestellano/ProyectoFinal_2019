@@ -4,11 +4,10 @@
              x:Class="AppMobile.MenuHamburguesa">
 
     <MasterDetailPage.Master>
- 
+   
         <ContentPage
             Title="Oscal SRL"
-            Icon="">
-
+            Icon="">            
             <ListView x:Name="ListMenu" ItemSelected="ListMenu_ItemSelected" BackgroundColor="#c3c3c3" SeparatorColor="Black">
                 <ListView.ItemTemplate>
                     <DataTemplate>

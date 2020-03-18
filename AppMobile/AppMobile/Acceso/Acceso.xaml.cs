@@ -40,8 +40,9 @@ namespace AppMobile.Acceso
                     Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
 
                     if (lblPassword.Text.Trim() == dictionary["password"] & lblNickName.Text.Trim() == dictionary["nickname"])
-                    {                       
-                        Navigation.PushAsync(new MenuHamburguesa(lblNickName.Text.Trim()));
+                    {
+                        App.Usuario = lblNickName.Text.Trim();
+                        Navigation.PushAsync(new MenuHamburguesa());
                     }
                     else
                     {
@@ -56,6 +57,20 @@ namespace AppMobile.Acceso
             }
         }
 
-       
+        private void registrarUsuario(object sender, EventArgs e)
+            {
+            try
+            {
+                Navigation.PushAsync(new RegistroVendedor.BuscarVendedor());
+            }
+            catch (Exception)
+            {
+
+                DisplayAlert("", "Funcionalidad no disponible.", "Aceptar");
+            }
+
+            }
+
+
     }
 }

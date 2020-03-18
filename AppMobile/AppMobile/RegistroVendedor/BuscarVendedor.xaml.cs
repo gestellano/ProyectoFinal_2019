@@ -7,23 +7,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppMobile
+namespace AppMobile.RegistroVendedor
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PantallaExito : ContentPage
+	public partial class BuscarVendedor : ContentPage
 	{
-        string usuario;
-		public PantallaExito ()
+		public BuscarVendedor ()
 		{
 			InitializeComponent ();
-            btnInicio.Clicked += BtnInicio_Clicked;
             NavigationPage.SetHasBackButton(this, false);
 
         }
-
-        private void BtnInicio_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MenuHamburguesa());
-        }
-    }
+	}
 }

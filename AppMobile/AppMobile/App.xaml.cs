@@ -13,7 +13,8 @@ namespace AppMobile
 
             MainPage = new NavigationPage(new Acceso.Acceso());
             string usuario;
-            
+            App.Usuario = null;
+
         }
 
         protected override void OnStart()
@@ -30,5 +31,7 @@ namespace AppMobile
         {
             // Handle when your app resumes
         }
+
+        public static string Usuario { get; set; }
     }
 }

@@ -17,15 +17,12 @@ namespace AppMobile
 		public Contactos ()
 		{
 			InitializeComponent ();
-          
-            btnOscal.Clicked += BtnOscal_Clicked;
-            btnAdmin.Clicked += BtnAdmin_Clicked;            
-            btnCelularOscar.Clicked += BtnCelularOscar_Clicked;
-            btnAnaliaGonzalez.Clicked += BtnAnaliaGonzalez_Clicked;
-            btnGonzaloLopez.Clicked += BtnGonzaloLopez_Clicked;
+
+            NavigationPage.SetHasNavigationBar(this, false);
+           
         }
 
-        private void BtnGonzaloLopez_Clicked(object sender, EventArgs e)
+        private void LlamarCelularGonzalo(object sender, EventArgs e)
         {
             try
             {
@@ -36,11 +33,11 @@ namespace AppMobile
             catch (Exception)
             {
 
-                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+                DisplayAlert("", "Ha ocurrido al enviar los datos, intente nuevamente la operativa.", "Aceptar");
             }
         }
 
-        private void BtnAnaliaGonzalez_Clicked(object sender, EventArgs e)
+        private void LlamarCelularAnalia(object sender, EventArgs e)
         {
             try
             {
@@ -55,7 +52,7 @@ namespace AppMobile
             }
         }
 
-        private void BtnCelularOscar_Clicked(object sender, EventArgs e)
+        private void LlamarCelularOscar(object sender, EventArgs e)
         {
             try
             {
@@ -70,7 +67,7 @@ namespace AppMobile
             }
         }
 
-        private void BtnAdmin_Clicked(object sender, EventArgs e)
+        private void LlamarAdminsitracion(object sender, EventArgs e)
         {
             try
             {
@@ -85,7 +82,7 @@ namespace AppMobile
             }
         }
 
-        private void BtnOscal_Clicked(object sender, EventArgs e)
+        private void LlamarOscal(object sender, EventArgs e)
         {
             try
             {

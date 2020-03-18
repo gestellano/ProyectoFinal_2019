@@ -12,7 +12,7 @@ namespace AppMobile.Alta_Pedido
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AltaPedido_BuscarCliente : ContentPage
 	{
-        string usuario;
+       
 		public AltaPedido_BuscarCliente()
 		{
 			InitializeComponent();
