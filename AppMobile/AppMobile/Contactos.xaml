@@ -6,36 +6,42 @@
         <ScrollView>
             <StackLayout Padding="20">
        
-            <Label Text="Oscal SRL - Direccion 123"
+                <Label Text="Oscal SRL - Dionisio Oribe 3071"
                 TextColor="#000000"
                 VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand"/>
+                <Button x:Name="btnOscal" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
+                <Label Text="---------------------------" HorizontalOptions = "Center" />
+                
+                <Label Text="Teléfono Oficinas - Administración"
+                 TextColor="#000000"
+                VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="StartAndExpand" />
-            <Label></Label>
-            <Label Text="Telefono Oficinas - 24002020"
+                <Button x:Name="btnAdmin" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
+                <Label Text="---------------------------" HorizontalOptions = "Center" />
+                
+                <Label Text="Celular Oscar - 098563563"
                    TextColor="#000000"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="StartAndExpand" />
-            <Label></Label>
-            <Label Text="Celular Oscar - 099999999"
+                <Button x:Name="btnCelularOscar" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
+                <Label Text="---------------------------" HorizontalOptions = "Center"  />
+                
+                <Label Text="Analia Gonzalez - Vendedora"
                    TextColor="#000000"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="StartAndExpand" />
-            <Label></Label>
-            <Label Text="Vendedor 1 - 099999999"
+                <Button x:Name="btnAnaliaGonzalez" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
+                <Label Text="---------------------------" HorizontalOptions = "Center" />
+
+                <Label Text="Gonzalo Lopez - Vendedor"
                    TextColor="#000000"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="StartAndExpand" />
-            <Label></Label>
-            <Label Text="Vendedor 2 - 098888888"
-                   TextColor="#000000"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="StartAndExpand" />
-            <Label></Label>
-            <Label Text="Vendedor 3 - 097777777"
-                   TextColor="#000000"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="StartAndExpand" />
-        </StackLayout>
+                <Button x:Name="btnGonzaloLopez" Text="Llamar" WidthRequest="100" HorizontalOptions="Center" ></Button>
+
+
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

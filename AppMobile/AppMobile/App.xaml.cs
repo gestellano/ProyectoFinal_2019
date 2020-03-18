@@ -13,6 +13,7 @@ namespace AppMobile
 
             MainPage = new NavigationPage(new Acceso.Acceso());
             string usuario;
+            
         }
 
         protected override void OnStart()
