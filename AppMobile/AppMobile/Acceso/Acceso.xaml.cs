@@ -43,12 +43,7 @@ namespace AppMobile.Acceso
                     if (lblPassword.Text.Trim() == dictionary["password"] & lblNickName.Text.Trim() == dictionary["nickname"])
                     {
                         App.Usuario = lblNickName.Text.Trim();
-                        App.password = dictionary["password"];
-                        App.nombre = dictionary["nombre"];
-                        App.celular = dictionary["celular"];
-                        App.mail = dictionary["mail"];
-                        App.zonatrabajo = dictionary["zonatrabajo"];
-                        App.tieneVehiculo = dictionary["tienevechiulo"];
+                        App.Password = dictionary["password"].ToString();
 
                         Navigation.PushAsync(new MenuHamburguesa());
                     }

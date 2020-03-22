@@ -51,16 +51,16 @@ namespace PedidoServidor.Controllers
         [HttpGet]
         public void ModificarVendedor(string nombre, string mail, string celular, string nickname, string password, string zonaTrabajo, bool tieneVehiculo, string modificar)
         {
-            BaseDeDatosContext context = new BaseDeDatosContext();
-            var VendModif = context.Vendedores.First<Vendedor>();
+            BaseDeDatosContext context2 = new BaseDeDatosContext();
+            var VendModif = context2.Vendedores.First<Vendedor>();
+            VendModif.Nickname = nickname;
             VendModif.Celular = celular;
             VendModif.Mail = mail;
-            VendModif.Nickname = nickname;
             VendModif.Nombre = nombre;
             VendModif.Password = password;
             VendModif.TieneVehiculo = tieneVehiculo;
             VendModif.ZonaTrabajo = zonaTrabajo;
-            context.SaveChanges();
+            context2.SaveChanges();
         }
 
         //Cambiar Contraseña Vendedor

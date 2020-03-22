@@ -46,7 +46,7 @@
     <EmbeddedResource Update="Contactos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Datos  Personales\DatosPersonales.xaml">
+    <EmbeddedResource Update="DatosVendedor\ModificarDatos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MenuHamburguesa.xaml">

@@ -241,25 +241,27 @@ namespace AppMobile
                 }            
         }
 
-        //ModificarCliente
+        //Modificar Vendedor
         public void ModificarVendedor(string nombre, string mail, string celular, string nickname, string password, string zonaTrabajo, bool tieneVehiculo, string modificar)
         {
             try
             {
                 using (var client = new HttpClient())
                 {
+                    
 
                     //client.BaseAddress = new Uri(baseUrl);
-                    string urlAltaVendedor = "http://10.0.2.2:4425/api/Vendedor/ModificarVendedor?" + "Nombre=" + nombre +
+                    string urlModificarVendedor = "http://10.0.2.2:4425/api/Vendedor/ModificarVendedor?" + "Nombre=" + nombre +
                                                                                         "&Mail=" + mail +
                                                                                         "&Celular=" + celular +
                                                                                         "&NickName=" + nickname +
                                                                                         "&Password=" + password +
                                                                                         "&ZonaTrabajo=" + zonaTrabajo +
-                                                                                        "&TieneVehiculo=" + tieneVehiculo;
+                                                                                        "&TieneVehiculo=" + tieneVehiculo +
+                                                                                        "&Modificar="+modificar;
 
                     WebClient wc = new WebClient();
-                    wc.DownloadString(urlAltaVendedor);
+                    wc.DownloadString(urlModificarVendedor);
 
                 }
             }

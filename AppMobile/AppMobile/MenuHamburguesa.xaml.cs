@@ -12,15 +12,16 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MenuHamburguesa : MasterDetailPage
 	{
-       
-
         public MenuHamburguesa()
-		{
+        {
             InitializeComponent();
             Init();
             NavigationPage.SetHasNavigationBar(this, false);
-          
+            Navigation.PushAsync(new PaginaInicioxaml());
+
         }
+
+
 
         void Init()
         {
@@ -29,9 +30,9 @@ namespace AppMobile
                 
                 List<Menu> menu = new List<Menu>
             {
-                new Menu{MenuTitle = "Bienvenido/a: "+App.Usuario, Page = new MenuHamburguesa()},
+                
                 new Menu{MenuTitle = "Inicio", Page = new PaginaInicioxaml()},
-                new Menu{MenuTitle = "Datos Personales", Page = new Datos__Personales.DatosPersonales()},
+                new Menu{MenuTitle = "Datos Personales", Page = new DatosVendedor.ModificarDatos() },
                 new Menu{MenuTitle = "Perfil", Page = new Perfil()},
                 new Menu{MenuTitle = "Contactos", Page = new Contactos()},
                 new Menu{MenuTitle = "A-M Clientes", Page = new ABMClientes()},
