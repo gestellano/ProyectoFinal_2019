@@ -19,15 +19,23 @@
             <Label></Label>
             <Button x:Name="btnAcceso" Text="Ingresar"></Button>
 
-            <Label Text="Registrarme" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center">
+            <Label Text="Registrarme" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                 Tapped="registrarUsuario"
                  />
                 </Label.GestureRecognizers>
             </Label>
+
+            <Label Text="Olvidé mi contraseña" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="olvidoContraseña"
+                 />
+                </Label.GestureRecognizers>
+            </Label>
+
+
 
 
 

@@ -56,6 +56,7 @@ namespace PedidoServidor.Controllers
             
         }
 
+        //Modificar Cliente
         [HttpGet]
         public void ModificarCliente(string rut, string nombre, string direccion, string ciudad, string telefono, string modificar)
         {
@@ -72,15 +73,6 @@ namespace PedidoServidor.Controllers
 
 
 
-        // PUT: api/Cliente/5
-        //public void Put(int id, [FromBody]string value)
-
-        //{
-        //}
-
-        // DELETE: api/Cliente/5
-        //public void Delete(int id)
-        //{
-        //}
+       
     }
 }

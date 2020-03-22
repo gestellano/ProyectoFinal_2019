@@ -16,6 +16,7 @@ namespace AppMobile.Acceso
 		{
             InitializeComponent();
             btnAcceso.Clicked += BtnAcceso_Clicked;
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         private void BtnAcceso_Clicked(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace AppMobile.Acceso
             {
 
                 LogicaServicios obj = new LogicaServicios();
-                string result = obj.Login(lblNickName.Text.Trim());
+                string result = obj.BuscarVendedor(lblNickName.Text.Trim());
 
                 if (result.Length > 1)
                 {
@@ -42,6 +43,13 @@ namespace AppMobile.Acceso
                     if (lblPassword.Text.Trim() == dictionary["password"] & lblNickName.Text.Trim() == dictionary["nickname"])
                     {
                         App.Usuario = lblNickName.Text.Trim();
+                        App.password = dictionary["password"];
+                        App.nombre = dictionary["nombre"];
+                        App.celular = dictionary["celular"];
+                        App.mail = dictionary["mail"];
+                        App.zonatrabajo = dictionary["zonatrabajo"];
+                        App.tieneVehiculo = dictionary["tienevechiulo"];
+
                         Navigation.PushAsync(new MenuHamburguesa());
                     }
                     else
@@ -70,6 +78,20 @@ namespace AppMobile.Acceso
             }
 
             }
+
+        private void olvidoContraseña(object sender, EventArgs e)
+        {
+            try
+            {
+                Navigation.PushAsync(new Olvido_de_contraseña.IngresoDatos());
+            }
+            catch (Exception)
+            {
+
+                DisplayAlert("", "Funcionalidad no disponible.", "Aceptar");
+            }
+
+        }
 
 
     }

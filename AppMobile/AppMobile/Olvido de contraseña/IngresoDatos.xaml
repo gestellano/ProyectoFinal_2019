@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.Olvido_de_contraseña.IngresoDatos">
+    <ScrollView>
+
+        <StackLayout Padding="20">
+
+            <Label Text="Olvidé mi contraseña" Font="25" TextColor="Black" HorizontalOptions="Center" />
+            <Label></Label>
+
+            <Label Text="* Nickname:" TextColor="#000000" ></Label>
+            <Entry x:Name="lblNickName" Placeholder="Usuario" TextColor="#000000"></Entry>
+            <Label></Label>
+
+            <Label Text="* e-Mail:" TextColor="#000000" ></Label>
+            <Entry x:Name="lblemail" Placeholder="e-Mail" TextColor="#000000"></Entry>
+            <Label></Label>
+
+            <Label TextColor="Gray" FontSize="10" Text="Se le enviará un correo electrónico con su nueva contraseña." HorizontalOptions="Center"/>
+
+            <Button x:Name="btnEnviar" Text="Ingresar"></Button>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

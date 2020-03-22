@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.PantallExitoExterna">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="OK.png" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center"></Image>
+                <Label TextColor="#000000" Text="Operación realizada con exito" HorizontalOptions="Center"/>
+
+                <Label></Label>
+                <Label></Label>
+
+                <Button x:Name="btnIngresar" Text="Ingresar"></Button>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

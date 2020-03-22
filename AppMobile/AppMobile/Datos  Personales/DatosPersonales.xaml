@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.Datos__Personales.DatosPersonales">
+    <ScrollView >
+
+        <StackLayout Padding="20">
+
+            <Label Text="Datos Personales" Font="25" TextColor="Red" HorizontalOptions="Center" />
+
+            <Label  Text="Nickname: *" TextColor="#000000"></Label>
+            <Label  x:Name="lblNickName" TextColor="#000000"></Label>
+            <Label></Label>
+            <Label Text="* Nombre *" TextColor="#000000"></Label>
+            <Entry x:Name="lblNombre"  Placeholder="Nombre Empresa" TextColor="#000000"></Entry>
+            <Label></Label>
+            <Label  Text="* Celular: *" TextColor="#000000"></Label>
+            <Entry x:Name="lblCelular" Placeholder="Direccion"></Entry>
+            <Label></Label>
+            <Label  Text="* e-Mail: *" TextColor="#000000" ></Label>
+            <Entry x:Name="lblmail" Placeholder="Telefono" Keyboard="Telephone"></Entry>
+            <Label></Label>
+            <Label  Text="* Zona de Trabajo: *" TextColor="#000000"></Label>
+            <Entry x:Name="lblzonatrabajo" Placeholder="Ciudad"></Entry>
+            <Label></Label>
+            <Label  Text="* Tiene Vehiculo: *" TextColor="#000000"></Label>
+            <Picker  x:Name="TieneVehiculo" Title="Seleccione" ></Picker>
+            <Label></Label>
+          
+            
+            <Button x:Name="btnSiguiente" Text="Siguiente"></Button>
+            <Button x:Name="btnCancelar" Text="Cancelar"></Button>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

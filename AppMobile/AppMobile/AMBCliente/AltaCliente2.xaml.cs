@@ -40,8 +40,6 @@ namespace AppMobile
         {
             try
             {            
-                //control que rut sea solo numerico
-
                 LogicaServicios obj = new LogicaServicios();
                 obj.AgregarCliente(lblRut.Text,lblNombreEmp.Text,lblDireccion.Text,lblTelefono.Text,lblCiudad.Text);               
                 Navigation.PushAsync(new PantallaExito());

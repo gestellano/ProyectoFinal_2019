@@ -31,6 +31,7 @@ namespace AppMobile
             {
                 new Menu{MenuTitle = "Bienvenido/a: "+App.Usuario, Page = new MenuHamburguesa()},
                 new Menu{MenuTitle = "Inicio", Page = new PaginaInicioxaml()},
+                new Menu{MenuTitle = "Datos Personales", Page = new Datos__Personales.DatosPersonales()},
                 new Menu{MenuTitle = "Perfil", Page = new Perfil()},
                 new Menu{MenuTitle = "Contactos", Page = new Contactos()},
                 new Menu{MenuTitle = "A-M Clientes", Page = new ABMClientes()},

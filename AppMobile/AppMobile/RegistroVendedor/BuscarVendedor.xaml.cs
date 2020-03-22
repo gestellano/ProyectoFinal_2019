@@ -15,8 +15,32 @@ namespace AppMobile.RegistroVendedor
 		public BuscarVendedor ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasBackButton(this, false);
+             btnBuscar.Clicked += BtnBuscar_Clicked;
 
         }
-	}
+
+        private void BtnBuscar_Clicked(object sender, EventArgs e)
+        {
+            LogicaServicios obj = new LogicaServicios();
+            string result = obj.BuscarVendedor(lblNickName.Text.Trim());
+
+            if (result.Length > 1)
+            {
+                result = result.Substring(1, result.Length - 2);
+            }
+
+            if (result.Length == 0)
+            {
+                
+                Navigation.PushAsync(new RegistroVendedorIngresoDatos(lblNickName.Text.Trim()));
+
+            }
+            else
+            {
+                DisplayAlert("", "Nickname ya se encuentra registrado.", "Aceptar");
+
+            }
+
+        }
+    }
 }
