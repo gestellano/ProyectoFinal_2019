@@ -17,14 +17,18 @@ namespace AppMobile.Acceso
             InitializeComponent();
             btnAcceso.Clicked += BtnAcceso_Clicked;
             NavigationPage.SetHasBackButton(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
+            App.Usuario = null;
+            App.Password = null;
         }
 
         private void BtnAcceso_Clicked(object sender, EventArgs e)
         {
             try
             {
-
-                LogicaServicios obj = new LogicaServicios();
+                activityIndicator.IsVisible = true;
+                activityIndicator.IsRunning = true;
+                 LogicaServicios obj = new LogicaServicios();
                 string result = obj.BuscarVendedor(lblNickName.Text.Trim());
 
                 if (result.Length > 1)
@@ -44,6 +48,7 @@ namespace AppMobile.Acceso
                     {
                         App.Usuario = lblNickName.Text.Trim();
                         App.Password = dictionary["password"].ToString();
+                        App.Mail = dictionary["mail"].ToString();
 
                         Navigation.PushAsync(new MenuHamburguesa());
                     }

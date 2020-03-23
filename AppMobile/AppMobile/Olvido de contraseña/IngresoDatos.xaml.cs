@@ -59,8 +59,7 @@ namespace AppMobile.Olvido_de_contraseña
                                 "Su nueva contraseña será: 12345678 , debe de ingresar al sistema y cambiarla mediante Datos Personales para su mayor seguridad. <br><br>" +
                                 "Atentamente,<br>" +
                                 "Oscal SRL.";
-                            client.EnableSsl = true;
-                            //  client.Credentials = new System.Net.NetworkCredential(App.direccionEnvioMail, App.passwordEnvioMail);
+                            client.EnableSsl = true;                            
                             client.Credentials = new System.Net.NetworkCredential(App.direccionEnvioMail, App.passwordEnvioMail);
                             client.Send(message);
 

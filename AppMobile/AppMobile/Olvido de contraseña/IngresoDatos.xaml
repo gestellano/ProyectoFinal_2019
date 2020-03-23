@@ -19,7 +19,7 @@
 
             <Label TextColor="Gray" FontSize="10" Text="Se le enviará un correo electrónico con su nueva contraseña." HorizontalOptions="Center"/>
 
-            <Button x:Name="btnEnviar" Text="Ingresar"></Button>
+            <Button x:Name="btnEnviar" Text="Recuperar"></Button>
 
         </StackLayout>
     </ScrollView>

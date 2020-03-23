@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.EnvioMail.EnvioMail">
+    <ScrollView>
+
+        <StackLayout Padding="20">
+
+            <Label Text="Envío de mail" Font="25" TextColor="Black" HorizontalOptions="Center" />
+            <Label></Label>
+            <Label TextColor="Gray" FontSize="10" Text="Se le enviará un correo electrónico al área de administración." HorizontalOptions="Center"/>
+            <Label x:Name="lblMailAdmin" TextColor="#000000" ></Label>
+            <Label></Label>
+            <Label Text="* Asunto:" TextColor="#000000" ></Label>
+            <Entry x:Name="lblAsunto" Placeholder="Usuario" TextColor="#000000"></Entry>
+            <Label></Label>
+            <Label Text="* Contenido:" TextColor="#000000" ></Label>
+            <Editor x:Name="txtContenido" Text="" VerticalOptions="FillAndExpand" HeightRequest="100" Keyboard="Chat" Placeholder="Contenido" FontSize="8"/>            
+            
+            <Label></Label>
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Blue" VerticalOptions="StartAndExpand" IsVisible="False" />
+            
+            <Button x:Name="btnEnviar" Text="Enviar"></Button>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

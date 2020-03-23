@@ -9,18 +9,20 @@ using Xamarin.Forms.Xaml;
 
 namespace AppMobile.RegistroVendedor
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class BuscarVendedor : ContentPage
-	{
-		public BuscarVendedor ()
-		{
-			InitializeComponent ();
-             btnBuscar.Clicked += BtnBuscar_Clicked;
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class BuscarVendedor : ContentPage
+    {
+        public BuscarVendedor()
+        {
+            InitializeComponent();
+            btnBuscar.Clicked += BtnBuscar_Clicked;
 
         }
 
         private void BtnBuscar_Clicked(object sender, EventArgs e)
         {
+            activityIndicator.IsRunning = true;
+            activityIndicator.IsVisible = true;
             LogicaServicios obj = new LogicaServicios();
             string result = obj.BuscarVendedor(lblNickName.Text.Trim());
 
@@ -31,7 +33,7 @@ namespace AppMobile.RegistroVendedor
 
             if (result.Length == 0)
             {
-                
+
                 Navigation.PushAsync(new RegistroVendedorIngresoDatos(lblNickName.Text.Trim()));
 
             }
@@ -40,6 +42,9 @@ namespace AppMobile.RegistroVendedor
                 DisplayAlert("", "Nickname ya se encuentra registrado.", "Aceptar");
 
             }
+
+            activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;
 
         }
     }

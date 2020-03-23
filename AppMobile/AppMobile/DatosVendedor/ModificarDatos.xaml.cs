@@ -70,7 +70,7 @@ namespace AppMobile.DatosVendedor
                 }
                 
                     LogicaServicios obj = new LogicaServicios();
-                    obj.ModificarVendedor(lblNombre.Text.Trim(), lblmail.Text.Trim(), lblCelular.Text.Trim(), App.Usuario.ToString(), lblpassword.Text.Trim(), lblzonatrabajo.Text.Trim(), tieneVeh, "S");
+                    obj.ModificarVendedor(lblNombre.Text.Trim(), lblmail.Text.Trim(), lblCelular.Text.Trim(), lblNickName.Text.Trim(), lblpassword.Text.Trim(), lblzonatrabajo.Text.Trim(), tieneVeh, "S");
                     Navigation.PushAsync(new PantallaExito());               
 
             }

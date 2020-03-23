@@ -15,6 +15,7 @@ namespace AppMobile
             //Usuario logueado
             App.Usuario = null;
             App.Password = null;
+            App.Mail = null;
             
 
             //Credencias para envio de mail
@@ -41,6 +42,7 @@ namespace AppMobile
 
         
         public static string Password { get; set; }
+        public static string Mail { get; set; }
         public static string direccionEnvioMail { get; set; }
 
         public static string passwordEnvioMail { get; set; }

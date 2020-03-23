@@ -37,7 +37,9 @@ namespace AppMobile
                 new Menu{MenuTitle = "Contactos", Page = new Contactos()},
                 new Menu{MenuTitle = "A-M Clientes", Page = new ABMClientes()},
                 new Menu{MenuTitle = "Buscar Articulo", Page = new BuscarProducto()},          
-                new Menu{MenuTitle = "Realizar Pedido", Page = new Alta_Pedido.AltaPedido_BuscarCliente()}
+                new Menu{MenuTitle = "Realizar Pedido", Page = new Alta_Pedido.AltaPedido_BuscarCliente()},
+                 new Menu{MenuTitle = "Enviar mail", Page = new EnvioMail.EnvioMail()},
+                new Menu{MenuTitle = "Cerrar Sesión", Page = new CerrarSesion.CerrarSesion()}
             };
 
                 ListMenu.ItemsSource = menu;

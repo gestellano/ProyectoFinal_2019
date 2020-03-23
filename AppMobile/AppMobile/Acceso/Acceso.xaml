@@ -16,10 +16,12 @@
             <Label Text="Contraseña:" TextColor="#000000" ></Label>
             <Entry x:Name="lblPassword" Placeholder="Contraseña" TextColor="#000000" IsPassword="True"></Entry>
 
-            <Label></Label>
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Blue" VerticalOptions="StartAndExpand" IsVisible="False" />
+
             <Button x:Name="btnAcceso" Text="Ingresar"></Button>
 
-            <Label Text="Registrarme" >
+            <Label></Label>
+            <Label Text="Registrarme" TextColor="Blue" TextDecorations="Underline"  >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                 Tapped="registrarUsuario"
@@ -27,7 +29,7 @@
                 </Label.GestureRecognizers>
             </Label>
 
-            <Label Text="Olvidé mi contraseña" >
+            <Label Text="Olvidé mi contraseña" TextColor="Blue" TextDecorations="Underline"  >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer
                 Tapped="olvidoContraseña"
@@ -35,6 +37,7 @@
                 </Label.GestureRecognizers>
             </Label>
 
+           
 
 
 
