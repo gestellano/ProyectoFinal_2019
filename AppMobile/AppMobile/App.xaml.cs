@@ -16,6 +16,7 @@ namespace AppMobile
             App.Usuario = null;
             App.Password = null;
             App.Mail = null;
+            App.NumeroCelular = null;
             
 
             //Credencias para envio de mail
@@ -39,8 +40,9 @@ namespace AppMobile
         }
 
         public static string Usuario { get; set; }
+        public static string NumeroCelular { get; set; }
 
-        
+
         public static string Password { get; set; }
         public static string Mail { get; set; }
         public static string direccionEnvioMail { get; set; }

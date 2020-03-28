@@ -30,9 +30,7 @@
             <Label Text="Tabla de datos" Font="15" TextColor="#000000" />
             <Label x:Name="lblArticuloAgregado" Font="15" TextColor="#000000"/>
 
-            <!--<TableView x:Name=" ListaArticulosVista">
-                
-            </TableView>-->
+            <ListView x:Name="ListArticulos"  IsPullToRefreshEnabled="True" ></ListView>
 
             <Label Text="Tipo de envio:"  Font="15" TextColor="#000000"/>
             <Picker  x:Name="Seleccione" Title="Seleccione" ></Picker>

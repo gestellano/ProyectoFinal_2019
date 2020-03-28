@@ -8,7 +8,7 @@
 
             <Label Text="Datos Personales" Font="25" TextColor="Red" HorizontalOptions="Center" />
 
-            <Label  Text="Nickname: *" TextColor="#000000"></Label>
+            <Label  Text="Usuario: *" TextColor="#000000"></Label>
             <Label  x:Name="lblNickName" TextColor="#000000"></Label>
             <Label></Label>
             <Label Text="* Nombre *" TextColor="#000000"></Label>

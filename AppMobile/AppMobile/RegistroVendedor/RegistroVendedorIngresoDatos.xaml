@@ -12,8 +12,8 @@
             <Label Text="Ingrese los datos" Font="18" TextColor="Black" HorizontalOptions="Center" />
             <Label></Label>
 
-            <Label Text="Nickname:" TextColor="#000000" ></Label>            
-            <Entry x:Name="lblNickName" Placeholder="Nickname" TextColor="#000000"></Entry>
+            <Label Text="Usuario:" TextColor="#000000" ></Label>            
+            <Entry x:Name="lblNickName" Placeholder="Usuario" TextColor="#000000"></Entry>
             <Label></Label>
 
             <Label Text="* Nombre completo:" TextColor="#000000" ></Label>

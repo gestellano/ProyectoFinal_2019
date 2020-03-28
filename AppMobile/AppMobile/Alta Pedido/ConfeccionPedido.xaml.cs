@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,13 +17,23 @@ namespace AppMobile.Alta_Pedido
         string rutEmpresa;
         string tipoEnvioSeleccionado;
         string codigoProducto;
-        int cantidadArticulos;
+        string usu;
+        string celular;
+        string mailDesde;
+          int cantidadArticulos;
         Dictionary<string, int> listaArticulos = new Dictionary<string, int>();
+        ObservableCollection<string> ListaArticulosString = new ObservableCollection<string>();
+        string articuloAgregado;
+        string NombreEmpresaString;
 
         public ConfeccionPedido(string rut, string nombreEmp)
         {
 			InitializeComponent ();
 
+            usu = App.Usuario;
+            celular = App.NumeroCelular;
+            mailDesde = App.Mail;
+            NombreEmpresaString = nombreEmp;
             lblRut.Text = "RUT: "+rut;
             lblNombreEmpresa.Text = "Nombre Empresa: "+nombreEmp;
             rutEmpresa = rut;
@@ -44,7 +55,7 @@ namespace AppMobile.Alta_Pedido
 
         }
 
-        
+
         private void BtnAgregarAlPedido_Clicked(object sender, EventArgs e)
         {
             try
@@ -67,20 +78,16 @@ namespace AppMobile.Alta_Pedido
                     btnEnviarPedido.IsVisible = true;
                     btnEnviarPedido.IsEnabled = true;
 
+
+                    articuloAgregado = "Codigo: "+codigoProducto + "    ----    Cantidad: " + cantidadArticulos;
+                    ListaArticulosString.Add(articuloAgregado);
+                    ListArticulos.ItemsSource = ListaArticulosString;
                     lblCantidad.Text = null;
                     lblCodigo.Text = null;
                     lblArticulo.Text = null;
                     lblCodigoBuscar.Text = null;
 
                     
-                    
-                    //foreach (KeyValuePair<string, int> entry in listaArticulos)
-                    //{
-                    //    int cantidadArticulo = Convert.ToInt32(entry.Value.ToString());
-                    //    string codigoArticulo = entry.Key.ToString();
-                        
-                    //   // lblArticuloAgregado.Text = "Codigo: " + codigoArticulo + "   -   Cantidad: " + cantidadArticulo.ToString();
-                    //}
                 }
                             
             }
@@ -141,15 +148,13 @@ namespace AppMobile.Alta_Pedido
         {
             try
             {
-                if (App.Usuario == null)
+
+                if (usu == null)
                 {
                     DisplayAlert("Error interno", "Por favor, cerrar app y volver a abrir.", "Aceptar");
                 }
                 else
                 {
-
-
-
                     if (Seleccione.SelectedItem == null)
                     {
                         DisplayAlert("", "Debe de seleccionar un Tipo de Envio", "Aceptar");
@@ -168,18 +173,44 @@ namespace AppMobile.Alta_Pedido
                             int estadoImpresionPedido = 0;
                             LogicaServicios obj = new LogicaServicios();
                             obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, App.Usuario, tipoEnvioSeleccionado, listaArticulos);
+
+                            //Envio mail del pedido al Administrador
+                            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                            MailMessage message = new MailMessage();
+                            message.From = new MailAddress(mailDesde.ToString(), "Oscal SRL - noreply");
+                            message.To.Add(App.direccionEnvioMail);
+                            message.Subject = "Nuevo Pedido: RUT: " + rutEmpresa+" Vendedor: "+usu+ " – OSCAL S.R.L";
+                            message.IsBodyHtml = true;
+                            message.Body = "<b>Pedido confeccionado por Vendedor: </b>" + usu + "<br>" +
+                                "<b>Número de contacto: </b>" + App.NumeroCelular + "<br>" +
+                                "-----------------------------<br><br>" +
+                                "<b>Cliente RUT: </b>" + rutEmpresa+"<br>"+
+                                "<b>Nombre Empresa: </b>"+ NombreEmpresaString + "<br>"+                                
+                                "<b>Tipo de Envío: </b>"+tipoEnvioSeleccionado.ToString()+"<br>"+
+                                "<b>Fecha del Pedido: </b>"+fechaActual+"<br><br>";
+
+                                foreach (var item in ListaArticulosString)
+                            {
+                                message.Body += item.ToString()+ "<br>";
+                                
+                            }
+
+                            message.Body += "<br><br>-------------------------------------------- <br>Fin del pedido<br>";
+
+                            client.EnableSsl = true;
+                            client.Credentials = new System.Net.NetworkCredential(App.direccionEnvioMail, App.passwordEnvioMail);
+                            client.Send(message);
+                            //Fin cuerpo mail
+
                             Navigation.PushAsync(new PantallaExito());
                         }
-
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
-
         }
 
 

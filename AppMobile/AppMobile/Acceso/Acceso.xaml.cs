@@ -18,8 +18,7 @@ namespace AppMobile.Acceso
             btnAcceso.Clicked += BtnAcceso_Clicked;
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetHasNavigationBar(this, false);
-            App.Usuario = null;
-            App.Password = null;
+            
         }
 
         private void BtnAcceso_Clicked(object sender, EventArgs e)
@@ -46,9 +45,10 @@ namespace AppMobile.Acceso
 
                     if (lblPassword.Text.Trim() == dictionary["password"] & lblNickName.Text.Trim() == dictionary["nickname"])
                     {
-                        App.Usuario = lblNickName.Text.Trim();
+                        App.Usuario = dictionary["nickname"].ToString();
                         App.Password = dictionary["password"].ToString();
                         App.Mail = dictionary["mail"].ToString();
+                        App.NumeroCelular = dictionary["celular"].ToString(); ;
 
                         Navigation.PushAsync(new MenuHamburguesa());
                     }

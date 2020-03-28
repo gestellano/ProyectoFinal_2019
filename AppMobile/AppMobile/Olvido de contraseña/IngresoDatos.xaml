@@ -9,7 +9,7 @@
             <Label Text="Olvidé mi contraseña" Font="25" TextColor="Black" HorizontalOptions="Center" />
             <Label></Label>
 
-            <Label Text="* Nickname:" TextColor="#000000" ></Label>
+            <Label Text="* Usuario:" TextColor="#000000" ></Label>
             <Entry x:Name="lblNickName" Placeholder="Usuario" TextColor="#000000"></Entry>
             <Label></Label>
 

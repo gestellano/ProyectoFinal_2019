@@ -18,6 +18,8 @@ namespace AppMobile
             Init();
             NavigationPage.SetHasNavigationBar(this, false);
             Navigation.PushAsync(new PaginaInicioxaml());
+            
+
 
         }
 
@@ -39,6 +41,7 @@ namespace AppMobile
                 new Menu{MenuTitle = "Buscar Articulo", Page = new BuscarProducto()},          
                 new Menu{MenuTitle = "Realizar Pedido", Page = new Alta_Pedido.AltaPedido_BuscarCliente()},
                  new Menu{MenuTitle = "Enviar mail", Page = new EnvioMail.EnvioMail()},
+                new Menu{MenuTitle = "Pagina Prueba", Page = new PaginPrueba.Prueba()},
                 new Menu{MenuTitle = "Cerrar Sesión", Page = new CerrarSesion.CerrarSesion()}
             };
 

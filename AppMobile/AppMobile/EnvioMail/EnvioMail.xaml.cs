@@ -15,15 +15,17 @@ namespace AppMobile.EnvioMail
 	{
         string mailDesde;
         string usu;
+        string celular;
 
         public EnvioMail ()
 		{
 
 			InitializeComponent ();
-            lblMailAdmin.Text = "Mail destino: " + App.direccionEnvioMail;
+            lblMailAdmin.Text =  App.direccionEnvioMail;
             btnEnviar.Clicked += BtnEnviar_Clicked;
             mailDesde = App.Mail;
             usu = App.Usuario;
+            celular = App.NumeroCelular;
         }
 
         private void BtnEnviar_Clicked(object sender, EventArgs e)
@@ -36,7 +38,8 @@ namespace AppMobile.EnvioMail
                 message.To.Add(App.direccionEnvioMail);
                 message.Subject = "Contacto vía mail: "+usu+" – OSCAL S.R.L";
                 message.IsBodyHtml = true;
-                message.Body = "Mail enviado desde la app por: "+usu+"<br>" +
+                message.Body = "<b>Mail enviado desde la app por: </b>"+usu+"<br>" +
+                    "<b>Número de contacto: </b>"+celular+"<br>"+
                     "-----------------------------<br><br>" +
                      txtContenido.Text;
                 client.EnableSsl = true;
@@ -47,7 +50,7 @@ namespace AppMobile.EnvioMail
             catch (Exception ex)
             {
 
-                throw;
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
     }

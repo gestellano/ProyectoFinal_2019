@@ -12,15 +12,16 @@ namespace AppMobile.CerrarSesion
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CerrarSesion : ContentPage
 	{
-		public CerrarSesion ()
-		{
-			InitializeComponent ();
-            
+        public CerrarSesion()
+        {
+            InitializeComponent();
+
             try
             {
-                App.Usuario = null;
-                App.Password = null;
-                App.Mail = null;
+                //App.Usuario = null;
+                //App.Password = null;
+                //App.Mail = null;
+                //App.NumeroCelular = null;
                 Navigation.PushAsync(new Acceso.Acceso());
             }
             catch (Exception ex)
@@ -28,5 +29,6 @@ namespace AppMobile.CerrarSesion
 
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
+        }
 	}
 }
