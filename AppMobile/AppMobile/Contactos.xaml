@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMobile.Contactos">
-    <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20">
                 <Label Text="Contactos" Font="25" TextColor="Red" HorizontalOptions="Center" />
@@ -61,5 +60,4 @@
                 
             </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
 </ContentPage>

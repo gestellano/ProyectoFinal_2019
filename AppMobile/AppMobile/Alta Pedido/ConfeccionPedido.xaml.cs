@@ -17,13 +17,16 @@ namespace AppMobile.Alta_Pedido
         string rutEmpresa;
         string tipoEnvioSeleccionado;
         string codigoProducto;
+        string nombreProducto;
         string usu;
         string celular;
         string mailDesde;
           int cantidadArticulos;
         Dictionary<string, int> listaArticulos = new Dictionary<string, int>();
         ObservableCollection<string> ListaArticulosString = new ObservableCollection<string>();
+        ObservableCollection<string> ListEnvioMail = new ObservableCollection<string>();
         string articuloAgregado;
+        string articuloAgregadoMail;
         string NombreEmpresaString;
 
         public ConfeccionPedido(string rut, string nombreEmp)
@@ -79,9 +82,16 @@ namespace AppMobile.Alta_Pedido
                     btnEnviarPedido.IsEnabled = true;
 
 
-                    articuloAgregado = "Codigo: "+codigoProducto + "    ----    Cantidad: " + cantidadArticulos;
+                    articuloAgregado = "Cod.: "+codigoProducto +" - Cant.: " + cantidadArticulos;
+                    articuloAgregadoMail = "Codigo: " + codigoProducto + " - Nombre: " + nombreProducto + " - Cantidad: " + cantidadArticulos;
+
                     ListaArticulosString.Add(articuloAgregado);
                     ListArticulos.ItemsSource = ListaArticulosString;
+
+                    //List Envio de mail
+                    ListEnvioMail.Add(articuloAgregadoMail);
+
+
                     lblCantidad.Text = null;
                     lblCodigo.Text = null;
                     lblArticulo.Text = null;
@@ -128,6 +138,7 @@ namespace AppMobile.Alta_Pedido
                         lblArticulo.Text = "Nombre: "+dictionary["nombre"];
                         btnAgregarAlPedido.IsVisible = true;            
                         codigoProducto = dictionary["codigo"];
+                        nombreProducto = dictionary["nombre"];
 
                         lblCodigo.IsVisible = true;
                         lblArticulo.IsVisible = true;
@@ -189,13 +200,14 @@ namespace AppMobile.Alta_Pedido
                                 "<b>Tipo de Envío: </b>"+tipoEnvioSeleccionado.ToString()+"<br>"+
                                 "<b>Fecha del Pedido: </b>"+fechaActual+"<br><br>";
 
-                                foreach (var item in ListaArticulosString)
+                                foreach (var item in ListEnvioMail)
                             {
                                 message.Body += item.ToString()+ "<br>";
                                 
                             }
 
-                            message.Body += "<br><br>-------------------------------------------- <br>Fin del pedido<br>";
+                            message.Body += "<br><br> <b.--------------------------------------------</b> <br>" +
+                                "Fin del pedido<br>";
 
                             client.EnableSsl = true;
                             client.Credentials = new System.Net.NetworkCredential(App.direccionEnvioMail, App.passwordEnvioMail);

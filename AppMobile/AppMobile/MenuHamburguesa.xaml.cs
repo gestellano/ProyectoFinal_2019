@@ -20,7 +20,7 @@ namespace AppMobile
             Navigation.PushAsync(new PaginaInicioxaml());
             
 
-
+            
         }
 
 
@@ -35,12 +35,11 @@ namespace AppMobile
                 
                 new Menu{MenuTitle = "Inicio", Page = new PaginaInicioxaml()},
                 new Menu{MenuTitle = "Datos Personales", Page = new DatosVendedor.ModificarDatos() },
-                new Menu{MenuTitle = "Perfil", Page = new Perfil()},
                 new Menu{MenuTitle = "Contactos", Page = new Contactos()},
                 new Menu{MenuTitle = "A-M Clientes", Page = new ABMClientes()},
                 new Menu{MenuTitle = "Buscar Articulo", Page = new BuscarProducto()},          
                 new Menu{MenuTitle = "Realizar Pedido", Page = new Alta_Pedido.AltaPedido_BuscarCliente()},
-                 new Menu{MenuTitle = "Enviar mail", Page = new EnvioMail.EnvioMail()},
+                new Menu{MenuTitle = "Enviar mail", Page = new EnvioMail.EnvioMail()},
                 new Menu{MenuTitle = "Pagina Prueba", Page = new PaginPrueba.Prueba()},
                 new Menu{MenuTitle = "Cerrar Sesión", Page = new CerrarSesion.CerrarSesion()}
             };
