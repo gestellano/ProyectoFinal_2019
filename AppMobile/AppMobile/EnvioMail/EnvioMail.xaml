@@ -6,7 +6,7 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Envío de mail" Font="25" TextColor="Black" HorizontalOptions="Center" />
+            <Label Text="Envío de mail" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
             <Label TextColor="Gray" FontSize="10" Text="Se le enviará un correo electrónico al área de administración." HorizontalOptions="Center"/>
             <Label TextColor="Black" Text="Mail destino: " HorizontalOptions="Center" ></Label>

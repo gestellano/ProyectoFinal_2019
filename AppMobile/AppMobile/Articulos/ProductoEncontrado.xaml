@@ -6,7 +6,7 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Articulo Encontrado" Font="25" TextColor="Red" HorizontalOptions="Center" />
+            <Label Text="Articulo Encontrado" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
 
             <Label Text="Codigo:" TextColor="#000000"></Label>

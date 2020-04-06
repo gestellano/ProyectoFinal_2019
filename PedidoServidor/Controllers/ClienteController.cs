@@ -29,6 +29,7 @@ namespace PedidoServidor.Controllers
             using (var context = new BaseDeDatosContext())
             {
                  var client = context.Clientes.Find(rut);
+                
                 if(client == null)
                 {
                     return string.Empty;
@@ -41,7 +42,10 @@ namespace PedidoServidor.Controllers
                        "direccion=" + client.Direccion  + ";" +
                        "rut="    + client.Rut;
                 }
+
             }
+
+         
         }
 
 

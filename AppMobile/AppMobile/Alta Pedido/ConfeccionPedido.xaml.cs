@@ -181,20 +181,20 @@ namespace AppMobile.Alta_Pedido
                         {
                             tipoEnvioSeleccionado = Seleccione.SelectedItem.ToString();
                             DateTime fechaActual = DateTime.Now;
-                            int estadoImpresionPedido = 0;
+                           
                             LogicaServicios obj = new LogicaServicios();
-                            obj.AltaPedido(rutEmpresa, fechaActual, estadoImpresionPedido, App.Usuario, tipoEnvioSeleccionado, listaArticulos);
-
+                            
                             //Envio mail del pedido al Administrador
                             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
                             MailMessage message = new MailMessage();
                             message.From = new MailAddress(mailDesde.ToString(), "Oscal SRL - noreply");
                             message.To.Add(App.direccionEnvioMail);
+                            message.To.Add(App.Mail);
                             message.Subject = "Nuevo Pedido: RUT: " + rutEmpresa+" Vendedor: "+usu+ " – OSCAL S.R.L";
                             message.IsBodyHtml = true;
                             message.Body = "<b>Pedido confeccionado por Vendedor: </b>" + usu + "<br>" +
-                                "<b>Número de contacto: </b>" + App.NumeroCelular + "<br>" +
-                                "-----------------------------<br><br>" +
+                                "<b>Número de contacto: </b>" + App.NumeroCelular + "<br><br>" +
+                                "-------------------------------------------------------------<br><br>" +
                                 "<b>Cliente RUT: </b>" + rutEmpresa+"<br>"+
                                 "<b>Nombre Empresa: </b>"+ NombreEmpresaString + "<br>"+                                
                                 "<b>Tipo de Envío: </b>"+tipoEnvioSeleccionado.ToString()+"<br>"+
@@ -206,7 +206,7 @@ namespace AppMobile.Alta_Pedido
                                 
                             }
 
-                            message.Body += "<br><br> <b.--------------------------------------------</b> <br>" +
+                            message.Body += "<br><br> <b>--------------------------------------------</b> <br>" +
                                 "Fin del pedido<br>";
 
                             client.EnableSsl = true;

@@ -6,8 +6,8 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Realizar Pedido" Font="25" TextColor="Red" HorizontalOptions="Center" />         
-            <Label Text="Confeccion Pedido" Font="18" TextColor="Black" HorizontalOptions="Center" />
+            <Label Text="Realizar Pedido" Font="25" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Navy" />
+            <Label Text="Confeccion Pedido" Font="18" TextColor="Navy" HorizontalOptions="Center" />
 
            <Label x:Name="lblRut" Font="10" TextColor="#7B7776"/>           
            <Label x:Name="lblNombreEmpresa" Font="10" TextColor="#7B7776"/>

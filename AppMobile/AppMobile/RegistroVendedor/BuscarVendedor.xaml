@@ -6,7 +6,7 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Registro Usuario" Font="25" TextColor="Black" HorizontalOptions="Center" />
+            <Label Text="Registro Usuario" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
 
             <Label Text="Usuario:" TextColor="#000000" ></Label>

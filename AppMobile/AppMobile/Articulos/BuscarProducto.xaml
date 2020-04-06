@@ -8,7 +8,7 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Buscar Articulo" Font="25" TextColor="Red" HorizontalOptions="Center" />
+            <Label Text="Buscar Articulo" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
 
             <Label Text="Codigo de Articulo:" TextColor="#000000" ></Label>

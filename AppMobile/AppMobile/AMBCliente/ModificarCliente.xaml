@@ -7,7 +7,7 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Modificar Cliente" Font="25" TextColor="Red" HorizontalOptions="Center" />
+            <Label Text="Modificar Cliente" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
 
             <Label  Text="Rut: *" TextColor="#000000"></Label>
             <Label  x:Name="pRut" TextColor="#000000"></Label>

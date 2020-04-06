@@ -22,15 +22,15 @@ namespace PedidoServidor.SQL_Datos_y_Entity
 
         INSERT INTO dbo.Especificacion_Articulo(Codigo, Nombre, Descripcion)
         VALUES('1004', 'Ludo', 'Juego de mesa ludo');
+        
+        INSERT INTO dbo.Cliente(Rut, NombreEmp, Direccion, Telefono, Ciudad)
+        VALUES('111','Jugueteria Papasito','25 de Agosto 880','43623696' ,'Durazno');
 
         INSERT INTO dbo.Cliente(Rut, NombreEmp, Direccion, Telefono, Ciudad)
-        VALUES('111','Jugueteria Papasito','25 de Agosto 880','Durazno');
+        VALUES('222','Papeleria PACA','Manuel Oribe 585','43625588','Flores');
 
         INSERT INTO dbo.Cliente(Rut, NombreEmp, Direccion, Telefono, Ciudad)
-        VALUES('222','Papeleria PACA','Manuel Oribe 585','Flores');
-
-        INSERT INTO dbo.Cliente(Rut, NombreEmp, Direccion, Telefono, Ciudad)
-        VALUES('333','Jugueteria Pepe','Bv Artigas 2502','Montevideo');
+        VALUES('333','Jugueteria Pepe','Bv Artigas 2502','22001144','Montevideo');
 
         INSERT INTO dbo.Vendedor(Nickname, Nombre, Mail, Celular, Password, ZonaTrabajo, TieneVehiculo)
         VALUES('mantonio','Marcelo Antonio','mantonio@gmail.com','098555666','12345678','interior','0');
@@ -38,14 +38,19 @@ namespace PedidoServidor.SQL_Datos_y_Entity
         INSERT INTO dbo.Vendedor(Nickname, Nombre, Mail, Celular, Password, ZonaTrabajo, TieneVehiculo)
         VALUES('gestellano','Gaston Estellano','estellano.gaston@gmail.com','098977344','12345678','Durazno','0');
 
-    */
+        ----------------------------------------------------------
 
-    /*
         Enable-Migrations -ProjectName PedidoServidor -StartupProject PedidoServidor -Force
 
         Add-Migration -ProjectName PedidoServidor -StartUpProjectName PedidoServidor -Force
 
         Update-DataBase -ProjectName PedidoServidor -StartUpProjectName PedidoServidor
+
+        ----------------------------------------------------------
+
+        Email:
+        oscaljugueteria@gmail.com
+        Aa12345678!
 
     */
     }

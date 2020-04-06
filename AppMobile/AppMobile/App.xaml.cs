@@ -20,8 +20,8 @@ namespace AppMobile
             
 
             //Credencias para envio de mail
-            App.direccionEnvioMail = "estellano.gaston@gmail.com";
-            App.passwordEnvioMail = "tajamar1";
+            App.direccionEnvioMail = "oscaljugueteria@gmail.com";
+            App.passwordEnvioMail = "Aa12345678!";
         }
 
         protected override void OnStart()
