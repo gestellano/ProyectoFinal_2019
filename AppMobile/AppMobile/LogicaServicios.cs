@@ -10,7 +10,7 @@ namespace AppMobile
 {
     public class LogicaServicios
     {
-        private string baseUrl = "http://10.0.2.2:4425/api";
+        private string baseUrl = "http://10.0.2.2:4425";
 
         //Buscar Cliente
         public string BuscarCliente(int Rut)
@@ -19,12 +19,11 @@ namespace AppMobile
             try
             {
                 string rutString = Convert.ToString(Rut);
-                //string url = "/Cliente/BuscarCliente?rut=54";
 
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(baseUrl);
-                    string BuscarCliente = "http://10.0.2.2:4425/api/Cliente/BuscarCliente?" + "rut=" + rutString;
+                    
+                    string BuscarCliente = baseUrl+"/api/Cliente/BuscarCliente?" + "rut=" + rutString;
                     WebClient wc = new WebClient();
 
                     response = wc.DownloadString(BuscarCliente);
@@ -55,10 +54,7 @@ namespace AppMobile
                 {
                     using (var client = new HttpClient())
                     {
-
-                       
-                        client.BaseAddress = new Uri(baseUrl);
-                        string urlAgregarCliente = "http://10.0.2.2:4425/api/Cliente/AgregarCliente?" + "rut=" + rut +
+                        string urlAgregarCliente = baseUrl+"/api/Cliente/AgregarCliente?" + "rut=" + rut +
                                                                                             "&nombre=" + nombreEmp + 
                                                                                             "&direccion=" + direccion +
                                                                                             "&ciudad=" + ciudad + 
@@ -89,8 +85,7 @@ namespace AppMobile
              
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(baseUrl);
-                    string urlBuscarArticulo = "http://10.0.2.2:4425/api/EspecificacionArticulo/BuscarArticulo?" + "codigo=" + codigo;
+                    string urlBuscarArticulo = baseUrl +"/api/EspecificacionArticulo/BuscarArticulo?" + "codigo=" + codigo;
                     WebClient wc = new WebClient();
 
                     response = wc.DownloadString(urlBuscarArticulo);
@@ -112,8 +107,7 @@ namespace AppMobile
                 {
                     using (var client = new HttpClient())
                     {                    
-                     client.BaseAddress = new Uri(baseUrl);
-                     string urlAltaPedido = "http://10.0.2.2:4425/api/Pedido/AltaPedido?" + "rutCliente=" + rut +
+                     string urlAltaPedido = baseUrl + "/api/Pedido/AltaPedido?" + "rutCliente=" + rut +
                                                                                        "&fecha=" + fecha +
                                                                                        "&estadoImpresion=" + estadoImpresion +
                                                                                        "&vendedor=" + vendedor +
@@ -129,7 +123,7 @@ namespace AppMobile
                         string codigoArticulo = entry.Key.ToString();
                         int idPedido = 1;
 
-                        string urlAltaLineaPedido = "http://10.0.2.2:4425/api/Pedido/AltaLineaPedido?" + "codigo=" + codigoArticulo +
+                        string urlAltaLineaPedido = baseUrl + "/api/Pedido/AltaLineaPedido?" + "codigo=" + codigoArticulo +
                                                                                       "&cantidad=" + cantidadArticulo +
                                                                                       "&idPedido=" + idPedido;
 
@@ -162,8 +156,7 @@ namespace AppMobile
                     using (var client = new HttpClient())
                     {                       
                         string modificar = "S";
-                        client.BaseAddress = new Uri(baseUrl);
-                        string urlModificarCliente = "http://10.0.2.2:4425/api/Cliente/ModificarCliente?" + "&rut=" + rut +
+                        string urlModificarCliente = baseUrl +"/api/Cliente/ModificarCliente?" + "&rut=" + rut +
                                                                                             "&nombre=" + nombreEmp +
                                                                                             "&direccion=" + direccion +
                                                                                             "&ciudad=" + ciudad +
@@ -195,8 +188,7 @@ namespace AppMobile
              
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(baseUrl);
-                    string LoginVendedor = "http://10.0.2.2:4425/api/Vendedor/Login?" + "nickname=" + nickname;
+                    string LoginVendedor = baseUrl + "/api/Vendedor/Login?" + "nickname=" + nickname;
                     WebClient wc = new WebClient();
 
                     response = wc.DownloadString(LoginVendedor);
@@ -219,8 +211,7 @@ namespace AppMobile
                     using (var client = new HttpClient())
                     {
 
-                        //client.BaseAddress = new Uri(baseUrl);
-                        string urlAltaVendedor = "http://10.0.2.2:4425/api/Vendedor/AgregarVendedor?" + "Nombre=" + nombre +
+                        string urlAltaVendedor = baseUrl + "/api/Vendedor/AgregarVendedor?" + "Nombre=" + nombre +
                                                                                             "&Mail=" + mail +
                                                                                             "&Celular=" + celular +
                                                                                             "&NickName=" + nickname +
@@ -250,8 +241,7 @@ namespace AppMobile
                 {
                     
 
-                    //client.BaseAddress = new Uri(baseUrl);
-                    string urlModificarVendedor = "http://10.0.2.2:4425/api/Vendedor/ModificarVendedor?" + "Nombre=" + nombre +
+                    string urlModificarVendedor = baseUrl + "/api/Vendedor/ModificarVendedor?" + "Nombre=" + nombre +
                                                                                         "&Mail=" + mail +
                                                                                         "&Celular=" + celular +
                                                                                         "&NickName=" + nickname +
@@ -282,8 +272,7 @@ namespace AppMobile
                 using (var client = new HttpClient())
                 {
 
-                    //client.BaseAddress = new Uri(baseUrl);
-                    string urlCambiarContrasena = "http://10.0.2.2:4425/api/Vendedor/CambiarContrasena?" + "&NickName=" + nickname +
+                    string urlCambiarContrasena = baseUrl + "/api/Vendedor/CambiarContrasena?" + "&NickName=" + nickname +
                                                                                                     "&Password=" + password;
 
                     WebClient wc = new WebClient();
@@ -299,7 +288,6 @@ namespace AppMobile
             }
         }
 
-
-
+        
     }
 }

@@ -22,6 +22,9 @@ namespace PedidoServidor.SQL_Datos_y_Entity
 
         INSERT INTO dbo.Especificacion_Articulo(Codigo, Nombre, Descripcion)
         VALUES('1004', 'Ludo', 'Juego de mesa ludo');
+
+        INSERT INTO dbo.Especificacion_Articulo(Codigo, Nombre, Descripcion)
+        VALUES('1005', 'Pelota Nike', 'Pelota nike con logo grabado');
         
         INSERT INTO dbo.Cliente(Rut, NombreEmp, Direccion, Telefono, Ciudad)
         VALUES('111','Jugueteria Papasito','25 de Agosto 880','43623696' ,'Durazno');

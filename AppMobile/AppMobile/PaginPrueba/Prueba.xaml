@@ -3,4 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMobile.PaginPrueba.Prueba">
 
+    <ScrollView>
+        <StackLayout Padding="20">
+
+
+            <Button x:Name="btnSi" Text="Si"></Button>
+          
+
+        </StackLayout>
+    </ScrollView>
+
 </ContentPage>

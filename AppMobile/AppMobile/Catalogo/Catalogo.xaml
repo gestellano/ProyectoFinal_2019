@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.Catalogo.Catalogo">
+    <ScrollView>
+        <StackLayout Padding="20">
+
+            <Label Text="Ver Catalogo" Font="25" FontAttributes="Bold" TextColor="Navy"  HorizontalOptions="Center" />
+            <Label></Label>
+
+            <Label Text="Se abrirá un enlace de Google Drive donde se podrá descargar el PDF con el catálogo de 
+                   artículos actualizado y las ofertas que se podrán ofrecer a clientes." Font="10" TextColor="#000000" HorizontalTextAlignment="Center"></Label>
+            <Label></Label>
+
+            <Button x:Name="btnCatalogo" Text="Abrir Catalogo"></Button>
+           
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

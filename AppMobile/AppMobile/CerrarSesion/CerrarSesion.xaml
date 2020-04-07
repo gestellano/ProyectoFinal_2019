@@ -3,10 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMobile.CerrarSesion.CerrarSesion">
     <ScrollView>
-
         <StackLayout Padding="20">
 
-            <Label Text="Cerrar Sesión" Font="25"FontAttributes="Bold" TextColor="Navy"  HorizontalOptions="Center" />
+            <Label Text="Cerrar Sesión" Font="25" FontAttributes="Bold" TextColor="Navy"  HorizontalOptions="Center" />
             <Label></Label>
 
             <Label Text="¿Está seguro que desea cerrar sesión?" TextColor="#000000" HorizontalTextAlignment="Center"></Label>
@@ -17,5 +16,4 @@
             
         </StackLayout>
     </ScrollView>
-
 </ContentPage>
