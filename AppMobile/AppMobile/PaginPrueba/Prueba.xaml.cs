@@ -24,9 +24,16 @@ namespace AppMobile.PaginPrueba
 
         private void BtnSi_Clicked(object sender, EventArgs e)
         {
-            WebClient client = new WebClient();
-            client.DownloadFile("https://drive.google.com/file/d/11iHF_aawiSmwICkBW97B4tL-ll00yNak/view?usp=sharing","Catalogo_OSCAL");
-            DisplayAlert("Archivo Descargado", "El archivo ha sido descargado", "OK");
+
+            var map = new Map();
+            map.IsShowingUser = true;
+            var rootPage = new ContentPage();
+            rootPage.Content = map;
+           //MainPage = rootPage;
+
+            //WebClient client = new WebClient();
+            //client.DownloadFile("https://drive.google.com/file/d/11iHF_aawiSmwICkBW97B4tL-ll00yNak/view?usp=sharing","Catalogo_OSCAL");
+            //DisplayAlert("Archivo Descargado", "El archivo ha sido descargado", "OK");
         }
     }
 }

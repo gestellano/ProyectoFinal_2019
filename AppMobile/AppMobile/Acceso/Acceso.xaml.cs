@@ -18,45 +18,58 @@ namespace AppMobile.Acceso
             btnAcceso.Clicked += BtnAcceso_Clicked;
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetHasNavigationBar(this, false);
+
             
         }
+
+      
 
         private void BtnAcceso_Clicked(object sender, EventArgs e)
         {
             try
             {
-                activityIndicator.IsVisible = true;
-                activityIndicator.IsRunning = true;
-                 LogicaServicios obj = new LogicaServicios();
-                string result = obj.BuscarVendedor(lblNickName.Text.Trim());
-
-                if (result.Length > 1)
+                
+                if (lblNickName.Text == "" || lblNickName.Text == null )
                 {
-                    result = result.Substring(1, result.Length - 2);
+                    DisplayAlert("", "Usuario no puede estar vacio.", "Aceptar");
                 }
-
-                if (result.Length == 0)
+                else if (lblPassword.Text == null || lblPassword.Text == "")
                 {
-                    DisplayAlert("", "Usuario y/o Password incorrecto.", "Aceptar");
-                }
+                    DisplayAlert("", "Contraseña no puede estar vacio.", "Aceptar");
+                }               
                 else
                 {
-                    Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
+                    LogicaServicios obj = new LogicaServicios();
+                    string result = obj.BuscarVendedor(lblNickName.Text.Trim());
 
-                    if (lblPassword.Text.Trim() == dictionary["password"] & lblNickName.Text.Trim() == dictionary["nickname"])
+                    if (result.Length > 1)
                     {
-                        App.Usuario = dictionary["nickname"].ToString();
-                        App.Password = dictionary["password"].ToString();
-                        App.Mail = dictionary["mail"].ToString();
-                        App.NumeroCelular = dictionary["celular"].ToString(); ;
-
-                        Navigation.PushAsync(new MenuHamburguesa());
+                        result = result.Substring(1, result.Length - 2);
                     }
-                    else
+
+                    if (result.Length == 0)
                     {
                         DisplayAlert("", "Usuario y/o Password incorrecto.", "Aceptar");
                     }
-                    
+                    else
+                    {
+
+                        Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
+
+                        if (lblPassword.Text.Trim() == dictionary["password"] & lblNickName.Text.Trim() == dictionary["nickname"])
+                        {
+                            App.Usuario = dictionary["nickname"].ToString();
+                            App.Password = dictionary["password"].ToString();
+                            App.Mail = dictionary["mail"].ToString();
+                            App.NumeroCelular = dictionary["celular"].ToString(); ;
+
+                            Navigation.PushAsync(new MenuHamburguesa(), true);
+                        }
+                        else
+                        {
+                            DisplayAlert("", "Usuario y/o Password incorrecto.", "Aceptar");
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -69,11 +82,10 @@ namespace AppMobile.Acceso
             {
             try
             {
-                Navigation.PushAsync(new RegistroVendedor.BuscarVendedor());
+                Navigation.PushAsync(new RegistroVendedor.CodigoSeguridadRegistro());
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Funcionalidad no disponible.", "Aceptar");
             }
 
@@ -87,7 +99,6 @@ namespace AppMobile.Acceso
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Funcionalidad no disponible.", "Aceptar");
             }
 

@@ -22,31 +22,40 @@ namespace AppMobile.DatosVendedor
                 lblNickName.Text = App.Usuario;
                 btnModificar.Clicked += BtnModificar_Clicked;
 
-                List<string> TieneVehiculoList = new List<string>();
-                TieneVehiculoList.Add("Si");
-                TieneVehiculoList.Add("No");
-                TieneVehiculo.ItemsSource = TieneVehiculoList;
-
-                LogicaServicios obj = new LogicaServicios();
-                string result = obj.BuscarVendedor(App.Usuario.ToString());
-                dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
-
-                lblCelular.Text = dictionary["celular"];
-                lblmail.Text = dictionary["mail"];
-                lblNombre.Text = dictionary["nombre"];
-                lblzonatrabajo.Text = dictionary["zonatrabajo"];
-                lblpassword.Text = App.Password.ToString();
-
-                string tienvehi = dictionary["tienevechiulo"]; ;
-
-                if (tienvehi == "True")
+                if(lblNickName.Text == null)
                 {
-                    TieneVehiculo.SelectedItem = "Si";
+                    DisplayAlert("", "Ha ocurrido un error. Por favor cerrar sesión y vuelva a ingresar.", "Aceptar");
                 }
-                else if (tienvehi == "False")
+                else
                 {
-                    TieneVehiculo.SelectedItem = "No";
+
+                    List<string> TieneVehiculoList = new List<string>();
+                    TieneVehiculoList.Add("Si");
+                    TieneVehiculoList.Add("No");
+                    TieneVehiculo.ItemsSource = TieneVehiculoList;
+
+                    LogicaServicios obj = new LogicaServicios();
+                    string result = obj.BuscarVendedor(App.Usuario.ToString());
+                    dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
+
+                    lblCelular.Text = dictionary["celular"];
+                    lblmail.Text = dictionary["mail"];
+                    lblNombre.Text = dictionary["nombre"];
+                    lblzonatrabajo.Text = dictionary["zonatrabajo"];
+                    lblpassword.Text = App.Password.ToString();
+
+                    string tienvehi = dictionary["tienevechiulo"]; ;
+
+                    if (tienvehi == "True")
+                    {
+                        TieneVehiculo.SelectedItem = "Si";
+                    }
+                    else if (tienvehi == "False")
+                    {
+                        TieneVehiculo.SelectedItem = "No";
+                    }
                 }
+
             }
             catch (Exception ex)
             {

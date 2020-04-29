@@ -288,6 +288,29 @@ namespace AppMobile
             }
         }
 
-        
+
+        //Buscar Codigo Seguridad
+        public string CodigoSeguridad(string numCodigo)
+        {
+            string response = "";
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    string BuscarCodigo = baseUrl + "/api/CodigoSeguridad/BuscarCodigoSeguridad?" + "numCodigo=" + numCodigo;
+                    WebClient wc = new WebClient();
+
+                    response = wc.DownloadString(BuscarCodigo);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.ToString());
+            }
+            return response;
+        }
+
+
     }
 }

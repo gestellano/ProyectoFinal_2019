@@ -41,6 +41,9 @@ namespace PedidoServidor.SQL_Datos_y_Entity
         INSERT INTO dbo.Vendedor(Nickname, Nombre, Mail, Celular, Password, ZonaTrabajo, TieneVehiculo)
         VALUES('gestellano','Gaston Estellano','estellano.gaston@gmail.com','098977344','12345678','Durazno','0');
 
+        INSERT INTO dbo.CodigoSeguridad(numCodigo, codigo)
+        VALUES('1', '123456');
+
         ----------------------------------------------------------
 
         Enable-Migrations -ProjectName PedidoServidor -StartupProject PedidoServidor -Force

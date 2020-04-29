@@ -277,6 +277,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CodigoSeguridadController.cs" />
     <Compile Include="Controllers\EspecificacionArticuloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
@@ -292,6 +293,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseDeDatos_DbContext.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\CodigoSeguridad.cs" />
     <Compile Include="Models\Especificacion_Articulo.cs" />
     <Compile Include="Models\Linea_Pedido.cs" />
     <Compile Include="Models\Pedido.cs" />
@@ -357,6 +359,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Cliente\" />
+    <Folder Include="Views\CodigoSeguridad\" />
     <Folder Include="Views\Default\" />
     <Folder Include="Views\EspecificacionArticulo\" />
     <Folder Include="Views\Pedido\" />

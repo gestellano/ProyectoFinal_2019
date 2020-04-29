@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMobile.RegistroVendedor.CodigoSeguridadRegistro">
+    <ScrollView>
+
+        <StackLayout Padding="20">
+
+            <Label Text="Registro Usuario" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
+            <Label Text="Código de Seguridad" Font="18" TextColor="Navy" HorizontalOptions="Center" />
+            <Label></Label>
+
+           
+            <Label Text="Éste código se lo deberá proporcionar la adminsitración de la empresa." TextColor="Gray" Font="7" ></Label>
+            <Entry x:Name="lblCodigo" Placeholder="Codigo " TextColor="#000000"></Entry>
+           
+
+            <Button x:Name="btnContinuar" Text="Continuar"></Button>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

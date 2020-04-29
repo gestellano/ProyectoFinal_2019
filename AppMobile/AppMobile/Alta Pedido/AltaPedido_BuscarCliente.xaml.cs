@@ -12,7 +12,6 @@ namespace AppMobile.Alta_Pedido
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AltaPedido_BuscarCliente : ContentPage
 	{
-       
 		public AltaPedido_BuscarCliente()
 		{
 			InitializeComponent();
@@ -30,7 +29,6 @@ namespace AppMobile.Alta_Pedido
                 }
                 else
                 {
-
                     int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());
 
                     LogicaServicios obj = new LogicaServicios();
@@ -51,7 +49,6 @@ namespace AppMobile.Alta_Pedido
 
                         Navigation.PushAsync(new ConfeccionPedido(dictionary["rut"], dictionary["nombreEmp"] ));
                     }
-
                 }
             }
             catch (Exception ex )

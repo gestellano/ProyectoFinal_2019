@@ -20,6 +20,15 @@ namespace PedidoServidor.Migrations
                 .PrimaryKey(t => t.Rut);
             
             CreateTable(
+                "dbo.CodigoSeguridad",
+                c => new
+                    {
+                        numCodigo = c.String(nullable: false, maxLength: 128),
+                        codigo = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.numCodigo);
+            
+            CreateTable(
                 "dbo.Especificacion_Articulo",
                 c => new
                     {
@@ -76,6 +85,7 @@ namespace PedidoServidor.Migrations
             DropTable("dbo.Pedido");
             DropTable("dbo.Linea_Pedido");
             DropTable("dbo.Especificacion_Articulo");
+            DropTable("dbo.CodigoSeguridad");
             DropTable("dbo.Cliente");
         }
     }

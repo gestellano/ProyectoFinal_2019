@@ -67,8 +67,7 @@ namespace AppMobile.RegistroVendedor
             }
             catch (Exception)
             {
-
-                throw;
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
     }

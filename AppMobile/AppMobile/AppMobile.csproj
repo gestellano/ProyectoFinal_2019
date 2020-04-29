@@ -83,6 +83,9 @@
     <EmbeddedResource Update="RegistroVendedor\BuscarVendedor.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="RegistroVendedor\CodigoSeguridadRegistro.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="RegistroVendedor\RegistroVendedorIngresoDatos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

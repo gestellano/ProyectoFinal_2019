@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 using Android.App;
 using Android.Content.PM;
@@ -12,6 +13,7 @@ namespace AppMobile.Droid
     [Activity(Label = "Oscal S.R.L", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+       
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -19,6 +21,8 @@ namespace AppMobile.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
 
         }
