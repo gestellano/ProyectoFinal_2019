@@ -43,7 +43,7 @@ namespace AppMobile
             {
                 Navigation.PushAsync(new MenuHamburguesa());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }

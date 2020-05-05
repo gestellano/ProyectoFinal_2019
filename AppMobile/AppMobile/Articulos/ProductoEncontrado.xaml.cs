@@ -12,7 +12,7 @@ namespace AppMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProductoEncontrado : ContentPage
 	{
-        string usuario;
+        
 		public ProductoEncontrado (string codigo, string nombre, string descripcion)
 		{
             try
@@ -39,7 +39,7 @@ namespace AppMobile
             {
                 Navigation.PushAsync(new MenuHamburguesa());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
@@ -51,7 +51,7 @@ namespace AppMobile
             {
                 Navigation.PushAsync(new BuscarProducto());
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");

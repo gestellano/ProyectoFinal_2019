@@ -20,7 +20,7 @@ namespace AppMobile.CerrarSesion
                 btnNo.Clicked += BtnNo_Clicked;
                 btnSi.Clicked += BtnSi_Clicked;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
@@ -37,7 +37,7 @@ namespace AppMobile.CerrarSesion
                 
                 Navigation.PushAsync(new Acceso.Acceso());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
@@ -49,7 +49,7 @@ namespace AppMobile.CerrarSesion
             {
                 Navigation.PushAsync(new PaginaInicioxaml());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }

@@ -58,7 +58,7 @@ namespace AppMobile.Alta_Pedido
                     }
                 }
             }
-            catch (Exception ex )
+            catch (Exception )
             {
 
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");

@@ -56,7 +56,7 @@ namespace AppMobile.DatosVendedor
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
@@ -80,7 +80,7 @@ namespace AppMobile.DatosVendedor
                     Navigation.PushAsync(new PantallaExito());               
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }

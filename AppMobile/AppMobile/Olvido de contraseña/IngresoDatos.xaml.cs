@@ -82,7 +82,7 @@ namespace AppMobile.Olvido_de_contraseña
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }            

@@ -42,7 +42,7 @@ namespace AppMobile
                 obj.AgregarCliente(lblRut.Text,lblNombreEmp.Text,lblDireccion.Text,lblTelefono.Text,lblCiudad.Text);               
                 Navigation.PushAsync(new PantallaExito());
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
 
@@ -56,7 +56,7 @@ namespace AppMobile
             {
                 Navigation.PushAsync(new MenuHamburguesa());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");

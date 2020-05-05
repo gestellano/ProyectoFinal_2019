@@ -100,7 +100,7 @@ namespace AppMobile.Alta_Pedido
                     lblCodigoBuscar.Text = null;                    
                 }                            
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido un error en la app,intente nuevamente la operativa.", "Aceptar");
             }
@@ -214,7 +214,7 @@ namespace AppMobile.Alta_Pedido
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
