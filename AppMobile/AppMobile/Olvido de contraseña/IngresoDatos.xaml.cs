@@ -15,8 +15,16 @@ namespace AppMobile.Olvido_de_contraseña
 	{
 		public IngresoDatos ()
 		{
-			InitializeComponent ();
-            btnEnviar.Clicked += BtnEnviar_Clicked;
+            try
+            {
+                InitializeComponent();
+                btnEnviar.Clicked += BtnEnviar_Clicked;
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
+			
 		}
 
         private void BtnEnviar_Clicked(object sender, EventArgs e)
@@ -71,17 +79,13 @@ namespace AppMobile.Olvido_de_contraseña
                         {
                             DisplayAlert("", "Nickname y e-mail no coinciden.", "Aceptar");
                         }
-
                     }
-
                 }
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
-            }
-            
+            }            
         }
     }
 }

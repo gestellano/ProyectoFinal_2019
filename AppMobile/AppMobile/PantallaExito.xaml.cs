@@ -15,9 +15,16 @@ namespace AppMobile
         
 		public PantallaExito ()
 		{
-			InitializeComponent ();
-            btnInicio.Clicked += BtnInicio_Clicked;
-            NavigationPage.SetHasBackButton(this, false);
+            try
+            {
+                InitializeComponent();
+                btnInicio.Clicked += BtnInicio_Clicked;
+                NavigationPage.SetHasBackButton(this, false);
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }			
 
         }
 
@@ -29,7 +36,6 @@ namespace AppMobile
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
            

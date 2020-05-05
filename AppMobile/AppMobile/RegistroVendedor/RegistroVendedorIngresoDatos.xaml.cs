@@ -14,16 +14,23 @@ namespace AppMobile.RegistroVendedor
 	{
 		public RegistroVendedorIngresoDatos (string nickname)
 		{
-			InitializeComponent ();
-            lblNickName.IsEnabled = false;
-            lblNickName.Text = nickname;
+            try
+            {
+                InitializeComponent();
+                lblNickName.IsEnabled = false;
+                lblNickName.Text = nickname;
 
-            List<string> TieneVehiculoList = new List<string>();
-            TieneVehiculoList.Add("Si");
-            TieneVehiculoList.Add("No");            
-            TieneVehiculo.ItemsSource = TieneVehiculoList;
+                List<string> TieneVehiculoList = new List<string>();
+                TieneVehiculoList.Add("Si");
+                TieneVehiculoList.Add("No");
+                TieneVehiculo.ItemsSource = TieneVehiculoList;
 
-            btnContinuar.Clicked += BtnContinuar_Clicked;
+                btnContinuar.Clicked += BtnContinuar_Clicked;
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }			
         }
 
         private void BtnContinuar_Clicked(object sender, EventArgs e)

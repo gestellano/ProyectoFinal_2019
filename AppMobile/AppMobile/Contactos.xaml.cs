@@ -16,10 +16,17 @@ namespace AppMobile
 	{
 		public Contactos ()
 		{
-			InitializeComponent ();
+            try
+            {
+                InitializeComponent();
+                NavigationPage.SetHasNavigationBar(this, false);
 
-            NavigationPage.SetHasNavigationBar(this, false);
-           
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos, intente nuevamente la operativa.", "Aceptar");
+            }
+			
         }
 
         private void LlamarCelularGonzalo(object sender, EventArgs e)
@@ -32,7 +39,6 @@ namespace AppMobile
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos, intente nuevamente la operativa.", "Aceptar");
             }
         }
@@ -47,7 +53,6 @@ namespace AppMobile
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
@@ -62,7 +67,6 @@ namespace AppMobile
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
@@ -77,7 +81,6 @@ namespace AppMobile
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
@@ -94,9 +97,6 @@ namespace AppMobile
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
-           
         }
-
-       
     }
 }

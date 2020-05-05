@@ -14,9 +14,16 @@ namespace AppMobile
 	{
 		public PantallExitoExterna ()
 		{
-			InitializeComponent ();
-            NavigationPage.SetHasBackButton(this, false);
-            btnIngresar.Clicked += BtnIngresar_Clicked;
+            try
+            {
+                InitializeComponent();
+                NavigationPage.SetHasBackButton(this, false);
+                btnIngresar.Clicked += BtnIngresar_Clicked;
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }			
         }
 
         private void BtnIngresar_Clicked(object sender, EventArgs e)

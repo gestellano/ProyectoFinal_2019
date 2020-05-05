@@ -45,7 +45,6 @@ namespace AppMobile
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
@@ -58,11 +57,9 @@ namespace AppMobile
               || string.IsNullOrEmpty(pTelefono.Text) || string.IsNullOrEmpty(pCiudad.Text))
                 {
                     DisplayAlert("Error", "Todos los campos son obligatorios", "Aceptar");
-
                 }
                 else
                 {
-
                     LogicaServicios obj = new LogicaServicios();
                     obj.ModificarCliente(pRut.Text, pNombreEmp.Text, pDireccion.Text, pTelefono.Text, pCiudad.Text);                    
                    Navigation.PushAsync(new PantallaExito());
@@ -72,8 +69,6 @@ namespace AppMobile
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
-
-          
         }
     }
 }

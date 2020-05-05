@@ -14,13 +14,17 @@ namespace AppMobile
 	{
         public MenuHamburguesa()
         {
-            InitializeComponent();
-            Init();
-            NavigationPage.SetHasNavigationBar(this, false);
-            Navigation.PushAsync(new PaginaInicioxaml());
-            
-
-            
+            try
+            {
+                InitializeComponent();
+                Init();
+                NavigationPage.SetHasNavigationBar(this, false);
+                Navigation.PushAsync(new PaginaInicioxaml());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ha ocurrido un error en App y debe cerrase");
+            }
         }
 
 
@@ -28,8 +32,7 @@ namespace AppMobile
         void Init()
         {
             try
-            {
-                
+            {                
                 List<Menu> menu = new List<Menu>
             {
                 
@@ -93,11 +96,5 @@ namespace AppMobile
             get;
             set;
         }
-
-        
-
-
     } 
-
-
 }

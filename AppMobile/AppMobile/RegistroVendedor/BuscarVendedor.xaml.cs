@@ -14,8 +14,17 @@ namespace AppMobile.RegistroVendedor
     {
         public BuscarVendedor()
         {
-            InitializeComponent();
-            btnBuscar.Clicked += BtnBuscar_Clicked;
+            try
+            {
+                InitializeComponent();
+                btnBuscar.Clicked += BtnBuscar_Clicked;
+            }
+            catch (Exception)
+            {
+
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
+            
 
         }
 
@@ -50,8 +59,7 @@ namespace AppMobile.RegistroVendedor
             catch (Exception)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
-            }
-            
+            }            
         }
     }
 }

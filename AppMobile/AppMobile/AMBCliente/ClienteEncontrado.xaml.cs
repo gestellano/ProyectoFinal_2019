@@ -24,7 +24,6 @@ namespace AppMobile
                 lblTelefono.Text = telefono;
                 lblCiudad.Text = ciudad;
 
-
                 btnCancelar.Clicked += BtnCancelar_Clicked;
                 btnModificar.Clicked += BtnModificar_Clicked;
             }
@@ -32,8 +31,6 @@ namespace AppMobile
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
-   
-
         }
 
         private void BtnModificar_Clicked(object sender, EventArgs e)
@@ -45,9 +42,7 @@ namespace AppMobile
             catch
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
-            }
-
-            
+            }            
         }
 
         private void BtnCancelar_Clicked(object sender, EventArgs e)
@@ -58,10 +53,8 @@ namespace AppMobile
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
-
     }
 }

@@ -20,18 +20,11 @@ namespace AppMobile
                 InitializeComponent();                
                 btnBuscar.Clicked += BtnBuscar_Clicked;
                 btnCancelar.Clicked += BtnCancelar_Clicked;
-               
-                //overlay.IsEnabled = true;
-                //overlay.IsRunning = true;
-                //overlay.IsVisible = true;
-
             }
             catch
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
-
-
         }
 
         private void BtnCancelar_Clicked(object sender, EventArgs e)
@@ -51,11 +44,6 @@ namespace AppMobile
         {
             try
             {
-                //AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  AbsoluteLayout.LayoutFlags="All" IsVisible="True" BackgroundColor="#C0808080" Padding="10, 0"
-                //overlay.IsEnabled = true;
-                //overlay.IsRunning = true;
-                //overlay.IsVisible = true;
-
                 if (lblCodigo.Text == null || lblCodigo.Text.Trim() == "")
                 {
 
@@ -81,8 +69,7 @@ namespace AppMobile
                         Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
 
                         Navigation.PushAsync(new ProductoEncontrado(dictionary["codigo"], dictionary["nombre"], dictionary["descripcion"]));
-                    }                    
-                   
+                    }     
                 }
             }
             catch

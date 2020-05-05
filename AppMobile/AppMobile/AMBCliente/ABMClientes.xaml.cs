@@ -21,8 +21,7 @@ namespace AppMobile
 		{
             try
             {
-                InitializeComponent();              
-
+                InitializeComponent();  
                 btnCancelar.Clicked += BtnCancelar_Clicked;
                 btnBuscar.Clicked += BtnBuscar_Clicked;
             }
@@ -31,22 +30,19 @@ namespace AppMobile
                 throw new Exception("Ha ocurrido un error en App y debe cerrase");
             }
 
-        
 		}
 
 
         private void BtnBuscar_Clicked(object sender, EventArgs e)
         {
             try
-            {              
-
+            {            
                 if (lblRut.Text == null || lblRut.Text.Trim() == "")
                 {
                     DisplayAlert("Error", "RUT es obligatorios", "Aceptar");
                 }
                 else
                 {
-
                     int rutEmpresa = Convert.ToInt32(lblRut.Text.Trim());
 
                     LogicaServicios obj = new LogicaServicios();
@@ -67,15 +63,12 @@ namespace AppMobile
     
                         Navigation.PushAsync(new ClienteEncontrado(dictionary["rut"], dictionary["nombreEmp"], dictionary["direccion"], dictionary["telefono"], dictionary["ciudad"]));
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
-
-            
         }
 
         private void BtnCancelar_Clicked(object sender, EventArgs e)
@@ -86,10 +79,8 @@ namespace AppMobile
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
-           
         }
     }
 }

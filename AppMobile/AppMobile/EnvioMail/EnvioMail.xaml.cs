@@ -19,13 +19,21 @@ namespace AppMobile.EnvioMail
 
         public EnvioMail ()
 		{
+            try
+            {
+                InitializeComponent();
+                lblMailAdmin.Text = App.direccionEnvioMail;
+                btnEnviar.Clicked += BtnEnviar_Clicked;
+                mailDesde = App.Mail;
+                usu = App.Usuario;
+                celular = App.NumeroCelular;
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
 
-			InitializeComponent ();
-            lblMailAdmin.Text =  App.direccionEnvioMail;
-            btnEnviar.Clicked += BtnEnviar_Clicked;
-            mailDesde = App.Mail;
-            usu = App.Usuario;
-            celular = App.NumeroCelular;
+			
         }
 
         private void BtnEnviar_Clicked(object sender, EventArgs e)
@@ -47,9 +55,8 @@ namespace AppMobile.EnvioMail
                 client.Send(message);
                 Navigation.PushAsync(new PantallaExito());
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }

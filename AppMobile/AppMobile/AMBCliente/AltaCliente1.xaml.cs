@@ -20,10 +20,6 @@ namespace AppMobile
                 InitializeComponent();
                 usuario = nickname;
                 lblRut.Text = Convert.ToString(pRut);
-               
-                
-
-
                 btnCancelar.Clicked += BtnCancelar_Clicked;
                 btnSiguiente.Clicked += BtnSiguiente_Clicked;
             }
@@ -31,8 +27,6 @@ namespace AppMobile
             {
                 throw new Exception("Ha ocurrido un error en App y debe cerrase");
             }
-
-       
         }
 
 
@@ -50,7 +44,6 @@ namespace AppMobile
                     || string.IsNullOrEmpty(Telefono) || string.IsNullOrEmpty(Ciudad))
                 {
                     DisplayAlert("Error", "Todos los campos son obligatorios", "Aceptar");
-
                 }
 
                 else
@@ -73,7 +66,6 @@ namespace AppMobile
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }

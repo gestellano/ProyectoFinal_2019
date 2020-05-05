@@ -14,8 +14,16 @@ namespace AppMobile.RegistroVendedor
 	{
 		public CodigoSeguridadRegistro ()
 		{
-			InitializeComponent ();
-            btnContinuar.Clicked += BtnContinuar_Clicked;
+            try
+            {
+                InitializeComponent();
+                btnContinuar.Clicked += BtnContinuar_Clicked;
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
+			
 
             
 		}

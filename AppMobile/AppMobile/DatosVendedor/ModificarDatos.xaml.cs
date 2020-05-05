@@ -28,7 +28,6 @@ namespace AppMobile.DatosVendedor
                 }
                 else
                 {
-
                     List<string> TieneVehiculoList = new List<string>();
                     TieneVehiculoList.Add("Si");
                     TieneVehiculoList.Add("No");
@@ -68,7 +67,6 @@ namespace AppMobile.DatosVendedor
         {
             try
             {
-
                 if (TieneVehiculo.SelectedItem.ToString() == "Si")
                 {
                     tieneVeh = true;
@@ -76,8 +74,7 @@ namespace AppMobile.DatosVendedor
                 else
                 {
                     tieneVeh = false;
-                }
-                
+                }                
                     LogicaServicios obj = new LogicaServicios();
                     obj.ModificarVendedor(lblNombre.Text.Trim(), lblmail.Text.Trim(), lblCelular.Text.Trim(), lblNickName.Text.Trim(), lblpassword.Text.Trim(), lblzonatrabajo.Text.Trim(), tieneVeh, "S");
                     Navigation.PushAsync(new PantallaExito());               
@@ -85,9 +82,7 @@ namespace AppMobile.DatosVendedor
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
-
             }
         }
     }

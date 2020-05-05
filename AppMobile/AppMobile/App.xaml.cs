@@ -9,19 +9,22 @@ namespace AppMobile
     {
         public App()
         {
-            InitializeComponent();
-
-            MainPage = new NavigationPage(new Acceso.Acceso());
-            //Usuario logueado
-            App.Usuario = null;
-            App.Password = null;
-            App.Mail = null;
-            App.NumeroCelular = null;
             
+                InitializeComponent();
 
-            //Credencias para envio de mail
-            App.direccionEnvioMail = "oscaljugueteria@gmail.com";
-            App.passwordEnvioMail = "Aa12345678!";
+                MainPage = new NavigationPage(new Acceso.Acceso());
+                //Usuario logueado
+                App.Usuario = null;
+                App.Password = null;
+                App.Mail = null;
+                App.NumeroCelular = null;
+
+
+                //Credencias para envio de mail
+                App.direccionEnvioMail = "oscaljugueteria@gmail.com";
+                App.passwordEnvioMail = "Aa12345678!";
+           
+           
         }
 
         protected override void OnStart()

@@ -15,15 +15,22 @@ namespace AppMobile
         string usuario;
 		public ProductoEncontrado (string codigo, string nombre, string descripcion)
 		{
-			InitializeComponent ();
+            try
+            {
+                InitializeComponent();
 
-            lblCodigo.Text = codigo;
-            lblNombre.Text = nombre;
-            lblDescripcion.Text = descripcion;
-      
+                lblCodigo.Text = codigo;
+                lblNombre.Text = nombre;
+                lblDescripcion.Text = descripcion;
+                btnBuscarOtroProducto.Clicked += BtnBuscarOtroProducto_Clicked;
+                btnInicio.Clicked += BtnInicio_Clicked;
+            }
+            catch (Exception)
+            {
 
-            btnBuscarOtroProducto.Clicked += BtnBuscarOtroProducto_Clicked;
-            btnInicio.Clicked += BtnInicio_Clicked;
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
+			
 		}
 
         private void BtnInicio_Clicked(object sender, EventArgs e)
@@ -34,7 +41,6 @@ namespace AppMobile
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
@@ -49,8 +55,7 @@ namespace AppMobile
             {
 
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
-            }
-           
+            }           
         }
     }
 }

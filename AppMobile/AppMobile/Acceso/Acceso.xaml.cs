@@ -14,21 +14,24 @@ namespace AppMobile.Acceso
 	{
 		public Acceso ()
 		{
-            InitializeComponent();
-            btnAcceso.Clicked += BtnAcceso_Clicked;
-            NavigationPage.SetHasBackButton(this, false);
-            NavigationPage.SetHasNavigationBar(this, false);
-
-            
+            try
+            {
+                InitializeComponent();
+                btnAcceso.Clicked += BtnAcceso_Clicked;
+                NavigationPage.SetHasBackButton(this, false);
+                NavigationPage.SetHasNavigationBar(this, false);
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
+           
         }
-
-      
-
+        
         private void BtnAcceso_Clicked(object sender, EventArgs e)
         {
             try
-            {
-                
+            {                
                 if (lblNickName.Text == "" || lblNickName.Text == null )
                 {
                     DisplayAlert("", "Usuario no puede estar vacio.", "Aceptar");
@@ -101,9 +104,7 @@ namespace AppMobile.Acceso
             {
                 DisplayAlert("", "Funcionalidad no disponible.", "Aceptar");
             }
-
         }
-
 
     }
 }

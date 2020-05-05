@@ -31,31 +31,35 @@ namespace AppMobile.Alta_Pedido
 
         public ConfeccionPedido(string rut, string nombreEmp)
         {
-			InitializeComponent ();
+            try
+            {
+                InitializeComponent();
 
-            usu = App.Usuario;
-            celular = App.NumeroCelular;
-            mailDesde = App.Mail;
-            NombreEmpresaString = nombreEmp;
-            lblRut.Text = "RUT: "+rut;
-            lblNombreEmpresa.Text = "Nombre Empresa: "+nombreEmp;
-            rutEmpresa = rut;
-           
+                usu = App.Usuario;
+                celular = App.NumeroCelular;
+                mailDesde = App.Mail;
+                NombreEmpresaString = nombreEmp;
+                lblRut.Text = "RUT: " + rut;
+                lblNombreEmpresa.Text = "Nombre Empresa: " + nombreEmp;
+                rutEmpresa = rut;
+                btnBuscar.Clicked += BtnBuscar_Clicked;
+                btnAgregarAlPedido.IsVisible = false;
+                lblCantidad.IsVisible = false;
+                
+                btnAgregarAlPedido.Clicked += BtnAgregarAlPedido_Clicked;
+                btnEnviarPedido.Clicked += BtnEnviarPedido_Clicked;
 
-            btnBuscar.Clicked += BtnBuscar_Clicked;
-            btnAgregarAlPedido.IsVisible = false;
-            lblCantidad.IsVisible = false;
+                List<string> TipoEnvio = new List<string>();
+                TipoEnvio.Add("Normal");
+                TipoEnvio.Add("Express");
+                TipoEnvio.Add("Consultar");
+                Seleccione.ItemsSource = TipoEnvio;
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
             
-            
-            btnAgregarAlPedido.Clicked += BtnAgregarAlPedido_Clicked;
-            btnEnviarPedido.Clicked += BtnEnviarPedido_Clicked;
-
-            List<string> TipoEnvio = new List<string>();
-            TipoEnvio.Add("Normal");
-            TipoEnvio.Add("Express");
-            TipoEnvio.Add("Consultar");
-            Seleccione.ItemsSource = TipoEnvio;
-
         }
 
 
@@ -81,7 +85,6 @@ namespace AppMobile.Alta_Pedido
                     btnEnviarPedido.IsVisible = true;
                     btnEnviarPedido.IsEnabled = true;
 
-
                     articuloAgregado = "Cod.: "+codigoProducto +" - Cant.: " + cantidadArticulos;
                     articuloAgregadoMail = "Codigo: " + codigoProducto + " - Nombre: " + nombreProducto + " - Cantidad: " + cantidadArticulos;
 
@@ -91,15 +94,11 @@ namespace AppMobile.Alta_Pedido
                     //List Envio de mail
                     ListEnvioMail.Add(articuloAgregadoMail);
 
-
                     lblCantidad.Text = null;
                     lblCodigo.Text = null;
                     lblArticulo.Text = null;
-                    lblCodigoBuscar.Text = null;
-
-                    
-                }
-                            
+                    lblCodigoBuscar.Text = null;                    
+                }                            
             }
             catch (Exception ex)
             {
@@ -118,7 +117,6 @@ namespace AppMobile.Alta_Pedido
                 }
                 else
                 {
-
                     LogicaServicios obj = new LogicaServicios();
                     string result = obj.BuscarArticulio(lblCodigoBuscar.Text.Trim());
 
@@ -144,13 +142,11 @@ namespace AppMobile.Alta_Pedido
                         lblArticulo.IsVisible = true;
                         lblCodigoBuscar.IsVisible = true;
                         lblCantidad.IsVisible = true;
-
                     }
                 }
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
@@ -159,7 +155,6 @@ namespace AppMobile.Alta_Pedido
         {
             try
             {
-
                 if (usu == null)
                 {
                     DisplayAlert("Error interno", "Por favor, cerrar app y volver a abrir.", "Aceptar");
@@ -224,8 +219,5 @@ namespace AppMobile.Alta_Pedido
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
-
-
-
     }
 }

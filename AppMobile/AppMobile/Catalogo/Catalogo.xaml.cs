@@ -14,8 +14,16 @@ namespace AppMobile.Catalogo
     {
         public Catalogo()
         {
-            InitializeComponent();
-            btnCatalogo.Clicked += BtnCatalogo_Clicked;
+            try
+            {
+                InitializeComponent();
+                btnCatalogo.Clicked += BtnCatalogo_Clicked;
+            }
+            catch (Exception)
+            {
+                DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
+            }
+           
         }
 
         private void BtnCatalogo_Clicked(object sender, EventArgs e)
@@ -26,7 +34,6 @@ namespace AppMobile.Catalogo
             }
             catch (Exception)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }

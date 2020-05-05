@@ -32,8 +32,6 @@ namespace AppMobile
             {
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
-     
- 
         }
 
         private void BtnConfirmar_Clicked(object sender, EventArgs e)

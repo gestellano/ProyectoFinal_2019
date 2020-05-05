@@ -14,16 +14,14 @@ namespace AppMobile.CerrarSesion
 	{
         public CerrarSesion()
         {
-            InitializeComponent();
-
             try
             {
+                InitializeComponent();
                 btnNo.Clicked += BtnNo_Clicked;
                 btnSi.Clicked += BtnSi_Clicked;
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
@@ -41,7 +39,6 @@ namespace AppMobile.CerrarSesion
             }
             catch (Exception ex)
             {
-
                 DisplayAlert("", "Ha ocurrido al enviar los datos,intente nuevamente la operativa.", "Aceptar");
             }
         }
