@@ -16,11 +16,8 @@
             <Label></Label>
             <Label Text="Contraseña:" TextColor="#000000" ></Label>
             <Entry x:Name="lblPassword" Placeholder="Contraseña" TextColor="#000000" IsPassword="True"></Entry>
-
-            <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Blue" VerticalOptions="StartAndExpand" IsVisible="False" />
             <Button x:Name="btnAcceso" Text="Ingresar"></Button>
 
-                        
             <Label></Label>
             <Label Text="Registrarme" TextColor="Blue" TextDecorations="Underline"  >
                 <Label.GestureRecognizers>

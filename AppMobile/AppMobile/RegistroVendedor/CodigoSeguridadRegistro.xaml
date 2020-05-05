@@ -14,7 +14,6 @@
             <Label Text="Éste código se lo deberá proporcionar la adminsitración de la empresa." TextColor="Gray" Font="7" ></Label>
             <Entry x:Name="lblCodigo" Placeholder="Codigo " TextColor="#000000"></Entry>
            
-
             <Button x:Name="btnContinuar" Text="Continuar"></Button>
 
 

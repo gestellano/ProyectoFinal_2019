@@ -12,8 +12,7 @@
             <Label Text="Usuario:" TextColor="#000000" ></Label>
             <Label Text="Usuario con el cual ingresará al sistema" TextColor="Gray" Font="7" ></Label>
             <Entry x:Name="lblNickName" Placeholder="Usuario" TextColor="#000000"></Entry>
-            <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Blue" VerticalOptions="StartAndExpand" IsVisible="False" />            
-                       
+                                   
             <Button x:Name="btnBuscar" Text="Ingresar"></Button>
            
 

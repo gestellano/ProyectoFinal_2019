@@ -18,20 +18,6 @@
             <Button x:Name="btnBuscar" Text="Buscar"></Button>
             <Button x:Name="btnCancelar" Text="Cancelar"></Button>
 
-            <!--<AbsoluteLayout  >
-                <ActivityIndicator x:Name="overlay" 
-                                   WidthRequest="110" 
-                                   HeightRequest="100" 
-                                   IsRunning="False" 
-                                   IsVisible="False" 
-                                   IsEnabled="False" 
-                                   Color="Black" 
-                                   HorizontalOptions="FillAndExpand"                                   
-                                   VerticalOptions="FillAndExpand"
-                                   AbsoluteLayout.LayoutBounds="0,0,1,1"                                                                     
-                                   AbsoluteLayout.LayoutFlags="All"/>
-            </AbsoluteLayout>-->
-
         </StackLayout>
     </ScrollView>
 </ContentPage>

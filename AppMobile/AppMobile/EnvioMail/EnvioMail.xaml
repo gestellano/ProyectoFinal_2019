@@ -19,7 +19,6 @@
             <Editor x:Name="txtContenido" Text="" VerticalOptions="FillAndExpand" HeightRequest="100" Keyboard="Chat" Placeholder="Contenido" FontSize="8"/>            
             
             <Label></Label>
-            <ActivityIndicator x:Name="activityIndicator" IsRunning="False" Color="Blue" VerticalOptions="StartAndExpand" IsVisible="False" />
             
             <Button x:Name="btnEnviar" Text="Enviar"></Button>
 
