@@ -11,22 +11,22 @@
             <Label  Text="Usuario: *" TextColor="#000000"></Label>
             <Label  x:Name="lblNickName" TextColor="#000000"></Label>
             <Label></Label>
-            <Label Text="* Nombre *" TextColor="#000000"></Label>
+            <Label Text="Nombre: *" TextColor="#000000"></Label>
             <Entry x:Name="lblNombre"  TextColor="#000000"></Entry>
             <Label></Label>
-            <Label  Text="* Celular: *" TextColor="#000000"></Label>
+            <Label  Text="Celular: *" TextColor="#000000"></Label>
             <Entry x:Name="lblCelular" ></Entry>
             <Label></Label>
-            <Label  Text="* e-Mail: *" TextColor="#000000" ></Label>
+            <Label  Text="e-Mail: *" TextColor="#000000" ></Label>
             <Entry x:Name="lblmail" Keyboard="Telephone"></Entry>
             <Label></Label>
-            <Label  Text="* Zona de Trabajo: *" TextColor="#000000"></Label>
+            <Label  Text="Zona de Trabajo: *" TextColor="#000000"></Label>
             <Entry x:Name="lblzonatrabajo" ></Entry>
             <Label></Label>
-            <Label  Text="* Tiene Vehiculo: *" TextColor="#000000"></Label>
+            <Label  Text="Tiene Vehiculo: *" TextColor="#000000"></Label>
             <Picker  x:Name="TieneVehiculo" Title="Seleccione" ></Picker>
             <Label></Label>
-            <Label  Text="* Password: *" TextColor="#000000"></Label>
+            <Label  Text="Password: *" TextColor="#000000"></Label>
             <Entry x:Name="lblpassword" IsPassword="True"></Entry>
             <Label></Label>
 

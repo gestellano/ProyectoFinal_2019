@@ -31,7 +31,15 @@ namespace AppMobile.Acceso
         private void BtnAcceso_Clicked(object sender, EventArgs e)
         {
             try
-            {                
+            {
+                var activity = new ActivityIndicator
+                {
+                    IsEnabled = true,
+                    IsVisible = true,
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    IsRunning = true
+                };
+
                 if (lblNickName.Text == "" || lblNickName.Text == null )
                 {
                     DisplayAlert("", "Usuario no puede estar vacio.", "Aceptar");

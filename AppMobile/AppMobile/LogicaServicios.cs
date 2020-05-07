@@ -10,7 +10,10 @@ namespace AppMobile
 {
     public class LogicaServicios
     {
+        //ip Emulador
         private string baseUrl = "http://10.0.2.2:4425";
+      
+
 
         //Buscar Cliente
         public string BuscarCliente(int Rut)

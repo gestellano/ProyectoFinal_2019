@@ -11,6 +11,8 @@
             <Label Text="Ingresar" Font="25" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
             
+                <ActivityIndicator IsRunning="False" />
+            
             <Label Text="Usuario:" TextColor="#000000" ></Label>
             <Entry x:Name="lblNickName" Placeholder="Usuario" TextColor="#000000"></Entry>
             <Label></Label>
