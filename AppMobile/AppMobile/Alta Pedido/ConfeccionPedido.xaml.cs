@@ -14,6 +14,7 @@ namespace AppMobile.Alta_Pedido
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ConfeccionPedido : ContentPage
 	{
+   
         string rutEmpresa;
         string tipoEnvioSeleccionado;
         string codigoProducto;
@@ -69,11 +70,11 @@ namespace AppMobile.Alta_Pedido
             {
                 if (lblCodigo.Text == null  )
                 {
-                    DisplayAlert("", "Debe de buscar un articulo para agregar al pedido.", "Aceptar");
+                    DisplayAlert("", "Debe de buscar un artículo para agregar al pedido.", "Aceptar");
                 }
                 else if(lblCantidad.Text == null)
                 {
-                    DisplayAlert("", "Debe de ingresar la cantidad de articulos.", "Aceptar");
+                    DisplayAlert("", "Debe de ingresar la cantidad de artículos.", "Aceptar");
                 }
                 else
                 {
@@ -86,7 +87,7 @@ namespace AppMobile.Alta_Pedido
                     btnEnviarPedido.IsEnabled = true;
 
                     articuloAgregado = "Cod.: "+codigoProducto +" - Cant.: " + cantidadArticulos;
-                    articuloAgregadoMail = "Codigo: " + codigoProducto + " - Nombre: " + nombreProducto + " - Cantidad: " + cantidadArticulos;
+                    articuloAgregadoMail = "Código: " + codigoProducto + " - Nombre: " + nombreProducto + " - Cantidad: " + cantidadArticulos;
 
                     ListaArticulosString.Add(articuloAgregado);
                     ListArticulos.ItemsSource = ListaArticulosString;
@@ -113,7 +114,7 @@ namespace AppMobile.Alta_Pedido
                 if (lblCodigoBuscar.Text == null || lblCodigoBuscar.Text.Trim() == "")
                 {
 
-                    DisplayAlert("Alerta", "Codigo de producto obligatorio", "Aceptar");
+                    DisplayAlert("", "Código de artículo es obligatorio", "Aceptar");
                 }
                 else
                 {
@@ -127,12 +128,12 @@ namespace AppMobile.Alta_Pedido
 
                     if (result.Length == 0)
                     {
-                        DisplayAlert("", "Articulo no registrado", "Aceptar");                       
+                        DisplayAlert("", "Artículo no registrado", "Aceptar");                       
                     }
                     else
                     {
                         Dictionary<string, string> dictionary = result.TrimEnd(';').Split(';').ToDictionary(item => item.Split('=')[0], item => item.Split('=')[1]);
-                        lblCodigo.Text = "Codigo: "+dictionary["codigo"];
+                        lblCodigo.Text = "Código: "+dictionary["codigo"];
                         lblArticulo.Text = "Nombre: "+dictionary["nombre"];
                         btnAgregarAlPedido.IsVisible = true;            
                         codigoProducto = dictionary["codigo"];
@@ -163,14 +164,14 @@ namespace AppMobile.Alta_Pedido
                 {
                     if (Seleccione.SelectedItem == null)
                     {
-                        DisplayAlert("", "Debe de seleccionar un Tipo de Envio", "Aceptar");
+                        DisplayAlert("", "Debe de seleccionar un Tipo de Envío", "Aceptar");
 
                     }
                     else
                     {
                         if (listaArticulos.Count == 0)
                         {
-                            DisplayAlert("", "Debe de agregar articulos al pedido", "Aceptar");
+                            DisplayAlert("", "Debe de agregar artículos al pedido", "Aceptar");
                         }
                         else
                         {

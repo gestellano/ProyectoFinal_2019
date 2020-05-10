@@ -47,7 +47,7 @@ namespace AppMobile.CerrarSesion
         {
             try
             {
-                Navigation.PushAsync(new PaginaInicioxaml());
+                Navigation.PushAsync(new MenuHamburguesa());
             }
             catch (Exception)
             {

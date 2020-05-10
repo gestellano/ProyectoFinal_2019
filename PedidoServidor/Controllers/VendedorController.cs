@@ -52,8 +52,7 @@ namespace PedidoServidor.Controllers
         public void ModificarVendedor(string nombre, string mail, string celular, string nickname, string password, string zonaTrabajo, bool tieneVehiculo, string modificar)
         {
             BaseDeDatosContext context2 = new BaseDeDatosContext();
-            var VendModif = context2.Vendedores.First<Vendedor>();
-            VendModif.Nickname = nickname;
+            var VendModif = context2.Vendedores.First<Vendedor>();           
             VendModif.Celular = celular;
             VendModif.Mail = mail;
             VendModif.Nombre = nombre;

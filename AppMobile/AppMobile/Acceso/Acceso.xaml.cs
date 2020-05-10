@@ -32,13 +32,7 @@ namespace AppMobile.Acceso
         {
             try
             {
-                var activity = new ActivityIndicator
-                {
-                    IsEnabled = true,
-                    IsVisible = true,
-                    HorizontalOptions = LayoutOptions.FillAndExpand,
-                    IsRunning = true
-                };
+               
 
                 if (lblNickName.Text == "" || lblNickName.Text == null )
                 {

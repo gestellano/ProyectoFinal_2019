@@ -43,7 +43,7 @@ namespace AppMobile.RegistroVendedor
                     || string.IsNullOrEmpty(lblcelular.Text.Trim()) || string.IsNullOrEmpty(lblZonaTrabajo.Text.Trim())
                     || string.IsNullOrEmpty(lblPassword.Text.Trim()) || string.IsNullOrEmpty(lblPassword1.Text.Trim()))
                 {
-                    DisplayAlert("Error", "Todos los campos son obligatorios *", "Aceptar");
+                    DisplayAlert("", "Todos los campos son obligatorios *", "Aceptar");
                 }
                 else if(TieneVehiculo.SelectedItem == null)
                 {

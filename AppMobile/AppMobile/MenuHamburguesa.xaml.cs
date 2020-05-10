@@ -26,9 +26,7 @@ namespace AppMobile
                 throw new Exception("Ha ocurrido un error en App y debe cerrase");
             }
         }
-
-
-
+        
         void Init()
         {
             try
@@ -40,9 +38,9 @@ namespace AppMobile
                 new Menu{MenuTitle = "Datos Personales", Page = new DatosVendedor.ModificarDatos() },
                 new Menu{MenuTitle = "Contactos", Page = new Contactos()},
                 new Menu{MenuTitle = "A-M Clientes", Page = new ABMClientes()},
-                new Menu{MenuTitle = "Buscar Articulo", Page = new BuscarProducto()},          
+                new Menu{MenuTitle = "Buscar Artículo", Page = new BuscarProducto()},          
                 new Menu{MenuTitle = "Realizar Pedido", Page = new Alta_Pedido.AltaPedido_BuscarCliente()},
-                new Menu{MenuTitle = "Enviar mail", Page = new EnvioMail.EnvioMail()},
+                new Menu{MenuTitle = "Enviar e-mail", Page = new EnvioMail.EnvioMail()},
                 new Menu{MenuTitle = "Ver Catalogo", Page = new Catalogo.Catalogo()},                
                 new Menu{MenuTitle = "Cerrar Sesión", Page = new CerrarSesion.CerrarSesion()}
             };

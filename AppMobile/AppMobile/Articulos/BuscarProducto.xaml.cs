@@ -47,7 +47,7 @@ namespace AppMobile
                 if (lblCodigo.Text == null || lblCodigo.Text.Trim() == "")
                 {
 
-                    DisplayAlert("Error", "Codigo de producto obligatorio", "Aceptar");
+                    DisplayAlert("", "Código de producto obligatorio", "Aceptar");
                 }
                 else
                 {
@@ -61,7 +61,7 @@ namespace AppMobile
 
                     if (result.Length == 0)
                     {
-                        DisplayAlert("", "Articulo no registrado", "Aceptar");
+                        DisplayAlert("", "Artículo no registrado", "Aceptar");
                         Navigation.PushAsync(new BuscarProducto());
                     }
                     else

@@ -13,13 +13,13 @@ namespace AppMobile
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Contactos : ContentPage
-	{
+    {
 		public Contactos ()
 		{
             try
             {
                 InitializeComponent();
-                NavigationPage.SetHasNavigationBar(this, false);
+                NavigationPage.SetHasNavigationBar(this, true);
 
             }
             catch (Exception)

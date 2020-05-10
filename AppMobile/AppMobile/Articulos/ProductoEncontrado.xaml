@@ -6,10 +6,10 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Articulo Encontrado" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
+            <Label Text="Artículo Encontrado" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
 
-            <Label Text="Codigo:" TextColor="#000000"></Label>
+            <Label Text="Código:" TextColor="#000000"></Label>
             <Label x:Name="lblCodigo"  TextColor="#7B7776"/>
 
             <Label></Label>
@@ -17,13 +17,13 @@
             <Label x:Name="lblNombre"  TextColor="#7B7776"/>
 
             <Label></Label>
-            <Label Text="Descripcion:" TextColor="#000000"></Label>
+            <Label Text="Descripción:" TextColor="#000000"></Label>
             <Label x:Name="lblDescripcion"  TextColor="#7B7776"/>
 
             <Label></Label>
             
 
-            <Button x:Name="btnBuscarOtroProducto" Text="Buscar otro articulo"></Button>
+            <Button x:Name="btnBuscarOtroProducto" Text="Buscar otro artículo"></Button>
             <Button x:Name="btnInicio" Text="Inicio"></Button>
 
         </StackLayout>

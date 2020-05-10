@@ -39,7 +39,7 @@ namespace AppMobile
             {            
                 if (lblRut.Text == null || lblRut.Text.Trim() == "")
                 {
-                    DisplayAlert("Error", "RUT es obligatorios", "Aceptar");
+                    DisplayAlert("", "RUT es obligatorios", "Aceptar");
                 }
                 else
                 {

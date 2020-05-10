@@ -2,17 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMobile.PaginaInicioxaml">
-
-    <StackLayout Padding="20">
-        <Label  x:Name="lblIngreso" TextColor="Black" FontAttributes="Bold"></Label>
-        <Label></Label>
-        <Label x:Name="lblp1" TextColor="Black" FontAttributes="Bold"></Label>
-        <Label x:Name="lblp1p" TextColor="Black" FontAttributes="Italic"></Label>
-        <Label x:Name="lblp2" TextColor="Black" FontAttributes="Bold"></Label>
-        <Label x:Name="lblp2p" TextColor="Black" FontAttributes="Italic"></Label>
-        <Label x:Name="lblp3" TextColor="Black" FontAttributes="Bold"></Label>
-        <Label x:Name="lblp3p" TextColor="Black" FontAttributes="Italic"></Label>
-        <Label></Label>
-        <Label x:Name="lblReporte" FontSize="8" TextColor="Gray"></Label>
-    </StackLayout> 
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label  x:Name="lblIngreso" TextColor="Black" FontAttributes="Bold"></Label>
+            <Label></Label>
+            <Label x:Name="lblp1" TextColor="Black" FontAttributes="Bold"></Label>
+            <Label x:Name="lblp1p" TextColor="Black" FontAttributes="Italic"></Label>
+            <Label x:Name="lblp2" TextColor="Black" FontAttributes="Bold"></Label>
+            <Label x:Name="lblp2p" TextColor="Black" FontAttributes="Italic"></Label>
+            <Label x:Name="lblp3" TextColor="Black" FontAttributes="Bold"></Label>
+            <Label x:Name="lblp3p" TextColor="Black" FontAttributes="Italic"></Label>
+            <Label></Label>
+            <Label x:Name="lblReporte" FontSize="8" TextColor="Gray"></Label>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

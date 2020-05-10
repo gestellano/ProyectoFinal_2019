@@ -6,14 +6,14 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Registro Usuario" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
+            <Label Text="Registro de Usuario" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
 
             <Label Text="Usuario:" TextColor="#000000" ></Label>
             <Label Text="Usuario con el cual ingresará al sistema" TextColor="Gray" Font="7" ></Label>
             <Entry x:Name="lblNickName" Placeholder="Usuario" TextColor="#000000"></Entry>
                                    
-            <Button x:Name="btnBuscar" Text="Ingresar"></Button>
+            <Button x:Name="btnBuscar" Text="Registrarme"></Button>
            
 
         </StackLayout>

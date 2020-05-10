@@ -16,11 +16,11 @@
             <Label x:Name="lblNombreEmp"  TextColor="#7B7776"/>
 
             <Label></Label>
-            <Label Text="Direccion:" TextColor="#000000"></Label>
+            <Label Text="Dirección:" TextColor="#000000"></Label>
             <Label x:Name="lblDireccion"  TextColor="#7B7776"/>
 
             <Label></Label>
-            <Label Text="Telefono:" TextColor="#000000" ></Label>
+            <Label Text="Teléfono:" TextColor="#000000" ></Label>
             <Label x:Name="lblTelefono"  TextColor="#7B7776"/>
 
             <Label></Label>

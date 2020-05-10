@@ -4,7 +4,7 @@
              x:Class="AppMobile.Contactos">
         <ScrollView>
             <StackLayout Padding="20">
-                <Label Text="Contactos" Font="25" TextColor="Red" HorizontalOptions="Center" />
+            <Label Text="Contactos" Font="25" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Navy"  />
 
                 <Label Text="Presione sobre cada contacto para realizar una llamada." Font="7" TextColor="Gray" HorizontalOptions="Center" />
                 <Label></Label>

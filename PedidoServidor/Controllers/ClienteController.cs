@@ -66,7 +66,7 @@ namespace PedidoServidor.Controllers
         {
             BaseDeDatosContext context = new BaseDeDatosContext();
             var ClienteModif = context.Clientes.First<Cliente>();
-            ClienteModif.Rut = rut;
+            
             ClienteModif.NombreEmp = nombre;
             ClienteModif.Ciudad = ciudad;
             ClienteModif.Direccion = direccion;

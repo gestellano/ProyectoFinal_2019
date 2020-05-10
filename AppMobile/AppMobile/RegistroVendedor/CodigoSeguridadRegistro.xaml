@@ -6,13 +6,13 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Registro Usuario" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
+            <Label Text="Registro de Usuario" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
             <Label Text="Código de Seguridad" Font="18" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
 
            
             <Label Text="Éste código se lo deberá proporcionar la adminsitración de la empresa." TextColor="Gray" Font="7" ></Label>
-            <Entry x:Name="lblCodigo" Placeholder="Codigo " TextColor="#000000"></Entry>
+            <Entry x:Name="lblCodigo" Placeholder="Codigo " Keyboard="Telephone" TextColor="#000000"></Entry>
            
             <Button x:Name="btnContinuar" Text="Continuar"></Button>
 

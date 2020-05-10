@@ -47,7 +47,7 @@ namespace AppMobile.Olvido_de_contraseña
 
                     if (result.Length == 0)
                     {
-                        DisplayAlert("", "No se encontro usuario con Nickname: " + lblNickName.Text, "Aceptar");
+                        DisplayAlert("", "No se encontro el usuario: " + lblNickName.Text, "Aceptar");
                     }
                     else
                     {
@@ -77,7 +77,7 @@ namespace AppMobile.Olvido_de_contraseña
                         }
                         else
                         {
-                            DisplayAlert("", "Nickname y e-mail no coinciden.", "Aceptar");
+                            DisplayAlert("", "Usuario y/o e-Mail no coinciden.", "Aceptar");
                         }
                     }
                 }

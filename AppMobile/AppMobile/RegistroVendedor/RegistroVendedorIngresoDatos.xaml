@@ -6,7 +6,7 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Registro Usuario" Font="25" FontAttributes="Bold" TextColor="Navy"  HorizontalOptions="Center" />
+            <Label Text="Registro de Usuario" Font="25" FontAttributes="Bold" TextColor="Navy"  HorizontalOptions="Center" VerticalTextAlignment="Center"/>
             <Label></Label>
 
             <Label Text="Ingrese los datos" Font="18" TextColor="Navy" HorizontalOptions="Center" />
@@ -21,7 +21,7 @@
             <Label></Label>
 
             <Label Text="* e-Mail:" TextColor="#000000" ></Label>
-            <Entry x:Name="lblemail" Placeholder="email" TextColor="#000000" Keyboard="Email"></Entry>
+            <Entry x:Name="lblemail" Placeholder="e-Mail" TextColor="#000000" Keyboard="Email"></Entry>
             <Label></Label>
 
             <Label Text="* Celular:" TextColor="#000000" ></Label>

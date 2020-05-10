@@ -32,7 +32,7 @@ namespace AppMobile.Alta_Pedido
             {
                 if (lblRut.Text == null || lblRut.Text.Trim() == "")
                 {
-                    DisplayAlert("Error", "RUT es obligatorios", "Aceptar");
+                    DisplayAlert("", "RUT es obligatorio", "Aceptar");
                 }
                 else
                 {
@@ -48,7 +48,7 @@ namespace AppMobile.Alta_Pedido
 
                     if (result.Length == 0)
                     {
-                        DisplayAlert("Info", "No existe el cliente", "Aceptar");
+                        DisplayAlert("", "No existe el cliente", "Aceptar");
                     }
                     else
                     {

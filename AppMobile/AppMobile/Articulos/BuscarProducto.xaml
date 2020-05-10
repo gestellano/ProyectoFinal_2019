@@ -8,11 +8,11 @@
 
         <StackLayout Padding="20">
 
-            <Label Text="Buscar Articulo" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
+            <Label Text="Buscar Artículo" Font="25" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
             <Label></Label>
 
-            <Label Text="Codigo de Articulo:" TextColor="#000000" ></Label>
-            <Entry x:Name="lblCodigo" Placeholder="Codigo" TextColor="#000000" Keyboard="Telephone"></Entry>
+            <Label Text="Codigo de Artículo:" TextColor="#000000" ></Label>
+            <Entry x:Name="lblCodigo" Placeholder="Código" TextColor="#000000" Keyboard="Telephone"></Entry>
             <Label></Label>
 
             <Button x:Name="btnBuscar" Text="Buscar"></Button>

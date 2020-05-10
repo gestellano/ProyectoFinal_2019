@@ -15,23 +15,25 @@
             <Entry x:Name="lblNombre"  TextColor="#000000"></Entry>
             <Label></Label>
             <Label  Text="Celular: *" TextColor="#000000"></Label>
-            <Entry x:Name="lblCelular" ></Entry>
+            <Entry x:Name="lblCelular" Keyboard="Telephone"></Entry>
             <Label></Label>
             <Label  Text="e-Mail: *" TextColor="#000000" ></Label>
-            <Entry x:Name="lblmail" Keyboard="Telephone"></Entry>
+            <Entry x:Name="lblmail" ></Entry>
             <Label></Label>
             <Label  Text="Zona de Trabajo: *" TextColor="#000000"></Label>
             <Entry x:Name="lblzonatrabajo" ></Entry>
             <Label></Label>
-            <Label  Text="Tiene Vehiculo: *" TextColor="#000000"></Label>
+            <Label  Text="Tiene Vehículo: *" TextColor="#000000"></Label>
             <Picker  x:Name="TieneVehiculo" Title="Seleccione" ></Picker>
             <Label></Label>
-            <Label  Text="Password: *" TextColor="#000000"></Label>
+            <Label  Text="Contraseña: *" TextColor="#000000"></Label>
             <Entry x:Name="lblpassword" IsPassword="True"></Entry>
             <Label></Label>
 
 
             <Button x:Name="btnModificar" Text="Modificar"></Button>
+            <Label Text="Deberá cerrar sesión y volver a ingresar para ver reflejados los cambios en Datos Personales." Font="10" TextColor="Gray" HorizontalTextAlignment="Center"></Label>
+            <Label></Label>
 
 
 
