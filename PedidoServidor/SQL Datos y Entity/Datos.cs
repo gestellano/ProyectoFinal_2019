@@ -35,11 +35,7 @@ namespace PedidoServidor.SQL_Datos_y_Entity
         INSERT INTO dbo.Cliente(Rut, NombreEmp, Direccion, Telefono, Ciudad)
         VALUES('333','Jugueteria Pepe','Bv Artigas 2502','22001144','Montevideo');
 
-        INSERT INTO dbo.Vendedor(Nickname, Nombre, Mail, Celular, Password, ZonaTrabajo, TieneVehiculo)
-        VALUES('mantonio','Marcelo Antonio','mantonio@gmail.com','098555666','12345678','interior','0');
-
-        INSERT INTO dbo.Vendedor(Nickname, Nombre, Mail, Celular, Password, ZonaTrabajo, TieneVehiculo)
-        VALUES('gestellano','Gaston Estellano','estellano.gaston@gmail.com','098977344','12345678','Durazno','0');
+ 
 
         INSERT INTO dbo.CodigoSeguridad(numCodigo, codigo)
         VALUES('1', '123456');
