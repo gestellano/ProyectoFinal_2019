@@ -4,6 +4,8 @@
              x:Class="AppMobile.PaginaInicioxaml">
     <ScrollView>
         <StackLayout Padding="20">
+            <Label  x:Name="lblNombre" Text="OSCAL S.R.L" TextColor="Navy" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" ></Label>
+            <Label></Label>
             <Label  x:Name="lblIngreso" TextColor="Black" FontAttributes="Bold"></Label>
             <Label></Label>
             <Label x:Name="lblp1" TextColor="Black" FontAttributes="Bold"></Label>

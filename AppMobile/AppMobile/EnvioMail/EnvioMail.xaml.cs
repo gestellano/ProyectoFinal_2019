@@ -44,11 +44,12 @@ namespace AppMobile.EnvioMail
                 MailMessage message = new MailMessage();
                 message.From = new MailAddress(mailDesde.ToString(), "Oscal SRL - noreply");
                 message.To.Add(App.direccionEnvioMail);
-                message.Subject = "Contacto vía mail: "+usu+" – OSCAL S.R.L";
+                message.Subject = "Contacto vía mail: "+usu+" – OSCAL S.R.L"+lblAsunto.Text;
                 message.IsBodyHtml = true;
-                message.Body = "<b>Mail enviado desde la app por el vendedor: </b>"+usu+"<br>" +
-                    "<b>Número de contacto: </b>"+celular+"<br>"+
+                message.Body = "<b>Mail enviado desde la app por el vendedor: </b>" + usu + "<br>" +
+                    "<b>Número de contacto: </b>" + celular + "<br>" +
                     "-----------------------------<br><br>" +
+                    
                      txtContenido.Text;
                 client.EnableSsl = true;
                 client.Credentials = new System.Net.NetworkCredential(App.direccionEnvioMail, App.passwordEnvioMail);
