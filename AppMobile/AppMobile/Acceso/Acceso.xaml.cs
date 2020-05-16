@@ -72,7 +72,7 @@ namespace AppMobile.Acceso
                         }
                         else
                         {
-                            DisplayAlert("", "Usuario y/o Password incorrecto.", "Aceptar");
+                            DisplayAlert("", "Usuario y/o Contraseña incorrecto.", "Aceptar");
                         }
                     }
                 }

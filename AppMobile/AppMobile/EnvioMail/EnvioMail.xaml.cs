@@ -40,21 +40,31 @@ namespace AppMobile.EnvioMail
         {
             try
             {
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                MailMessage message = new MailMessage();
-                message.From = new MailAddress(mailDesde.ToString(), "Oscal SRL - noreply");
-                message.To.Add(App.direccionEnvioMail);
-                message.Subject = "Contacto vía mail: "+usu+" – OSCAL S.R.L"+lblAsunto.Text;
-                message.IsBodyHtml = true;
-                message.Body = "<b>Mail enviado desde la app por el vendedor: </b>" + usu + "<br>" +
-                    "<b>Número de contacto: </b>" + celular + "<br>" +
-                    "-----------------------------<br><br>" +
-                    
-                     txtContenido.Text;
-                client.EnableSsl = true;
-                client.Credentials = new System.Net.NetworkCredential(App.direccionEnvioMail, App.passwordEnvioMail);
-                client.Send(message);
-                Navigation.PushAsync(new PantallaExito());
+                if (string.IsNullOrEmpty(lblAsunto.Text.Trim()) || string.IsNullOrEmpty(txtContenido.Text.Trim())         )
+                {
+                    DisplayAlert("", "Todos los campos son obligatorios", "Aceptar");
+                }
+
+                else
+                {
+                    SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                    MailMessage message = new MailMessage();
+                    message.From = new MailAddress(mailDesde.ToString(), "Oscal SRL - noreply");
+                    message.To.Add(App.direccionEnvioMail);
+                    message.Subject = "Contacto vía mail: " + usu + " – OSCAL S.R.L" + lblAsunto.Text;
+                    message.IsBodyHtml = true;
+                    message.Body = "<b>Mail enviado desde la app por el vendedor: </b>" + usu + "<br>" +
+                        "<b>Número de contacto: </b>" + celular + "<br>" +
+                        "-----------------------------<br><br>" +
+
+                         txtContenido.Text;
+                    client.EnableSsl = true;
+                    client.Credentials = new System.Net.NetworkCredential(App.direccionEnvioMail, App.passwordEnvioMail);
+                    client.Send(message);
+                    Navigation.PushAsync(new PantallaExito());
+                }
+
+                
             }
             catch (Exception )
             {

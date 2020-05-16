@@ -74,10 +74,21 @@ namespace AppMobile.DatosVendedor
                 else
                 {
                     tieneVeh = false;
-                }                
+                }
+                if (string.IsNullOrEmpty(lblNombre.Text.Trim()) || string.IsNullOrEmpty(lblCelular.Text.Trim())
+                    || string.IsNullOrEmpty(lblmail.Text.Trim()) || string.IsNullOrEmpty(lblzonatrabajo.Text.Trim())
+                    || string.IsNullOrEmpty(lblpassword.Text.Trim()))
+                {
+                    DisplayAlert("", "Todos los campos son obligatorios", "Aceptar");
+                }
+
+                else
+                {
                     LogicaServicios obj = new LogicaServicios();
                     obj.ModificarVendedor(lblNombre.Text.Trim(), lblmail.Text.Trim(), lblCelular.Text.Trim(), lblNickName.Text.Trim(), lblpassword.Text.Trim(), lblzonatrabajo.Text.Trim(), tieneVeh, "S");
-                    Navigation.PushAsync(new PantallaExito());               
+                    Navigation.PushAsync(new PantallaExito());
+                }
+                           
 
             }
             catch (Exception)

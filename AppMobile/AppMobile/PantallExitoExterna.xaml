@@ -6,7 +6,7 @@
         <ScrollView>
             <StackLayout>
                 <Image Source="OK.png" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center"></Image>
-                <Label TextColor="#000000" Text="Operación realizada con exito" HorizontalOptions="Center"/>
+                <Label TextColor="#000000" Text="Operación realizada con éxito" HorizontalOptions="Center"/>
 
                 <Label></Label>
                 <Label></Label>

@@ -43,7 +43,7 @@ namespace AppMobile
                 if (string.IsNullOrEmpty(NombreEmpresa) || string.IsNullOrEmpty(Direccion)
                     || string.IsNullOrEmpty(Telefono) || string.IsNullOrEmpty(Ciudad))
                 {
-                    DisplayAlert("Error", "Todos los campos son obligatorios", "Aceptar");
+                    DisplayAlert("", "Todos los campos son obligatorios", "Aceptar");
                 }
 
                 else
