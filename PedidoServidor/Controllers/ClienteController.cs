@@ -65,7 +65,9 @@ namespace PedidoServidor.Controllers
         public void ModificarCliente(string rut, string nombre, string direccion, string ciudad, string telefono, string modificar)
         {
             BaseDeDatosContext context = new BaseDeDatosContext();
-            var ClienteModif = context.Clientes.First<Cliente>();
+
+            var ClienteModif = context.Clientes.Find(rut);
+            
             
             ClienteModif.NombreEmp = nombre;
             ClienteModif.Ciudad = ciudad;
