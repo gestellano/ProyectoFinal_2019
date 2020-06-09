@@ -51,7 +51,7 @@ namespace AppMobile.EnvioMail
                     MailMessage message = new MailMessage();
                     message.From = new MailAddress(mailDesde.ToString(), "Oscal SRL - noreply");
                     message.To.Add(App.direccionEnvioMail);
-                    message.Subject = "Contacto vía mail: " + usu + "Asunto: " + lblAsunto.Text+" – OSCAL S.R.L" ;
+                    message.Subject = "Contacto vía mail: " + usu + " Asunto: " + lblAsunto.Text+" – OSCAL S.R.L" ;
                     message.IsBodyHtml = true;
                     message.Body = "<b>Mail enviado desde la app por el vendedor: </b>" + usu + "<br>" +
                         "<b>Número de contacto: </b>" + celular + "<br>" +
